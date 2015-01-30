@@ -1,0 +1,432 @@
+﻿@model HealthPortal.Models.PDFViewModel
+@using System.Linq;
+@{
+    ViewBag.Title = "PDFDownload";
+    Layout = "~/Views/Shared/_PdfLayout.cshtml";
+}
+
+
+<paragraph style="font-family:Helvetica;font-size:15;font-style:italic;">
+    <chunk red="255" green="0" blue="0">@Model.Reporttitle </chunk> @foreach (var pat in Model.PatientMDS)
+    {<chunk red="255" green="0" blue="0">@pat.PatientName</chunk>}
+</paragraph>
+@if (Model.PatientMDS.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Patient Demographics</chunk>
+    </paragraph>
+
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="8;3;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" textcolor="white" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Patient Name</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Sex</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Date Of Birth</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Race</cell>
+        </row>
+        @foreach (var item in Model.PatientMDS)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.PatientName</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.Sex</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.DateOfBirth</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Race</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.MyPhysicians.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Care Team</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="3;8">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Provider's Name</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Provider's office contact information</cell>
+        </row>
+        @foreach (var item in Model.MyPhysicians)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.Name</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.PrimaryPhone,@item.HospitalName,@item.StreetAddress @item.StreetAddress2 @item.Locality,@item.Region,@item.PostalCode</cell>
+            </row>
+        }
+
+    </table>
+}
+<newline />
+
+@if (Model.EncounterInfos.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Encounter Information</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="4;4;6">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Admission Date</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Discharge Date</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Admission and Discharge Location</cell>
+        </row>
+        @foreach (var item in Model.EncounterInfos)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.AdmissionDate</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.DischargeDate</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.Admissiondischargelocation</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.SocialHistories.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Social History</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="4;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Social History Item</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Description</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">SNOMED-CT</cell>
+        </row>
+        @foreach (var item in Model.SocialHistories)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.SocialHistoryItem</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.Description</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.SNOMEDCT</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.MedicationAllergies.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Medication Allergies</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="8;3;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Allergen</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">RxNorm</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Reaction</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Status</cell>
+        </row>
+        @foreach (var item in Model.MedicationAllergies)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.Allergen</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.RxNormCode</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Reaction</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Status</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+
+@if (Model.Medications.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Medication</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="5;3;5;4;3">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Medication/Drug Name</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">RxNorm</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">SIG</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Date Of Prescription</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Prescription Status</cell>
+        </row>
+        @foreach (var item in Model.Medications)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.MedicationsName</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.StandardCode</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.SIG</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.DateOfPrescription</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Status</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.Problems.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Problems</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="4;4;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Problem Name/Description</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">SNOMED-CT</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Problem Reported Date</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Problem Status</cell>
+        </row>
+        @foreach (var item in Model.Problems)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.ProblemCause</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.StandardCode</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.ProblemReportedDate</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Status</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.ProcedureDetails.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Procedures</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="6;3;4;3;3">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Procedure</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">SNOMED-CT</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Date Of Procedure</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">BodySite</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">BodySite SNOMED-CT</cell>
+        </row>
+        @foreach (var item in Model.ProcedureDetails)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.ProcedureName</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.SNOMEDCT</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">@item.ProcedureDate</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right"></cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right"></cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.VitalSigns.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Vital Signs</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Vital Type</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Value</cell>
+        </row>
+        @foreach (var item in Model.VitalSigns)
+        {
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">Height</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Height</cell>
+            </row>
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">Weight</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Weight</cell>
+            </row>
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">Blood Pressure</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.BloodPressure</cell>
+            </row>
+            <row>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true">Body Mass Index(BMI)</cell>
+                <cell borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.BMI</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.LabResults.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Laboratory Test and Values/Results</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="8;3;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Orderable Test Name</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">LOINC Code</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Test Result Value</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Date Performed</cell>
+        </row>
+        @foreach (var item in Model.LabResults)
+        {
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">@item.OrderableTestName</cell>
+                <cell left="true" right="true" top="true" bottom="true">@item.LONICCode</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.TestResultValue</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.DatePerformed</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.Vaccinations.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Immunizations</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="8;3;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Vaccine</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">CVXCode</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Date</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Status</cell>
+        </row>
+        @foreach (var item in Model.Vaccinations)
+        {
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">@item.VaccineName</cell>
+                <cell left="true" right="true" top="true" bottom="true">@item.CVXCode</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.DateAdministered</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.VaccineStatus</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.CarePlans.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Care Plan</chunk><chunk style="font-size:10">(Vendor supplied data that includes care plan goals and instructions is permitted.)</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="4;6">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Goal/Instructions</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Instructions</cell>
+        </row>
+        @foreach (var item in Model.CarePlans)
+        {
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">Goal</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Goal,SNOMED CT:@item.SNOMEDCT</cell>
+            </row>
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">Instructions</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Instructions</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.EncounterDisgnos.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Encounter Diagnosis</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="8;3;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Diagnosis</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">SNOMED-CT</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Start Date</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Status</cell>
+        </row>
+        @foreach (var item in Model.EncounterDisgnos)
+        {
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">@item.Diagnosis</cell>
+                <cell left="true" right="true" top="true" bottom="true">@item.SNOMEDCT</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.StartDate</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Status</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.CognFunStatus.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Cognitive and Functional Status</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0" widths="8;3;4;4">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Description</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">SNOMED-CT</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Reported Date</cell>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true" horizontalalign="right">Status</cell>
+        </row>
+        @foreach (var item in Model.CognFunStatus)
+        {
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">@item.Description</cell>
+                <cell left="true" right="true" top="true" bottom="true">@item.SNOMEDCT</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.ReportedDate</cell>
+                <cell left="true" right="true" top="true" bottom="true" horizontalalign="right">@item.Status</cell>
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.Reasonhospitals.Any())
+{
+    <paragraph style="font-weight:bold;font-size:13;">
+        <chunk>Reason For Hospitalization</chunk>
+    </paragraph>
+    <table width="100%" cellpadding="1.0" cellspacing="1.0">
+        <row>
+            <cell backgroundcolor="rgb(54,82,120)" borderwidth="0.5" left="true" right="true" top="true" bottom="true">Discharge Instructions</cell>
+        </row>
+        @foreach (var item in Model.Reasonhospitals)
+        {
+            <row>
+                <cell left="true" right="true" top="true" bottom="true">@item.Reason</cell>
+
+            </row>
+        }
+    </table>
+}
+<newline />
+
+@if (Model.EncounterInfos.Any())
+{
+    foreach (var enc in Model.EncounterInfos)
+    {
+        if (enc.EncounterType.Contains("I"))
+        {
+            foreach (var rasin in Model.Reasonhospitals)
+            {
+                foreach (var phy in Model.MyPhysicians)
+                {
+                    if (phy.EncounterType.Contains("I"))
+                    {
+                        <paragraph style="font-weight:bold;font-size:13;">
+                            <chunk>Discharge Instructions</chunk>
+                        </paragraph>
+
+                        <table width="100%" cellpadding="1.0" cellspacing="1.0">
+                            <row>
+                                <cell left="true" right="true" top="true" bottom="true">
+                                    <chunk>
+                                        You were admitted to @enc.Admissiondischargelocation on @enc.AdmissionDate with a diagnosis of
+                                        @rasin.Reason. You underwent a biopsy of the sinus mass and were treated with 4 antibiotics. You tolerated the procedure without complications and your condition improved. You were discharged from
+                                        @enc.Admissiondischargelocation on @enc.DischargeDate with instructions to follow up with @phy.Name.
+                                        Should you have any questions prior to discharge, please contact a member of your healthcare team. If you have left the hospital and have  any questions, please contact your primary care physician.
+                                    </chunk>
+                                </cell>
+                            </row>
+                            <row>
+                                <cell left="true" right="true" top="true" bottom="true">
+                                    <chunk>
+                                        1.Take all medications as prescribed 2. No heavy lifting, or nose blowing 3. If you experience any of the following symptoms, call your primary care physician or return to the Emergency Room. * Chest pain * Shortness of breath * Dizziness or light-headedness * Intractable nausea or vomiting * High fever * Uncontrollable bleeding * Pain or redness at the site of any previous intravenous catheter * Any other unusual 4.Schedule a follow up appointment with your primary care physician in one week
+                                    </chunk>
+                                </cell>
+                            </row>
+                        </table>
+                    }
+                }
+            }
+        }
+    }
+
+}
+</newline>

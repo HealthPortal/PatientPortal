@@ -1,0 +1,17 @@
+﻿
+body {
+font-family:Algerian;
+font-size:medium;
+
+}
+
+tr th {
+    font-weight:bold;
+    background-color:darkblue;
+    font-size:15px;
+}
+
+tr td{
+    background-color:lightblue;
+    font-size:12px;
+}

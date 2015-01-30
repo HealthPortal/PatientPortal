@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WallModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="PostComment">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="Int32" Nullable="false" />
+    <Property Name="PostId" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CommentedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CommentedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Post" Relationship="Self.FK_PostComments_ToPost" FromRole="PostComments" ToRole="Posts" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_PostComments_ToUserProfile" FromRole="PostComments" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PostedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="PostComments" Relationship="Self.FK_PostComments_ToPost" FromRole="Posts" ToRole="PostComments" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_Posts_ToUserProfile" FromRole="Posts" ToRole="UserProfile" />
+    <Property Name="PostReceivedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile1" Relationship="WallModel.FK_Posts_ToUserProfileReceiver" FromRole="Post" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AvatarExt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PostComments" Relationship="Self.FK_PostComments_ToUserProfile" FromRole="UserProfile" ToRole="PostComments" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_ToUserProfile" FromRole="UserProfile" ToRole="Posts" />
+    <NavigationProperty Name="Posts1" Relationship="WallModel.FK_Posts_ToUserProfileReceiver" FromRole="UserProfile" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK_PostComments_ToPost">
+    <End Role="Posts" Type="Self.Post" Multiplicity="1" />
+    <End Role="PostComments" Type="Self.PostComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="PostComments">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComments_ToUserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="PostComments" Type="Self.PostComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PostComments">
+        <PropertyRef Name="CommentedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_ToUserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="PostedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WallEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PostComments" EntityType="Self.PostComment" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <AssociationSet Name="FK_PostComments_ToPost" Association="Self.FK_PostComments_ToPost">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="PostComments" EntitySet="PostComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComments_ToUserProfile" Association="Self.FK_PostComments_ToUserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="PostComments" EntitySet="PostComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_ToUserProfile" Association="Self.FK_Posts_ToUserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_ToUserProfileReceiver" Association="WallModel.FK_Posts_ToUserProfileReceiver">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Posts_ToUserProfileReceiver">
+    <End Type="WallModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="WallModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="PostReceivedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

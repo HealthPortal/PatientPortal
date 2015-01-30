@@ -1,0 +1,574 @@
+﻿@model  IEnumerable<HealthPortal.Models.ExistingPatient>
+@{
+    ViewBag.Title = "ViewReport";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <link href="../../css/addpatient.css" rel="Stylesheet" type="text/css" />
+    <link href="../../css/tcal.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="../../Scripts/tcal.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#reporttype').change(function () {
+                var reporttype = $(this).val();
+                alert(reporttype);
+                if (reporttype == "SecureMessaging") {
+                    var title = "170.314(g1) Reporting for Secured Messaging";
+                    $('#ap_table').find('.reporttitle font b').html(title);
+                    $('#ap_table').fadeIn('slow');
+                }
+                else if (reporttype == "ViewDownloadTransmit") {
+                    var title = "170.314(g1) Reporting for View,Download And Transmit";
+                    $('#ap_table').find('.reporttitle font b').html(title);
+                    $('#ap_table').fadeIn('slow');
+                }
+                else if (reporttype == "SmokingStatus") {
+                    var title = "170.314(g1) Reporting for Smoking Status";
+                    $('#ap_table').find('.reporttitle font b').html(title);
+                    $('#ap_table').fadeIn('slow');
+                }
+                else if (reporttype == "VitalSigns") {
+                    var title = "170.314(g1) Reporting for Vital Signs";
+                    $('#ap_table').find('.reporttitle font b').html(title);
+                    $('#ap_table').fadeIn('slow');
+                }
+                else if (reporttype == "LabResults") {
+                    var title = "170.314(g1) Reporting for Lab Results";
+                    $('#ap_table').find('.reporttitle font b').html(title);
+                    $('#ap_table').fadeIn('slow');
+                }
+                else if (reporttype == "LogsResults") {
+                    var title = "Reporting for LogsResults";
+                    $('#ap_table').find('.reporttitle font b').html(title);
+                    $('#ap_table').fadeIn('slow');
+                }
+            });
+
+            $("#b").click(function () {
+                var reportt = $('#reporttype').val();
+                var logres = "";
+                var res1 = "";
+                var res2 = "";
+                var myTable = "<table border=1 width='100%'><th>PatientName</th>" +
+                "<th>DateOfBirth</th>" + "<th>Sex</th><th>Patient Seen EP Within or Outside Reporting Period</th>" +
+                    "<th>Received Secure Electronic Message Within or Outside Reporting Period</th>" +
+                    "<th>Secure Electronic Messages Received Within</th>" +
+                    "<th>Secure Electronic Messages Received Outside</th>" +
+                    "<th>Numerator Recorded</th></tr>";
+                var logTable = "<table border=1 width='100%'><tr><th>PatientName</th>" +
+                    "<th>Date&Time</th>" + "<th>ActionResults</th><th>UpdatedBy</th>" + "</tr>";
+                var viewTable = "<table border=1 width='100%'><tr><th>PatientName</th>" +
+                "<th>DateOfBirth</th>" + "<th>Sex</th><th>Patient Seen EP Within or Outside Reporting Period</th>" +
+                    "<th>Patient Viewed (Downloaded or Transmitted) Their Information Within or Outside Reporting Period</th>" +
+                    "<th>Numerator Recorded</th></tr>";
+
+                var sd = "";
+                var ed = "";
+
+                //To populate Sdate & EDate from Quarter Period
+                var period = document.getElementById("period");
+                var q = period.options[period.selectedIndex].text;
+                var year = document.getElementById("year");
+                var y = year.options[year.selectedIndex].text;
+
+                if (q == "Q1") {
+                    sd = "01/01/" + y;
+                    ed = "03/31/" + y;
+                }
+                else if (q == "Q2") {
+                    sd = "04/01/" + y;
+                    ed = "06/30/" + y;
+                }
+                else if (q == "Q3") {
+                    sd = "07/01/" + y;
+                    ed = "09/30/" + y;
+                }
+                else if (q == "Q4") {
+                    ed = "10/01/" + y;
+                    ed = "12/31/" + y;
+                }
+
+                //To populate Sdate & EDate from Calendar Period
+                var d = document.getElementById("datebox").value;
+                if (d != "") {
+                    sd = d;
+                    var mm = sd.substring(0, 2);
+                    var dd = sd.substring(3, 5);
+                    var yy = sd.substring(6, 10);
+                    var newdate = new Date(yy, mm, dd);
+                    newdate.setDate(newdate.getDate() + 90);
+
+                    var curr_date = newdate.getDate();
+                    var curr_month = newdate.getMonth();
+                    curr_month = curr_month + 1;
+                    var curr_year = newdate.getFullYear();
+
+                    ed = curr_month + '/' + curr_date + '/' + curr_year;
+
+                    var myDate = new Date(parseInt(curr_year, 10), parseInt(curr_month, 10) - 1, parseInt(curr_date, 10));
+                }
+
+
+                //To populate Sdate & EDate from Calendar Year
+                var calperiod = document.getElementById("calperiod");
+                var p = calperiod.options[calperiod.selectedIndex].text;
+                if (p != "--Select Year--") {
+                    sd = "01/01/" + p;
+                    ed = "12/31/" + p;
+                }
+
+                $("#patientname option:selected").each(function () {
+
+                    var totalOutside = "";
+                    var totalWithin = "";
+                    var encounterURL = "/ViewReport/EncounterReport?";
+                    var messageCntURL = "/ViewReport/MessageReport?";
+
+                    //var idx = document.getElementById("patientname").value;
+                    var idx = $(this).val();
+
+                    alert('Populating table for patient : ' + ($(this).val()));
+
+                    var startdate = "";
+                    var startdate2 = "";
+                    var enddate = "";
+                    var enddate2 = "";
+
+                    //Start Date formatting to YYYY-MM-DDTHH:MM:SS
+                    var m_sd = sd.substring(0, 2);
+                    var d_sd = sd.substring(3, 5);
+                    var y_sd = sd.substring(6, 10);
+                    startdate = y_sd + '-' + m_sd + '-' + d_sd + 'T00:00:00';
+                    startdate2 = y_sd + '-' + m_sd + '-' + d_sd + ' 00:00:00';
+
+                    //End Date formatting to YYYY-MM-DDTHH:MM:SS
+                    var m_ed = ed.substring(0, 2);
+                    var d_ed = ed.substring(3, 5);
+                    var y_ed = ed.substring(6, 10);
+                    enddate = y_ed + '-' + m_ed + '-' + d_ed + 'T00:00:00';
+                    enddate2 = y_ed + '-' + m_ed + '-' + d_ed + ' 00:00:00';
+
+                    var reportURL = "/ViewReport/EncounterReport?" + "PatientId=" + ($(this).val()) + "&FromDate=" + startdate2 + "&ToDate=" + enddate2;
+
+                    messageCntURL = messageCntURL + "PatientId=" + ($(this).val()) + "&FromDate=" + startdate2 + "&ToDate=" + enddate2;
+
+                    viewDownloadURL = "/ViewReport/ViewDownloadTReport?" + "PatientId=" + ($(this).val()) + "&FromDate=" + startdate2 + "&ToDate=" + enddate2;
+
+                    if (reportt == "SecureMessaging") {
+                        $.ajax({
+                            url: messageCntURL,
+                            type: 'Post',
+                            contentType: "application/json;charset=utf-8",
+                            success: function (json) {
+                                if (json != null) {
+                                    var sl = json.DOB;
+
+                                    var mm = sl.substring(0, 2);
+                                    var dd = sl.substring(3, 5);
+                                    var yy = sl.substring(6, 10);
+                                    totalOutside = json.TotalOutside;
+                                    totalWithin = json.TotalWithin;
+
+                                    var num = parseInt(json.NumWithin);
+                                    var num1 = parseInt(json.NumOutside);
+
+                                    var str = "";
+                                    if (totalWithin > 0) {
+                                        str += "Within";
+                                    } else {
+                                        str += "Outside";
+                                    }
+                                    var str1 = "";
+                                    if (num > 0) {
+                                        str1 += "Within";
+                                    }
+                                    else {
+                                        if (num1 > 0) {
+                                            str1 += "Outside"
+                                        }
+                                        else {
+                                            str1 += "No Message Received";
+                                        }
+
+                                    }
+                                    var str2 = "";
+                                    if (str == str1 && str == "Within") {
+                                        str2 += "1";
+                                    }
+                                    else {
+                                        str2 += "0";
+                                    }
+                                    res1 += "<tr><td>" + json.PatientName + "</td>" +
+                                                        "<td>" + mm + "/" + dd + "/" + yy + "</td>" +
+                                                        "<td>" + json.Gender + "</td>" + "<td>" + str + "</td>" +
+                                    "<td>" + str1 + "</td>" +
+                                    "<td>" + num + "</td>" +
+                                    "<td>" + num1 + "</td>" +
+                                    "<td>" + str2 + "</td></tr>";
+                                    $('#resultTitle').css('display', 'block');
+                                    $('.subtit').html("Secure Messaging - 1:" + "<span>&nbsp;" + "</span>" + "Test Data Set-Up for New Patient");
+                                    $('.subcol').html("Stage 2");
+                                    $('.subtit1').html("(This scenario should populate some numerators, as indicated)");
+                                    $('.subcol1').html(" EP Only");
+                                    $("#result").html(myTable + res1 + "</table>");
+
+                                }
+                            },
+                            error: function () {
+                            }
+                        });
+                    }
+
+                    else if (reportt == "LogsResults") {
+
+                        $.ajax({
+                            url: reportURL,
+                            type: 'Post',
+                            contentType: "application/json;charset=utf-8",
+                            success: function (logs) {
+                                if (logs != null) {
+                                    $.each(logs, function (key, value) {
+
+                                        logres += "<tr><td>" + value.PatientName + "</td>" +
+                                                            "<td>" + value.Date + "</td>" +
+                                                            "<td>" + value.ActionResults + "</td>" + "<td>" + value.UpdatedBy + "</td>"
+                                                            + "</tr>";
+                                       
+                                    });
+                                    $("#result").html(logTable + logres + "</table>");
+
+                                }
+                            },
+                            error: function () {
+                            }
+
+                        });
+                    }
+
+                    else if (reportt == "ViewDownloadTransmit")
+                    {
+                        $.ajax({
+                            url: viewDownloadURL,
+                            type: 'Post',
+                            contentType: "application/json;charset=utf-8",
+                            success: function (json) {
+                                if (json != null) {
+                                    var sl = json.DOB;
+
+                                    var mm = sl.substring(0, 2);
+                                    var dd = sl.substring(3, 5);
+                                    var yy = sl.substring(6, 10);
+                                    totalOutside = json.TotalOutside;
+                                    totalWithin = json.TotalWithin;
+                                    
+
+                                    var num = parseInt(json.NumWithin);
+                                    var num1 = parseInt(json.NumOutside);
+
+                                    var str = "";
+                                    if (totalWithin > 0) {
+                                        str += "Within";
+                                    } else {
+                                        str += "Outside";
+                                    }
+                                    var str1 = "";
+                                    if (num > 0) {
+                                        str1 += "Within";
+                                    }
+                                    else {
+                                        if (num1 > 0) {
+                                            str1 += "Outside"
+                                        }
+                                        else {
+                                            str1 += "Not Viewed";
+                                        }
+
+                                    }
+                                    var str2 = "";
+                                    if (str1 != "Not Viewed") {
+                                        str2 += "1";
+                                    }
+                                    else {
+                                        str2 += "0";
+                                    }
+                                     res1 += "<tr><td>" + json.PatientName + "</td>" +
+                                                        "<td>" + mm + "/" + dd + "/" + yy + "</td>" +
+                                                        "<td>" + json.Gender + "</td>" + "<td>" + str + "</td>" +
+                                    "<td>" + str1 + "</td>" +
+                                    "<td>" + str2 + "</td></tr>";
+                                    $('#resultTitle').css('display', 'block');
+                                    $('.subtit').html("View,Download and Transmit - 1:" + "<span>&nbsp;" + "</span>" + "Test Data Set-Up for New Patient");
+                                    $('.subcol').html("Stage 2(Measure B)");
+                                    $('.subtit1').html("(This scenario should populate some numerators, as indicated)");
+                                    $('.subcol1').html(" EP & EH/CAH");
+                                    $("#result").html(viewTable + res1 + "</table>");
+
+                                }
+                            },
+                            error: function () {
+                            }
+                        });
+
+                    }
+
+
+                });
+
+
+
+            });
+        });
+
+
+
+
+
+        function disable1() {
+            document.getElementById("period").disabled = false;
+            document.getElementById("period").selectedIndex = 0;
+            document.getElementById("year").disabled = false;
+            document.getElementById("year").selectedIndex = 0;
+            document.getElementById("datebox").value = "";
+            document.getElementById("datebox").disabled = true;
+            document.getElementById("calperiod").selectedIndex = 0;
+            document.getElementById("calperiod").disabled = true;
+
+        }
+
+        function disable2() {
+            document.getElementById("datebox").value = "";
+            document.getElementById("datebox").disabled = false;
+            document.getElementById("period").selectedIndex = 0;
+            document.getElementById("period").disabled = true;
+            document.getElementById("year").selectedIndex = 0;
+            document.getElementById("year").disabled = true;
+            document.getElementById("calperiod").selectedIndex = 0;
+            document.getElementById("calperiod").disabled = true;
+
+        }
+
+        function disable3() {
+            document.getElementById("calperiod").selectedIndex = 0;
+            document.getElementById("calperiod").disabled = false;
+            document.getElementById("datebox").value = "";
+            document.getElementById("datebox").disabled = true;
+            document.getElementById("period").selectedIndex = 0;
+            document.getElementById("period").disabled = true;
+            document.getElementById("year").selectedIndex = 0;
+            document.getElementById("year").disabled = true;
+        }
+
+
+    </script>
+    <style type="text/css">
+        p.contact {
+            margin-bottom: 55px;
+            margin-left: 161px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 style="text-align: center;color: #015BA7;  font-size: 1.1em;">Patient management center</h1>
+        <div class="menu-toggle">
+            <a class="nav-toggle"></a>
+        </div>
+        <nav class="headerTools right">
+
+            <a href="@Url.Action("ExistingPatient", "ExistingPatient")" class="search" style="margin-left: -130px;background-position: -282px -203px;margin-top: -35px;"></a>
+            <a href="#" class="msg" style="margin-left: -61px;background-position: -143px -7px;margin-top: -45px;"></a>
+            <a href="@Url.Action("Admin","Home")" class="actions" style="margin-right: -76px;background-position: -57px -300px;margin-top: -45px;"></a>
+        </nav>
+    </header>
+
+    <div class="cover">
+        <h2 class="contact">Patients Reports</h2>
+        <form id="contactform">
+            <p class="contact">
+                <label for="name">Types Of Reports</label>
+
+
+                <select name="enc-type" class="enc-type" id="reporttype">
+                    <option value="" selected="selected">--Plese select types of report--</option>
+                    <option value="SecureMessaging">Secure Messaging</option>
+                    <option value="ViewDownloadTransmit">View,Download & Transmit</option>
+                    <option value="SmokingStatus">Smoking Status</option>
+                    <option value="VitalSigns">Vital Signs</option>
+                    <option value="LabResults">Lab Results</option>
+                    <option value="LogsResults">LogsResults</option>
+                </select>
+            </p>
+            <table align:center; bgcolor:'grey' id='ap_table' style="display: none; width:64%; margin-left:76px ">
+                <tr>
+                    <td style="background-color: #5B74A8; ">
+                        <table border='0' width:'100%'>
+                            <tr>
+                                <td class="reporttitle" background-color:#5b74a8;align=center
+                                    style="padding: 1px; padding-bottom: 1px">
+                                    <font color="white" font-family:'helvetica';
+                                          font-weight:bold;"><b></b></font>
+                            </tr>
+                            <tr>
+                                <td bgcolor="white" style="padding: 5">
+                                    <table width:"100%" border=1>
+                                        <tr>
+                                            <td>
+                                                <table border=0 width:"95%">
+                                                    <tr align:"left">
+                                                        <td valign="middle" width="41%">
+                                                            <font style="font-size:70%; font-family:'helvetica';color:#015ba7;
+                                                                  font-size:1.1em;">
+                                                                <b>
+                                                                    &nbsp;&nbsp;Select
+                                                                    Patient(S)
+                                                                </b>
+                                                            </font>
+                                                        </td>
+                                                        <td>
+                                                            <select id="patientname" style="font-family:'Helvetica'" size="6" multiple="multiple">
+                                                                @foreach (var patient in Model)
+                                                                {
+                                                                    <option value="@patient.UserId">@patient.PatientName</option>
+                                                                }
+                                                            </select>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>&nbsp;</tr>
+                                                    <tr>
+                                                        <td>
+                                                            <font style="font-size: 70%; color: #015ba7; font-family: 'helvetica'">
+                                                                <b>
+                                                                    <input type="radio" name="p_year" value="quarter" onclick="disable1()">Quarter
+                                                                    Period
+                                                                </b>
+                                                            </font>
+                                                        </td>
+                                                        <td>
+                                                            <select id="period" disabled="disabled">
+                                                                <option value="Select">--Select Quarter--</option>
+                                                                <option value="q1">Q1</option>
+                                                                <option value="q2">Q2</option>
+                                                                <option value="q3">Q3</option>
+                                                                <option value="q4">Q4</option>
+                                                            </select>
+                                                        </td>
+                                                        <td width='17%'>
+                                                            <select id="year" disabled="disabled">
+                                                                <option value="Select">--Select Year--</option>
+                                                                <option value="q1">2014</option>
+                                                                <option value="q2">2013</option>
+                                                                <option value="q3">2012</option>
+                                                                <option value="q4">2011</option>
+                                                                <option value="q5">2010</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td width="60%">
+                                                            <font style="font-size: 70%; color: #015ba7; font-family: 'helvetica'">
+                                                                <input type="radio" name="p_year" value="year" onclick="disable2()"><b>
+                                                                    90
+                                                                    Consecutive Days Period
+                                                                </b>
+                                                            </font>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="datebox" name="date"
+                                                                   class="tcal" value="" />
+                                                        </td>
+                                                        <td width='27%'>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="40%">
+                                                            <font style="font-size: 70%; color: #015ba7; font-family: 'helvetica'">
+                                                                <input type="radio" name="p_year" value="calyear" onclick="disable3()"><b>
+                                                                    Full Calendar
+                                                                    Period
+                                                                </b>
+                                                            </font>
+                                                        </td>
+                                                        <td>
+                                                            <select id="calperiod" disabled="disabled">
+                                                                <option value="Select">--Select Year--</option>
+                                                                <option value="q1">2014</option>
+                                                                <option value="q2">2013</option>
+                                                                <option value="q3">2012</option>
+                                                                <option value="q4">2011</option>
+                                                                <option value="q5">2010</option>
+                                                            </select>
+                                                        </td>
+                                                        <td width='27%'>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan=3 align="right">
+                                                            <input id="b" type="button"
+                                                                   value="Generate Report" />
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%" align="center" bgcolor='white' style="margin-top: -2px;">
+                                        <tr>
+                                            <td width="100%">
+                                                <div id="resultTitle" style="display:none;">
+                                                    <table>
+                                                        <tr class="rhead" height="20" style="height:15.0pt">
+                                                            <td height="20" class="rtitle subtit" colspan="4" style="height:15.0pt;mso-ignore:colspan"></td>
+                                                            <td class="rcol">&nbsp;</td>
+                                                            <td class="rcol1">&nbsp;</td>
+                                                            <td colspan="5" class="rcol subcol"></td>
+                                                        </tr>
+                                                        <tr class="rhead" height="20" style="height:15.0pt">
+                                                            <td height="20" class="rtitle subtit1" colspan="5" style="height:15.0pt;mso-ignore:colspan"></td>
+                                                            <td class="rcol2">&nbsp;</td>
+                                                            <td colspan="5" class="rcol3 subcol1" width="544" style="border-left:none;width:410pt"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div id="result"></div>
+                                            </td>
+                                            @*<td width="70%"><div id="result1"></div></td>*@
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </form>
+    </div>
+
+</body>
+</html>
+

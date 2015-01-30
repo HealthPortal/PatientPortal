@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WallModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="PostComments">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" Nullable="false" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+    <Property Name="CommentedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CommentedDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+    <Property Name="PostedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="PostReceivedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="AvatarExt" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="FK_PostComments_ToPost">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+    <End Role="PostComments" Type="Self.PostComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="PostComments">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComments_ToUserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="PostComments" Type="Self.PostComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PostComments">
+        <PropertyRef Name="CommentedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_ToUserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="PostedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_ToUserProfileReceiver">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="PostReceivedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WallModelStoreContainer">
+    <EntitySet Name="PostComments" EntityType="Self.PostComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PostComments_ToPost" Association="Self.FK_PostComments_ToPost">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="PostComments" EntitySet="PostComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComments_ToUserProfile" Association="Self.FK_PostComments_ToUserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="PostComments" EntitySet="PostComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_ToUserProfile" Association="Self.FK_Posts_ToUserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_ToUserProfileReceiver" Association="Self.FK_Posts_ToUserProfileReceiver">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

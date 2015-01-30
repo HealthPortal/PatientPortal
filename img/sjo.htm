@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Bick Physician Portal
+		</title>
+		<meta name="description" content="">
+		<meta name="author" content=""><!-- Le styles -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="../css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+		<link href="../css/plugins/jquery.jscrollpane.css" rel="stylesheet" type="text/css">
+		<link href="../css/wireframe.css" rel="stylesheet" type="text/css">
+		<link href="../css/physician.css" rel="stylesheet" type="text/css">
+		<link href="../css/working.css" rel="stylesheet" type="text/css"><!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="ico/favicon.ico">
+		<!--<script type='text/javascript'>
+			(function (d, t) {
+			var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+			bh.type = 'text/javascript';
+			bh.src = '//www.bugherd.com/sidebarv2.js?apikey=ectha9sdh9tzfgzh5tpqag';
+			s.parentNode.insertBefore(bh, s);
+			})(document, 'script');
+		</script>-->
+	</head>
+	<body>
+	<!-- Wrapper -->
+		<div class="full-wrap">
+			<!-- Panel -->
+			<div class="pocket">
+				<div class="pocket-content">
+				</div>
+				<div class="pocket-menu">
+					<div class="menu-toggle">
+						<a class="nav-toggle"></a>
+					</div>
+					<div class="pocket-menu-nav">
+						<ul>
+                            <li class="nav-patients active">
+                                <a href="#myday"></a>
+                                <ul class="pocket-menu-sub-nav">
+                                    <li class="myday active"><a class="subnav-item" href="#myday">My Day</a></li>
+                                    <li class="watchlist"><a class="subnav-item" href="#watchlist">Watch List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-messages">
+                                <a href="#conversations">
+                                    
+                                </a>
+                            </li>
+                            <li class="nav-apps">
+                                <a href="#apps"></a>
+                            </li>
+                            <li class="nav-settings">
+                                <a href="#settings"></a>
+                            </li>
+                        </ul>
+					</div>
+					<div class="pocket-menu-brand">
+						<a class="panel-brand"></a>
+					</div>
+				</div>
+			</div>
+			<!-- Canvas-Wrapper -->
+			<div class="canvas-wrapper">
+				<!-- Nav -->
+				<!-- Canvas -->
+				<div class="canvas">
+					<iframe id="external-frame" frameborder="none" seamless src="" width="100%" height="100%"></iframe>
+					<div class="app-container">
+						<div class="patient-record">
+							<div class="patient-record-header">
+								<div class="inner-wrapper">
+									<div class="current-patient list-vcard active">
+										<div class="vcard-wrapper">
+											<a href="#" class="calendar-day pull-left"><span class="time">9:00</span><span class="ampm">AM</span></a>
+											<div class="pull-left">
+												<a href="" class="contact-name n">Cory Deem</a>
+												
+												<p class="summary">
+													Chest and Arm Pain 
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<table class="patient--quick-stats">
+									  <tbody>
+									    <tr>
+									      <th>35 yrs</th>
+									      <th>6' 1"</th>
+									      <th>185lbs</th>
+									    </tr>
+									    <tr>
+									      <td>04/16/1977</td>
+									      <td>(183cm)</td>
+									      <td>(83kg)</td>
+									    </tr>
+									  </tbody>
+									</table>
+									
+									
+								</div>
+							</div>
+							<div class="patient-record--body">
+								<div class="patient-record--main">
+									
+								</div>
+							</div>
+							<div class="patient-record--nav"> 
+								<ul>
+									<li class="patient-record--nav-item--summary active"><a href="#">Summary</a></li>
+									<li class="patient-record--nav-item--messages"><a href="#">Messages</a></li>
+									<li class="patient-record--nav-item--encounters"><a href="#">Encounters</a></li>
+									<li class="patient-record--nav-item--demo"><a href="#">Demographics</a></li>
+									<li class="patient-record--nav-item--procedures"><a href="#">Procedures</a></li>
+									<li class="patient-record--nav-item--allergies"><a href="#">Allergies</a></li>
+									<li class="patient-record--nav-item--diagnosis"><a href="#">Diagnosis</a></li>
+									<li class="patient-record--nav-item--medications"><a href="#">Medications</a></li>
+									<li class="patient-record--nav-item--labs"><a href="#">Labs</a></li>
+									<li class="patient-record--nav-item--immunizations"><a href="#">Immunizations</a></li>
+									<li class="patient-record--nav-item--admissions"><a href="#">Admissions</a></li>
+									<li class="patient-record--nav-item--ihealth"><a href="#">iHealth</a></li>
+									<li class="patient-record--nav-item--nikePlus"><a href="#">Nike +</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="../js/plugins/jquery.stickysectionheaders.js" type="text/javascript"></script>
+		<script src="../js/plugins/jquery.mousewheel.js" type="text/javascript"></script>
+		<script src="../js/plugins/mwheelIntent.js" type="text/javascript"></script>
+		<script src="../js/plugins/jquery.jscrollpane.min.js" type="text/javascript"></script>
+		<script src="../js/plugins/moment.min.js" type="text/javascript"></script>
+		<script src="../js/working-ck.js" type="text/javascript"></script>
+		<script src="../js/physician-ck.js" type="text/javascript"></script>
+		<script type='text/javascript'>
+		(function (d, t) {
+		  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		  bh.type = 'text/javascript';
+		  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=4ixaku5dxbtgcc0qscmasa';
+		  s.parentNode.insertBefore(bh, s);
+		  })(document, 'script');
+		</script>		
+	</body>
+</html>

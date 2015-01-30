@@ -1,0 +1,955 @@
+﻿@{
+    ViewBag.Title = "AddPatientDetails";
+    ViewBag.NewPatientid = ViewBag.NewPatientid;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Form</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
+    <link href="../../css/addpatient.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#content div").hide(); // Initially hide all content
+            $("#tabs li:first").attr("id", "current"); // Activate first tab
+            $("#content div:first").fadeIn(); // Show first tab content
+            $('#tabs a').click(function (e) {
+                e.preventDefault();
+                $("#content div").hide(); //Hide all content
+                $("#tabs li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current"); // Activate this
+                $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+            });
+            var id = '@ViewBag.NewPatientid';
+            $('#MyPhysician #physubmit').click(function () {
+                var MyPhysician = {
+                    UserId: id,
+                    Name: $('#mydropdown').val(),
+                    StreetAddress:$('#StreetAddress').val(),
+                    Locality: $('#Locality').val(),
+                    Region:$('#Region').val(),
+                    PostalCode: $('#PostalCode').val(),
+                    PrimaryPhone: $('#PrimaryPhone').val(),
+                    EncounterType:$('#PhyencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Physicians',
+                    type: 'POST',
+                    data: JSON.stringify(MyPhysician),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                       
+                    },
+                    error: function () {
+                        }
+                });
+
+
+            });
+
+            $('#Demographics #Demogrssubmit').click(function () {
+                var PatientMD = {
+                    UserId: id,
+                    PatientName: $('#PatientName').val(),
+                    Sex: $('#Sex').val(),
+                    DateOfBirth: $('#DOB').val(),
+                    Race: $('#Race').val(),
+                    Height: $('#PatientHeight').val(),
+                    Weight: $('#PatientWeight').val(),
+                    EncounterType: $('#DemosencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/PatientDemographics',
+                    type: 'POST',
+                    data: JSON.stringify(PatientMD),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+
+
+            });
+
+            $('#Vitals #vitalssubmit').click(function () {
+                var VitalSign = {
+                    UserId: id,
+                    BMI: $('#BMI').val(),
+                    BloodPressure: $('#BloodPressure').val(),
+                    Height: $('#Height').val(),
+                    Weight: $('#Weight').val(),
+                    RecordedDate: $('#RecordedDate').val(),
+                    EncounterType: $('#VitalsencType').val()
+                };
+                
+                $.ajax({
+                    url: 'http://localhost:56393/api/Vitals',
+                    type: 'POST',
+                    data: JSON.stringify(VitalSign),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+
+
+            });
+
+
+            $('#Issues #issuessubmit').click(function () {
+                var MedicationAllergie = {
+                    UserId: id,
+                    Allergen: $('#Allergen').val(),
+                    Reaction: $('#Reaction').val(),
+                    Status: $('#Algstatus').val(),
+                    RxNormCode: $('#AlgRxNormCode').val(),
+                    EncounterType: $('#AllergiesencType').val()
+                };
+                var Problem = {
+                    UserId: id,
+                    ProblemCause: $('#ProblemCause').val(),
+                    Status: $('#ProbStatus').val(),
+                    ProblemReportedDate: $('#ProblemReported').val(),
+                    StandardCode: $('#ProbStandardCode').val(),
+                    EncounterType: $('#ProblemencType').val()
+                };
+                
+                $.ajax({
+                    url: 'http://localhost:56393/api/Allergies',
+                    type: 'POST',
+                    data: JSON.stringify(MedicationAllergie),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+
+
+                $.ajax({
+                    url: 'http://localhost:56393/api/Problems',
+                    type: 'POST',
+                    data: JSON.stringify(Problem),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('#Medications #medicationssubmit').click(function () {
+                var Medications = {
+                    UserId: id,
+                    MedicationsName: $('#Medname').val(),
+                    DosageForm: $('#DosageForm').val(),
+                    SIG: $('#SIG').val(),
+                    Status: $('#MedStatus').val(),
+                    DateOfPrescription: $('#DateOfPrescription').val(),
+                    StandardCode: $('#StandardCode').val(),
+                    EncounterType: $('#MedicationsencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Medications',
+                    type: 'POST',
+                    data: JSON.stringify(Medications),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('#Vaccinations #vaccinesubmit').click(function () {
+                var Vaccination = {
+                    UserId: id,
+                    VaccineName: $('#VaccineName').val(),
+                    VaccineStatus: $('#VaccineStatus').val(),
+                    DateAdministered: $('#DateAdministered').val(),
+                    CVXCode: $('#CVXCode').val(),
+                    EncounterType: $('#VaccinationsencType').val()
+                };
+                var ProcedureDetail = {
+                    UserId: id,
+                    ProcedureName: $('#ProcedureName').val(),
+                    ProcedureDate: $('#ProcedureDate').val(),
+                    SNOMEDCT: $('#SNOMEDCT').val(),
+                    EncounterType: $('#ProcedureencType').val()
+                };
+                var CarePlan = {
+                    UserId: id,
+                    Goal: $('#Goal').val(),
+                    Instructions: $('#Instruction').val(),
+                    SNOMEDCT: $('#GoalSNOMEDCT').val(),
+                    EncounterType: $('#GoalencType').val()
+                };
+                var SocialHistory = {
+                    UserId: id,
+                    SocialHistoryItem: $('#SocHisitem').val(),
+                    Description: $('#Description').val(),
+                    SNOMEDCT: $('#SocSNOMEDCT').val(),
+                    EncounterType: $('#SocencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Vaccinations',
+                    type: 'POST',
+                    data: JSON.stringify(Vaccination),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+                $.ajax({
+                    url: 'http://localhost:56393/api/Procedures',
+                    type: 'POST',
+                    data: JSON.stringify(ProcedureDetail),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+                $.ajax({
+                    url: 'http://localhost:56393/api/CarePlans',
+                    type: 'POST',
+                    data: JSON.stringify(CarePlan),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+                $.ajax({
+                    url: 'http://localhost:56393/api/SocialHistories',
+                    type: 'POST',
+                    data: JSON.stringify(SocialHistory),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('#EncounterDiagnosis #encdiagsubmit').click(function () {
+                var EncounterDiagnosis = {
+                    UserId: id,
+                    Diagnosis: $('#EncDiagnosis').val(),
+                    SNOMEDCT: $('#EncDiagSNOMEDCT').val(),
+                    Status: $('#EncDiagStatus').val(),
+                    StartDate: $('#EncDiagStartDate').val(),
+                    EncounterType: $('#EncDiagStartDateencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/EncounterDiagnosis',
+                    type: 'POST',
+                    data: JSON.stringify(EncounterDiagnosis),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('#Immunizations #immussubmit').click(function () {
+                var Immunization = {
+                    PatientId: id,
+                    DATE: $('#ImmuDATE').val(),
+                    NAME: $('#ImmuNAME').val(),
+                    PROVIDER: $('#ImmuPROVIDER').val(),
+                    INSTRUCTIONS: $('#ImmuINSTRUCTIONS').val(),
+                    TYPE: $('#ImmuTYPE').val(),
+                    Dose: $('#ImmuDose').val(),
+                    Rate: $('#ImmuRate').val()
+
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Immunizations',
+                    type: 'POST',
+                    data: JSON.stringify(Immunization),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+            
+            $('#EncounterInformation #EncInfosubmit').click(function () {
+                var EncounterInformation = {
+                    UserId: id,
+                    AdmissionDate: $('#EncinfoAdmisssionDate').val(),
+                    DischargeDate: $('#DischargeDate').val(),
+                    Admissiondischargelocation: $('#Admissiondischargelocation').val(),
+                    EncounterType: $('#EncInfosencType').val()
+                };
+           
+                $.ajax({
+                    url: 'http://localhost:56393/api/EncounterInformations',
+                    type: 'POST',
+                    data: JSON.stringify(EncounterInformation),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('#Labs #Labssubmit').click(function () {
+                var LabResult = {
+                    UserId: id,
+                    OrderableTestName: $('#OrdTestName').val(),
+                    LONICCode: $('#LabsLOINCCode').val(),
+                    TestResultValue: $('#TestResval').val(),
+                    DatePerformed: $('#DatePerformed').val(),
+                    EncounterType: $('#LabsencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/LabResult',
+                    type: 'POST',
+                    data: JSON.stringify(LabResult),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('#CognitiveStatus #CognStsubmit').click(function () {
+                var CognitiveAndFunctionalStatus = {
+                    UserId: id,
+                    Description: $('#CogStaDescription').val(),
+                    SNOMEDCT: $('#CogStaSNOMEDCT').val(),
+                    ReportedDate: $('#ReportedDate').val(),
+                    Status: $('#CognStatus').val(),
+                    EncounterType: $('#CognStencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/CognFunctStatus',
+                    type: 'POST',
+                    data: JSON.stringify(CognitiveAndFunctionalStatus),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('#ReasonForHospitalization #ReasHospsubmit').click(function () {
+                var ReasonForHospitalization = {
+                    UserId: id,
+                    Reason: $('#ReasonHospInstructions').val(),
+                    EncounterType: $('#ReasHospencType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/ReasonForHospital',
+                    type: 'POST',
+                    data: JSON.stringify(ReasonForHospitalization),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('#Billing #billingsubmit').click(function () {
+                var InsuranceBilling = {
+                    UserId: id,
+                    Date: $('#billingDate').val(),
+                    Diagnosis: $('#billingDiagnosis').val(),
+                    ICDCode: $('#ICDCode').val(),
+                    Charges: $('#Charges').val(),
+                    Payments: $('#Payments').val(),
+                    Balance: $('#Balance').val(),
+                    EncounterType: $('#billingencType').val()
+                };
+               
+                $.ajax({
+                    url: 'http://localhost:56393/api/InsuranceBilling',
+                    type: 'POST',
+                    data: JSON.stringify(InsuranceBilling),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('#Appointment #Aptmntsubmit').click(function () {
+                var Appointment = {
+                    UserId: id,
+                    Date: $('#Date').val(),
+                    Reason: $('#Reason').val(),
+                    Time: $('#Time').val(),
+                    Physician: $('#Physician').val(),
+                    CenterName: $('#CenterName').val(),
+                    Address: $('#Address').val(),
+                    EncounterType: $('#AppointmentType').val()
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Appointment/',
+                    type: 'POST',
+                    data: JSON.stringify(Appointment),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        alert('details save success..');
+                    },
+                    error: function () {
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <header class="header">
+        <h1 style="text-align: center;color: #015BA7;  font-size: 1.1em;">Patient management center</h1>
+        <div class="menu-toggle">
+            <a class="nav-toggle"></a>
+        </div>
+        <nav class="headerTools right">
+
+            <a href="@Url.Action("ExistingPatient", "ExistingPatient")" class="search" style="margin-left: -130px;background-position: -282px -203px;margin-top: -35px;"></a>
+            <a href="#" class="msg" style="margin-left: -61px;background-position: -143px -7px;margin-top: -45px;"></a>
+            <a href="@Url.Action("Admin","Home")" class="actions" style="margin-right: -76px;background-position: -57px -300px;margin-top: -45px;"></a>
+        </nav>
+    </header>
+    <center style="font-family:arial; margin-top: -87px; margin-bottom: 21px; color: black; margin-left: 500px; width: 273px; font-size: 20px; ">Add new Patient Details</center></h2>
+    <input type="hidden" id="newpatient" value='' />
+    <ul id="tabs" style="">
+        <li><a href="#" title="tab1" style="margin-top: 5px;">Demographics</a></li>
+        <li><a href="#" title="tab2" style=" ">MyPhysicians</a></li>
+        <li><a href="#" title="tab3" style="">Vitals</a></li>
+        <li><a href="#" title="tab4" style="">Issues</a></li>
+        <li><a href="#" title="tab5" style="">Medication</a></li>
+        <li><a href="#" title="tab6" style="">History</a></li>
+        <li><a href="#" title="tab7" style="">EncounterDiagnosis</a></li>
+        <li><a href="#" title="tab8" style="">Immunizations</a></li>
+        <li><a href="#" title="tab9" style="">EncounterInformation</a></li>
+        <li><a href="#" title="tab10" style="">LaboratoryTest</a></li>
+        <li><a href="#" title="tab11" style="">CognitiveStatus</a></li>
+        <li><a href="#" title="tab12" style="">Reason</a></li>
+        <li><a href="#" title="tab13" style="">Billing</a></li>
+        <li><a href="#" title="tab14" style="">Appointment</a></li>
+    </ul>
+    <div id="notification"></div>
+    <div id="content" style="margin-top:120px">
+        <div id="tab1">
+            <form id="Demographics">
+                <center style="margin-bottom: -20px;">Demographics</center><br>
+
+                <p class="contact"><label for="PatientName">Patient Name</label></p>
+                <input id="PatientName" name="PatientName" tabindex="1" type="text">
+
+                <p class="contact"><label for="Sex">Sex</label></p>
+                <input id="Sex" name="Sex" tabindex="2" type="text">
+
+                <p class="contact"><label for="DOB">Date Of Birth</label></p>
+                <input id="DOB" name="DOB" class="datepicker" tabindex="5" type="text">
+
+                <p class="contact"><label for="PatientHeight">Height</label></p>
+                <input id="PatientHeight" name="PatientHeight" tabindex="5" type="text">
+
+                <p class="contact"><label for="PatientWeight">Weight</label></p>
+                <input id="PatientWeight" name="PatientWeight" tabindex="6" type="text">
+
+                <p class="contact"><label for="Race">Race</label></p>
+                <input id="Race" name="Race" tabindex="4" type="text">
+                <br>
+                <select name="enc-type" class="enc-type" id="DemosencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="Demogrssubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab2">
+
+            <form id="MyPhysician">
+                <center style="margin-bottom: -20px">MyPhysicians</center><br>
+
+                <p class="contact"><label for="name">Physician Name</label></p>
+                <select size="2" name="Name" id="mydropdown">
+                    <option value="Dr.Martin Green">Dr.Martin Green</option>
+                    <option value="Dr.Martin Rodriguez">Dr.Martin Rodriguez</option>
+                    <option value="Dr.Rahul Sharma">Dr.Rahul Sharma</option>
+
+                </select>
+                <p class="contact"><label for="StreetAddress">Street Address</label></p>
+                <input id="StreetAddress" name="StreetAddress" tabindex="2" type="text">
+
+                <p class="contact"><label for="Locality">Locality</label></p>
+                <input id="Locality" name="Locality" tabindex="3" type="text">
+
+                <p class="contact"><label for="Region">Region</label></p>
+                <input id="Region" name="Region" tabindex="4" type="text">
+
+                <p class="contact"><label for="PostalCode">PostalCode</label></p>
+                <input id="PostalCode" name="PostalCode" tabindex="5" type="text">
+
+                <p class="contact"><label for="PrimaryPhone">PrimaryPhone</label></p>
+                <input id="PrimaryPhone" name="PrimaryPhone" tabindex="6" type="text">
+
+                <br />
+                <select name="enc-type" class="enc-type" id="PhyencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="physubmit" tabindex="5" type="submit">
+            </form>
+        </div>
+       
+        <div id="tab3">
+            <form id="Vitals">
+                <center style="margin-bottom: -20px;">Vitals</center><br>
+                <p class="contact"><label for="BMI">BMI</label></p>
+                <input id="BMI" name="BMI" tabindex="1" type="text">
+
+                <p class="contact"><label for="BloodPressure">Blood Pressure</label></p>
+                <input id="BloodPressure" name="BloodPressure" tabindex="2" type="text">
+
+                <p class="contact"><label for="Height">Height</label></p>
+                <input id="Height" name="Height" tabindex="3" type="text">
+                <p class="contact"><label for="Weight">Weight</label></p>
+                <input id="Weight" name="Weight" tabindex="4" type="text">
+                <p class="contact"><label for="RecordedDate">Recorded Date</label></p>
+                <input id="RecordedDate" name="RecordedDate" class="datepicker" tabindex="5" type="text">
+                <br>
+                <select name="enc-type" class="enc-type" id="VitalsencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="vitalssubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab4">
+            <form id="Issues">
+                <center style="margin-bottom: -20px;">Allergies</center><br>
+
+                <p class="contact"><label for="Allergen">Allergen</label></p>
+                <input id="Allergen" name="Allergen" tabindex="1" type="text">
+
+                <p class="contact"><label for="Reaction">Reaction</label></p>
+                <input id="Reaction" name="Reaction" tabindex="2" type="text">
+
+                <p class="contact"><label for="Algstatus">Status</label></p>
+                <input id="Algstatus" name="Algstatus" tabindex="3" type="text">
+
+                <p class="contact"><label for="AlgRxNormCode">RxNormCode</label></p>
+                <input id="AlgRxNormCode" name="AlgRxNormCode" tabindex="4" type="text">
+                <br>
+                <select name="enc-type" class="enc-type" id="AllergiesencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <center style="margin-bottom: -20px;">Problems</center><br>
+                <p class="contact"><label for="ProblemCause">ProblemCause</label></p>
+                <input id="ProblemCause" name="ProblemCause" tabindex="5" type="text">
+
+                <p class="contact"><label for="ProbStatus">Status</label></p>
+                <input id="ProbStatus" name="ProbStatus" tabindex="6" type="text">
+
+                <p class="contact"><label for="ProblemReported">ProblemReported</label></p>
+                <input id="ProblemReported" name="ProblemReported" class="datepicker" tabindex="7" type="text">
+
+                <p class="contact"><label for="ProbStandardCode">StandardCode</label></p>
+                <input id="ProbStandardCode" name="ProbStandardCode" tabindex="8" type="text">
+                <br>
+                <select name="enc-type" class="enc-type" id="ProblemencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="issuessubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab5">
+            <form id="Medications">
+                <center style="margin-bottom: -20px;">Medications</center><br>
+                <p class="contact"><label for="Medname">Medication Name</label></p>
+                <input id="Medname" name="Medname" tabindex="1" type="text">
+
+                <p class="contact"><label for="DosageForm">DosageForm</label></p>
+                <input id="DosageForm" name="DosageForm" tabindex="2" type="text">
+
+                <p class="contact"><label for="SIG">SIG</label></p>
+                <input id="SIG" name="SIG" tabindex="3" type="text">
+
+                <p class="contact"><label for="MedStatus">Status</label></p>
+                <input id="MedStatus" name="MedStatus" tabindex="4" type="text">
+
+                <p class="contact"><label for="DateOfPrescription">DateOfPrescription</label></p>
+                <input id="DateOfPrescription" name="DateOfPrescription" class="datepicker" tabindex="5" type="text">
+
+                <p class="contact"><label for="StandardCode">StandardCode</label></p>
+                <input id="StandardCode" name="StandardCode" tabindex="6" type="text">
+
+                <br>
+                <select name="enc-type" class="enc-type" id="MedicationsencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="medicationssubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab6">
+            <form id="Vaccinations">
+                <center style="margin-bottom: -20px;">My Vaccination</center><br>
+                <p class="contact"><label for="VaccineName">VaccineName</label></p>
+                <input id="VaccineName" name="VaccineName" tabindex="1" type="text">
+
+                <p class="contact"><label for="VaccineStatus">VaccineStatus</label></p>
+                <input id="VaccineStatus" name="VaccineStatus" tabindex="2" type="text">
+
+                <p class="contact"><label for="DateAdministered">DateAdministered</label></p>
+                <input id="DateAdministered" name="DateAdministered" class="datepicker" tabindex="3" type="text">
+
+                <p class="contact"><label for="CVXCode">CVXCode</label></p>
+                <input id="CVXCode" name="CVXCode" tabindex="4" type="text">
+                <br />
+                <select name="enc-type" class="enc-type" id="VaccinationsencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <center style="margin-bottom: -20px;">Procedures</center><br>
+
+                <p class="contact"><label for="ProcedureName">ProcedureName</label></p>
+                <input id="ProcedureName" name="ProcedureName" tabindex="5" type="text">
+
+                <p class="contact"><label for="ProcedureDate">ProcedureDate</label></p>
+                <input id="ProcedureDate" name="ProcedureDate" class="datepicker" tabindex="6" type="text">
+
+                <p class="contact"><label for="SNOMEDCT">SNOMEDCT</label></p>
+                <input id="SNOMEDCT" name="SNOMEDCT" tabindex="7" type="text">
+                <br />
+                <select name="enc-type" class="enc-type" id="ProcedureencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <center style="margin-bottom: -20px;">CarePlan</center><br>
+
+                <p class="contact"><label for="Goal">Goal</label></p>
+                <input id="Goal" name="Goal" tabindex="8" type="text">
+
+                <p class="contact"><label for="Instruction">Instruction</label></p>
+                <input id="Instruction" name="Instruction" tabindex="9" type="text">
+
+                <p class="contact"><label for="GoalSNOMEDCT">SNOMEDCT</label></p>
+                <input id="GoalSNOMEDCT" name="GoalSNOMEDCT" tabindex="10" type="text"> <br>
+                <br />
+                <select name="enc-type" class="enc-type" id="GoalencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <center style="margin-bottom: -20px;">Social History</center><br>
+                <p class="contact"><label for="SocHisitem">Social History Item </label></p>
+                <input id="SocHisitem" name="SocHisitem" tabindex="11" type="text">
+
+                <p class="contact"><label for="Description">Description</label></p>
+                <input id="Description" name="Description" tabindex="12" type="text">
+
+                <p class="contact"><label for="SocSNOMEDCT">SNOMED-CT</label></p>
+                <input id="SocSNOMEDCT" name="SocSNOMEDCT" tabindex="13" type="text"> <br>
+                <br />
+                <select name="enc-type" class="enc-type" id="SocencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="vaccinesubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+
+        <div id="tab7">
+            <center style="margin-bottom: -20px;">Encounter Diagnosis</center><br>
+            <form id="EncounterDiagnosis">
+                <p class="contact"><label for="EncDiagnosis">Diagnosis</label></p>
+                <input id="EncDiagnosis" name="EncDiagnosis" tabindex="1" type="text">
+
+                <p class="contact"><label for="EncDiagSNOMEDCT">SNOMED-CT</label></p>
+                <input id="EncDiagSNOMEDCT" name="EncDiagSNOMEDCT" tabindex="2" type="text">
+
+                <p class="contact"><label for="EncDiagStatus">Status</label></p>
+                <input id="EncDiagStatus" name="EncDiagStatus" tabindex="3" type="text">
+
+                <p class="contact"><label for="EncDiagStartDate">Start Date</label></p>
+                <input id="EncDiagStartDate" name="EncDiagStartDate" class="datepicker" tabindex="4" type="text">
+                <br>
+                <select name="enc-type" class="enc-type" id="EncDiagStartDateencType">
+
+                    <option value="I">Inpatient</option>
+
+
+                </select>
+                <br />
+                <input name="submit" id="encdiagsubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+
+        <div id="tab8">
+            <center style="margin-bottom: -20px;">Immunizations</center><br>
+            <form id="Immunizations">
+                <p class="contact"><label for="ImmuDATE">DATE</label></p>
+                <input id="ImmuDATE" name="ImmuDATE" class="datepicker" type="text">
+
+                <p class="contact"><label for="ImmuNAME">NAME</label></p>
+                <input id="ImmuNAME" name="ImmuNAME" type="text">
+
+                <p class="contact"><label for="ImmuPROVIDER">PROVIDER</label></p>
+                <input id="ImmuPROVIDER" name="ImmuPROVIDER" type="text">
+
+
+                <p class="contact"><label for="ImmuINSTRUCTIONS">INSTRUCTIONS</label></p>
+                <input id="ImmuINSTRUCTIONS" name="ImmuINSTRUCTIONS" type="text">
+
+                <p class="contact"><label for="ImmuTYPE">TYPE</label></p>
+                <input id="ImmuTYPE" name="ImmuTYPE"  type="text">
+
+                <p class="contact"><label for="ImmuDose">Dose</label></p>
+                <input id="ImmuDose" name="ImmuDose" type="text">
+
+
+                <p class="contact"><label for="ImmuRate">Rate</label></p>
+                <input id="ImmuRate" name="ImmuRate"  type="text">
+
+                <br />
+                <input name="submit" id="immussubmit" tabindex="5" value="Save" type="submit">
+            </form> 
+        </div>
+        <div id="tab9">
+            <center style="margin-bottom: -20px;">EncounterInfo</center><br>
+            <form id="EncounterInformation">
+                <p class="contact"><label for="EncinfoAdmisssionDate">Admission Date</label></p>
+                <input id="EncinfoAdmisssionDate" name="EncinfoAdmisssionDate" class="datepicker" tabindex="1" type="text">
+
+
+                <p class="contact"><label for="DischargeDate">Discharge Date</label></p>
+                <input id="DischargeDate" name="DischargeDate" class="datepicker" tabindex="2" type="text">
+
+                <p class="contact"><label for="Admissiondischargelocation">Admission and Discharge Location</label></p>
+                <input id="Admissiondischargelocation" name="Admissiondischargelocation" tabindex="3" type="text">
+
+
+                <br>
+                <select name="enc-type" class="enc-type" id="EncInfosencType">
+
+                    <option value="I">Inpatient</option>
+
+
+                </select>
+                <br />
+                <input name="submit" id="EncInfosubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab10">
+            <center style="margin-bottom: -20px;">Labs Test</center><br>
+            <form id="Labs">
+                <p class="contact"><label for="OrdTestName">Orderable Test Name</label></p>
+                <input id="OrdTestName" name="OrdTestName" tabindex="1" type="text">
+
+                <p class="contact"><label for="LabsLOINCCode">LOINC Code</label></p>
+                <input id="LabsLOINCCode" name="LabsLOINCCode" tabindex="2" type="text">
+
+                <p class="contact"><label for="TestResval">Test Result Value</label></p>
+                <input id="TestResval" name="TestResval" tabindex="3" type="text">
+
+
+                <p class="contact"><label for="DatePerformed">Date Performed</label></p>
+                <input id="DatePerformed" name="DatePerformed" class="datepicker" tabindex="4" type="text">
+
+                <br>
+                <select name="enc-type" class="enc-type" id="LabsencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="Labssubmit" tabindex="5" value="Save" type="submit">
+            </form>
+
+        </div>
+        <div id="tab11">
+            <center style="margin-bottom: -20px;">CognitiveStatus</center><br>
+            <form id="CognitiveStatus">
+                <p class="contact"><label for="CogStaDescription">Description</label></p>
+                <input id="CogStaDescription" name="CogStaDescription" tabindex="1" type="text">
+
+                <p class="contact"><label for="CogStaSNOMEDCT">SNOMED-CT</label></p>
+                <input id="CogStaSNOMEDCT" name="CogStaSNOMEDCT" tabindex="2" type="text">
+
+                <p class="contact"><label for="ReportedDate">Reported Date</label></p>
+                <input id="ReportedDate" name="ReportedDate" class="datepicker" tabindex="3" type="text">
+
+
+
+                <p class="contact"><label for="CognStatus">Status</label></p>
+                <input id="CognStatus" name="CognStatus" tabindex="4" type="text">
+
+                <br>
+                <select name="enc-type" class="enc-type" id="CognStencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="CognStsubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab12">
+            <center style="margin-bottom: -20px;">Reason For Hospitalization </center><br>
+            <form id="ReasonForHospitalization">
+               
+                <p class="contact"><label for="ReasonHospInstructions">Reason For Hospitalization</label></p>
+                <input id="ReasonHospInstructions" style="height: 213px;" name="ReasonHospInstructions" tabindex="2" type="text">
+
+                <br>
+                <select name="enc-type" class="enc-type" id="ReasHospencType">
+
+                    <option value="I">Inpatient</option>
+
+
+                </select>
+                <br />
+                <input name="submit" id="ReasHospsubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+        <div id="tab13">
+            <form id="Billing">
+                <center style="margin-bottom: -20px;">Billing</center><br>
+                <p class="contact"><label for="ICDCode">ICD Code</label></p>
+                <input id="ICDCode" name="ICDCode" tabindex="1" type="text">
+
+                <p class="contact"><label for="Diagnosis">Diagnosis</label></p>
+                <input id="billingDiagnosis" name="billingDiagnosis" tabindex="2" type="text">
+
+                <p class="contact"><label for="Charges">Charges</label></p>
+                <input id="Charges" name="Charges" tabindex="3" type="text">
+
+                <p class="contact"><label for="Payments">Payments</label></p>
+                <input id="Payments" name="Payments" tabindex="4" type="text">
+
+                <p class="contact"><label for="Balance">Balance</label></p>
+                <input id="Balance" name="Balance" tabindex="3" type="text">
+                <p class="contact"><label for="Date">Date</label></p>
+                <input id="billingDate" name="billingDate" class="datepicker" tabindex="5" type="text">
+                <br>
+                <select name="enc-type" class="enc-type" id="billingencType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+                </select>
+                <br />
+                <input name="submit" id="billingsubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+
+        <div id="tab14">
+            <center style="margin-bottom: -20px;">Appointments</center><br>
+            <form id="Appointment">
+
+                <p class="contact"><label for="Date">Date</label></p>
+                <input id="Date" name="Date" class="datepicker" tabindex="1" type="text">
+
+                <p class="contact"><label for="Reason">Reason</label></p>
+                <input id="Reason" name="Reason" tabindex="2" type="text">
+
+                <p class="contact"><label for="Time">Time</label></p>
+                <input id="Time" name="Time" tabindex="3" type="text">
+
+                <p class="contact"><label for="Physician">Physician</label></p>
+                <input id="Physician" name="Physician" tabindex="4" type="text">
+
+                <p class="contact"><label for="CenterName">CenterName</label></p>
+                <input id="CenterName" name="CenterName" tabindex="5" type="text">
+
+                <p class="contact"><label for="Address">Address</label></p>
+                <input id="Address" name="Address" tabindex="6" type="text">
+
+                <br>
+                <select name="enc-type" class="enc-type" id="AppointmentType">
+                    <option value="P">Inpatient And Ambulatory</option>
+                    <option value="I">Inpatient</option>
+                    <option value="A">Ambulatory</option>
+
+                </select>
+                <br />
+                <input name="submit" id="Aptmntsubmit" tabindex="5" value="Save" type="submit">
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

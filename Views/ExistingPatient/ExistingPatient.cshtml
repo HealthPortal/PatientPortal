@@ -1,0 +1,250 @@
+﻿@model IEnumerable<HealthPortal.Models.ExistingPatient>
+
+@{
+    ViewBag.Title = "ExistingPatient";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../css/existingpatient.css">
+    <link type="text/css" href="../../css/theme.default.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery.tablePagination.0.5.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/json2.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery.tablesorter.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/modals.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.actions').click(function () {
+                var options = {
+                    "backdrop": "static"
+                }
+                $('#uploadModal').modal(options);
+                var accessadmin = "<a class=" + "admincheck" + " id=" + "Addnew" + " ><span>Add New Patient/Physician</span></a></br>";
+                accessadmin += "<a href=" + "@Url.Action("Index", "ExistingPatient")" + " class=" + "admincheck" + " id=" + "viewexist" + " ><span>View Existing Patient/Physician</span></a></br>";
+                accessadmin += "<a href=" + "@Url.Action("Index", "ViewReport")" + "#" + " class=" + "admincheck" + " id=" + "ViewReports" + " ><span>View Patient Reports</span></a></br>";
+
+                $(".modal-body .span9").html(accessadmin);
+
+
+                $("#uploadModal .modal-body .span9 #Addnew").unbind("click").on("click", function () {
+                    window.location.href = '@Url.Action("Register","Account")';
+                });
+
+            });
+
+            $('img').click(function () {
+                $(this).parent().find('input').val('');
+            });
+
+
+            var options = {
+                currPage: 1,
+                optionsForRows: [10],
+                rowsPerPage: 10,
+                tablePagination: '#accordion #tablePagination',
+                topNav: false
+            }
+            $('#accordion').tablePagination(options);
+            $('#menuTable').tablesorter();
+            var totpages = $('#tablePagination_totalPages').text();
+            console.log(totpages);
+            var curpage = 1;
+
+            for (var i = curpage + 1; i <= totpages; i++) {
+                $tabpg = $('#tablePagination_currPage');
+                $tabpg.append("<option value=" + i + ">" + i + "</option>");
+
+            }
+
+
+        });
+
+        $(document).ready(function () {
+
+            $('.success img, .warning img,.error img, .attention img, .information img').live('click', function () {
+                $(this).parent().fadeOut('slow', function () {
+                    $(this).remove();
+                    window.location.href = '@Url.Action("Index", "ExistingPatient")';
+                });
+            });
+
+            $('#search').keyup(function () {
+                searchTable($(this).val());
+            });
+
+            $('.removepatient').click(function () {
+                var userid = $(this).attr('data-id');
+                var patientname = $(this).attr('id');
+                var content = "You Are Deleting Patient <b>" + patientname + "</b> from this Portal.All Data Will Be Remove From Portal Belongs To This Patient.";
+                $('#content').find('p').html(content);
+                var options = {
+                    "backdrop": "static"
+                }
+                $('#DeleteModal').modal(options);
+
+                $('#DeleteModal .button.ohk').click(function () {
+                    if (userid != '') {
+                        $.ajax({
+                            url: '/ExistingPatient/DeletePatient?UserID=' + userid + '&PatientName=' + patientname,
+                            //data: { UserID: userid, PatientName: patientname },
+                            type: 'Post',
+                            dataType: 'json',
+                            contentType: 'json',
+                            error: function (data) {
+                            },
+                            success: function (results) {
+                                $('.success, .warning, .attention, .information, .error').remove();
+                                if (results.error) {
+                                    $('#notification').html('<div class="error" style="display: none;">' + results.error + '<img src="../../Images/close.png" alt="" class="close" /></div>');
+                                    $('.error').fadeIn('slow');
+                                }
+                                if (results.attention) {
+                                    $('#notification').html('<div class="attention" style="display: none;">' + results.attention + '<img src="../../Images/close.png" alt="" class="close" /></div>');
+                                    $('.attention').fadeIn('slow');
+                                }
+                                if (results.success) {
+                                    $('#notification').html('<div class="success" style="display: none;">' + results.success + '<img src="../../Images/close.png" alt="" class="close" /></div>');
+                                    $('.success').fadeIn('slow');
+                                }
+                                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                            }
+                        });
+
+                    }
+                });
+
+
+
+            })
+
+        });
+
+        function searchTable(inputVal) {
+            var table = $('#menuTable');
+            table.find('tr').each(function (index, row) {
+                var allCells = $(row).find('td');
+                if (allCells.length > 0) {
+                    var found = false;
+                    allCells.each(function (index, td) {
+                        var regExp = new RegExp(inputVal, 'i');
+                        if (regExp.test($(td).text())) {
+                            found = true;
+                            return false;
+                        }
+                    });
+                    if (found == true) $(row).show(); else $(row).hide();
+                }
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="uploadModal" class="modal hide fade" style="display: none;">
+        <div class="modal-header">
+            <a href="javascript:void(0);" class="close btnclose" data-dismiss="modal" aria-hidden="true">
+                &times;
+            </a>
+        </div>
+        <div class="modal-body" style="    margin-left: 16px; margin-top: 12px; overflow: hidden;">
+            <div class="row download-pdf-ccda">
+                <div class="span9">
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer" style="    margin-left: 16px;    width:493px; margin-bottom: 16px;">
+            <a class="btn btnok pull-left" data-dismiss="modal">Ok</a>
+            <a class="btn btnclose pull-right" data-dismiss="modal">Close</a>
+        </div>
+    </div>
+    s<header class="headers">
+        <h1 style="text-align: center; color: #015BA7; font-size: 19px;">Patient management center</h1>
+        <div class="menu-toggle">
+            <a class="nav-toggle"></a>
+        </div>
+        <nav class="headerTools right">
+            <a href="#" class="search" style="margin-left: -130px;background-position: -282px -203px;margin-top: -35px;"></a>
+            <a href="#" class="msg" style="margin-left: -61px;background-position: -143px -7px;margin-top: -45px;"></a>
+            <a href="#" class="actions" style="margin-right: -76px;background-position: -57px -300px;margin-top: -45px;"></a>
+        </nav>
+    </header>
+
+    <div id="main">
+
+        <div id="notification"></div>
+        <div>
+            <div class="permission-toggle">
+                <p class="search-lists open">
+                    <label for="search" style="font-family: 'Helvetica';">
+                        <strong>Search List </strong>
+                    </label>
+                    <span>
+                        <input type="text" id="search" /><span class="searchpatient"></span>
+                    </span>
+                </p>
+
+            </div>
+            <ul id="accordion">
+
+                <li style="overflow: hidden;">
+                    <div class="accordian-active">
+                        <h3 style="background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 81, 149, 0.7)), color-stop(90%,rgba(0, 81, 149, 0.25))); ">
+                            <font color="#FFFFF" style="font-family: 'Helvetica';">&nbsp;Currently Existing Patients</font>
+                        </h3>
+                    </div>
+                    <div class="css-content-text">
+
+                        <table id="menuTable" class="tablesorter" cellpadding="0" cellspacing="0" border="0">
+                            <thead>
+                                <tr style="color:#005195; font-weight:bold; font-family:'Helvetica';">
+                                    <th class="header">Patient Name</th>
+                                    <th class="header">EmailId</th>
+                                    <th class="header">Actions</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var p in Model)
+                                {
+                                    <tr>
+                                        <td><a href="#">@p.PatientName</a></td>
+                                        <td>@p.EmailId</td>
+                                        <td><a href="@Url.Action("EditExistingPatient", "ExistingPatient", new { Id= @p.UserId})"><span class="editpatient"></span></a><span class="removepatient" id="@p.PatientName" data-id="@p.UserId"></span></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="DeleteModal" class="modal hide fade">
+        <div id="heading">
+            Are U Sure U Want To Delete Patient?
+        </div>
+
+        <div id="content">
+            <p></p>
+
+            <a href="#" data-dismiss="modal" class="button ohk"><img src="../../Images/tick.png">Delete Patient.</a>
+
+            <a href="#" data-dismiss="modal" class="button cancel"><img src="../../Images/cross.png">Cancel</a>
+        </div>
+    </div>
+
+</body>
+</html>

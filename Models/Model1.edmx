@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WallModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuthenticationUser">
+          <Key>
+            <PropertyRef Name="Authuserid" />
+          </Key>
+          <Property Name="Authuserid" Type="int" Nullable="false" />
+          <Property Name="UserAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserAccess" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Verification" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccessType" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserAdminName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PostComments">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="Message" Type="varchar(max)" Nullable="false" />
+          <Property Name="CommentedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CommentedDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="varchar(max)" Nullable="false" />
+          <Property Name="PostedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PostedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PostReceivedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="AvatarExt" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+          <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostComments_ToPost">
+          <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+          <End Role="PostComments" Type="Self.PostComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="PostComments">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostComments_ToUserProfile">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="PostComments" Type="Self.PostComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PostComments">
+              <PropertyRef Name="CommentedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posts_ToUserProfile">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="PostedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posts_ToUserProfileReceiver">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="PostReceivedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WallModelStoreContainer">
+          <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AuthenticationUser" EntityType="Self.AuthenticationUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostComments" EntityType="Self.PostComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="Self.FK__aspnet_Us__RoleI__4AB81AF0">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostComments_ToPost" Association="Self.FK_PostComments_ToPost">
+            <End Role="Posts" EntitySet="Posts" />
+            <End Role="PostComments" EntitySet="PostComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostComments_ToUserProfile" Association="Self.FK_PostComments_ToUserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="PostComments" EntitySet="PostComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_ToUserProfile" Association="Self.FK_Posts_ToUserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_ToUserProfileReceiver" Association="Self.FK_Posts_ToUserProfileReceiver">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WallModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="PostComment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CommentedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommentedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Post" Relationship="Self.FK_PostComments_ToPost" FromRole="PostComments" ToRole="Posts" />
+          <NavigationProperty Name="UserProfile" Relationship="Self.FK_PostComments_ToUserProfile" FromRole="PostComments" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="PostComments" Relationship="Self.FK_PostComments_ToPost" FromRole="Posts" ToRole="PostComments" />
+          <NavigationProperty Name="UserProfile" Relationship="Self.FK_Posts_ToUserProfile" FromRole="Posts" ToRole="UserProfile" />
+          <Property Name="PostReceivedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserProfile1" Relationship="WallModel.FK_Posts_ToUserProfileReceiver" FromRole="Post" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AvatarExt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PostComments" Relationship="Self.FK_PostComments_ToUserProfile" FromRole="UserProfile" ToRole="PostComments" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_ToUserProfile" FromRole="UserProfile" ToRole="Posts" />
+          <NavigationProperty Name="Posts1" Relationship="WallModel.FK_Posts_ToUserProfileReceiver" FromRole="UserProfile" ToRole="Post" />
+        </EntityType>
+        <Association Name="FK_PostComments_ToPost">
+          <End Role="Posts" Type="Self.Post" Multiplicity="1" />
+          <End Role="PostComments" Type="Self.PostComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="PostComments">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostComments_ToUserProfile">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="PostComments" Type="Self.PostComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PostComments">
+              <PropertyRef Name="CommentedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posts_ToUserProfile">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="PostedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PostComments" EntityType="Self.PostComment" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+          <AssociationSet Name="FK_PostComments_ToPost" Association="Self.FK_PostComments_ToPost">
+            <End Role="Posts" EntitySet="Posts" />
+            <End Role="PostComments" EntitySet="PostComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostComments_ToUserProfile" Association="Self.FK_PostComments_ToUserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="PostComments" EntitySet="PostComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_ToUserProfile" Association="Self.FK_Posts_ToUserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_ToUserProfileReceiver" Association="WallModel.FK_Posts_ToUserProfileReceiver">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="AuthenticationUsers" EntityType="WallModel.AuthenticationUser" />
+          <EntitySet Name="aspnet_Roles" EntityType="WallModel.aspnet_Roles" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="WallModel.aspnet_UsersInRoles" />
+          <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="WallModel.FK__aspnet_Us__RoleI__4AB81AF0">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Posts_ToUserProfileReceiver">
+          <End Type="WallModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="WallModel.Post" Role="Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="PostReceivedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AuthenticationUser">
+          <Key>
+            <PropertyRef Name="Authuserid" />
+          </Key>
+          <Property Name="Authuserid" Type="Int32" Nullable="false" />
+          <Property Name="UserAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserAccess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Verification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserAdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_UsersInRoles" Relationship="WallModel.FK__aspnet_Us__RoleI__4AB81AF0" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="WallModel.FK__aspnet_Us__RoleI__4AB81AF0" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+        </EntityType>
+        <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+          <End Type="WallModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="1" />
+          <End Type="WallModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WallModelStoreContainer" CdmEntityContainer="WallEntities">
+          <EntitySetMapping Name="PostComments">
+            <EntityTypeMapping TypeName="WallModel.PostComment">
+              <MappingFragment StoreEntitySet="PostComments">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+                <ScalarProperty Name="CommentedDate" ColumnName="CommentedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="WallModel.Post">
+              <MappingFragment StoreEntitySet="Posts">
+                <ScalarProperty Name="PostReceivedBy" ColumnName="PostReceivedBy" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="PostedBy" ColumnName="PostedBy" />
+                <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="WallModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AvatarExt" ColumnName="AvatarExt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuthenticationUsers">
+            <EntityTypeMapping TypeName="WallModel.AuthenticationUser">
+              <MappingFragment StoreEntitySet="AuthenticationUser">
+                <ScalarProperty Name="UserAdminName" ColumnName="UserAdminName" />
+                <ScalarProperty Name="AccessType" ColumnName="AccessType" />
+                <ScalarProperty Name="Verification" ColumnName="Verification" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="UserAccess" ColumnName="UserAccess" />
+                <ScalarProperty Name="UserAdmin" ColumnName="UserAdmin" />
+                <ScalarProperty Name="Authuserid" ColumnName="Authuserid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="WallModel.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_UsersInRoles">
+            <EntityTypeMapping TypeName="WallModel.aspnet_UsersInRoles">
+              <MappingFragment StoreEntitySet="aspnet_UsersInRoles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

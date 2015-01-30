@@ -1,0 +1,1738 @@
+/* line 33, ../sass/_brand.scss */
+.pal-chart1 {
+  color: #005195;
+}
+
+/* line 34, ../sass/_brand.scss */
+.pal-chart2 {
+  color: #39892f;
+}
+
+/* line 38, ../sass/_brand.scss */
+.text-shad, .list_scroll li.sticky h5 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* line 39, ../sass/_brand.scss */
+.box-shad, .message--create, .reply--create {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+}
+
+/* line 41, ../sass/_brand.scss */
+.meta, .pocket--messages .list-message .meta-time {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* line 42, ../sass/_brand.scss */
+.badge {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 1, ../sass/_common-blocks.scss */
+.user-info-table, .patient-record-header .patient--quick-stats {
+  margin: 10px 0;
+  width: 130px;
+  font-size: 12px;
+}
+.patient-record-header
+{
+    top:35px;
+    margin-top:15px;
+}
+
+
+
+/* line 6, ../sass/_common-blocks.scss */
+.user-info-table tr th, .patient-record-header .patient--quick-stats tr th, .user-info-table tr td, .patient-record-header .patient--quick-stats tr td {
+  text-align: left;
+  padding: 0 10px;
+}
+/* line 10, ../sass/_common-blocks.scss */
+.user-info-table tr th:first-child, .patient-record-header .patient--quick-stats tr th:first-child, .user-info-table tr td:first-child, .patient-record-header .patient--quick-stats tr td:first-child {
+  padding-left: 0;
+}
+/* line 13, ../sass/_common-blocks.scss */
+.user-info-table tr th, .patient-record-header .patient--quick-stats tr th {
+  font-size: 14px;
+  line-height: 14px;
+}
+@media (max-width: 1030px) {
+  /* line 13, ../sass/_common-blocks.scss */
+  .user-info-table tr th, .patient-record-header .patient--quick-stats tr th {
+    font-size: 14px;
+  }
+}
+/* line 18, ../sass/_common-blocks.scss */
+.user-info-table tr td, .patient-record-header .patient--quick-stats tr td {
+  color: #777;
+  line-height: 18px;
+}
+
+/* line 25, ../sass/_common-blocks.scss */
+.seperator-vert {
+  display: block;
+  float: left;
+  border-right: 1px solid #ddd;
+  height: 60px;
+  margin: 0 20px;
+}
+
+/* line 33, ../sass/_common-blocks.scss */
+.opacity-switch, .patient-record {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+/* line 36, ../sass/_common-blocks.scss */
+.opacity-switch.off, .off.patient-record {
+  opacity: 0;
+}
+
+/* line 41, ../sass/_common-blocks.scss */
+.add-plus {
+  font-size: 30px;
+  color: white;
+}
+
+/* line 6, ../sass/physician.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 7, ../sass/physician.scss */
+ul, ol {
+  margin: 0;
+  list-style: none;
+}
+
+/* line 9, ../sass/physician.scss */
+.full-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 19, ../sass/physician.scss */
+.pocket {
+  -webkit-transition: margin-left 0.5s;
+  -moz-transition: margin-left 0.5s;
+  -o-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+  position: absolute;
+  width: 320px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #252525;
+  margin-left: 0;
+}
+/* line 29, ../sass/physician.scss */
+.pocket .pocket-content > div {
+  display: none;
+}
+/* line 33, ../sass/physician.scss */
+.pocket .pocket-content > div.active {
+  display: block;
+}
+/* line 37, ../sass/physician.scss */
+.pocket:after {
+  content: '';
+  display: block;
+  width: 10px;
+  top: 0;
+  bottom: 0;
+  left: 320px;
+  position: absolute;
+  z-index: 3;
+  background: none;
+  -webkit-box-shadow: -5px 0 30px 10px rgba(0, 0, 0, 0.3), 0px 0px 10px 2px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: -5px 0 30px 10px rgba(0, 0, 0, 0.3), 0px 0px 10px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: -5px 0 30px 10px rgba(0, 0, 0, 0.3), 0px 0px 10px 2px rgba(0, 0, 0, 0.7);
+}
+/* line 47, ../sass/physician.scss */
+.pocket .pocket-header {
+  height: 40px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 81, 149, 0.1)), color-stop(90%, rgba(0, 81, 149, 0.3)));
+  background-image: -webkit-linear-gradient(rgba(0, 81, 149, 0.1), rgba(0, 81, 149, 0.3) 90%);
+  background-image: -moz-linear-gradient(rgba(0, 81, 149, 0.1), rgba(0, 81, 149, 0.3) 90%);
+  background-image: -o-linear-gradient(rgba(0, 81, 149, 0.1), rgba(0, 81, 149, 0.3) 90%);
+  background-image: linear-gradient(rgba(0, 81, 149, 0.1), rgba(0, 81, 149, 0.3) 90%);
+}
+/* line 50, ../sass/physician.scss */
+.pocket .pocket-header h5 {
+  margin: 0;
+  padding: 10px;
+  color: white;
+}
+/* line 55, ../sass/physician.scss */
+.pocket .pocket-header .input-prepend {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 0;
+}
+/* line 59, ../sass/physician.scss */
+.pocket .pocket-header .input-prepend .add-on {
+  height: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 63, ../sass/physician.scss */
+.pocket .pocket-header .input-prepend .add-on i {
+  margin: 6px 5px 5px 3px;
+  opacity: .5;
+}
+/* line 65, ../sass/physician.scss */
+.pocket .pocket-header .input-prepend input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 275px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  height: 32px;
+  letter-spacing: .08em;
+  margin: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 78, ../sass/physician.scss */
+.pocket .pocket-header .input-prepend input::-webkit-input-placeholder, .pocket .pocket-header .input-prepend input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+/* line 82, ../sass/physician.scss */
+.pocket .pocket-header .input-prepend input:focus {
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset;
+  -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset;
+}
+/* line 88, ../sass/physician.scss */
+.pocket .pocket-header .btn-group {
+  background: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* line 91, ../sass/physician.scss */
+.pocket .pocket-header .btn-group .btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  height: 40px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: normal;
+  font-size: 12px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 10px 10px 10px 15px;
+}
+/* line 102, ../sass/physician.scss */
+.pocket .pocket-header .btn-group .btn.dropdown-toggle {
+  width: 32px;
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0px;
+}
+/* line 107, ../sass/physician.scss */
+.pocket .pocket-header .btn-group .btn.dropdown-toggle .caret {
+  margin-top: 8px;
+}
+
+/* line 115, ../sass/physician.scss */
+.pocket--settings .pocket-header {
+  height: 60px;
+}
+/* line 118, ../sass/physician.scss */
+.pocket--settings .pocket-header .avatar {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+/* line 124, ../sass/physician.scss */
+.pocket--settings .pocket-header h5 {
+  line-height: 35px;
+}
+/* line 128, ../sass/physician.scss */
+.pocket--settings .list_scroll {
+  top: 60px;
+}
+/* line 131, ../sass/physician.scss */
+.pocket--settings .list_scroll a {
+  color: white;
+}
+/* line 133, ../sass/physician.scss */
+.pocket--settings .list_scroll .btn-logout {
+  cursor: default;
+}
+/* line 135, ../sass/physician.scss */
+.pocket--settings .list_scroll .btn-logout:hover {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 139, ../sass/physician.scss */
+.pocket--settings .list_scroll .btn-logout a {
+  display: block;
+  line-height: 30px;
+}
+
+/* line 149, ../sass/physician.scss */
+.full-wrap.closed .pocket {
+  margin-left: -320px;
+}
+
+/* line 153, ../sass/physician.scss */
+.app, .pocket-patients {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+}
+/* line 160, ../sass/physician.scss */
+.app .pocket-header, .pocket-patients .pocket-header {
+  height: 80px;
+}
+
+/* line 165, ../sass/physician.scss */
+.menu-toggle {
+  position: fixed;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #252525), color-stop(90%, rgba(37, 37, 37, 0.9)));
+  background-image: -webkit-linear-gradient(#252525, rgba(37, 37, 37, 0.9) 90%);
+  background-image: -moz-linear-gradient(#252525, rgba(37, 37, 37, 0.9) 90%);
+  background-image: -o-linear-gradient(#252525, rgba(37, 37, 37, 0.9) 90%);
+  background-image: linear-gradient(#252525, rgba(37, 37, 37, 0.9) 90%);
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  -ms-border-radius: 0 3px 3px 0;
+  -o-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  -webkit-box-shadow: -15px 0px 20px -10px rgba(255, 255, 255, 0.1) inset, -3px 0px 6px -4px rgba(255, 255, 255, 0.3) inset, 0px 2px 4px -3px rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: -15px 0px 20px -10px rgba(255, 255, 255, 0.1) inset, -3px 0px 6px -4px rgba(255, 255, 255, 0.3) inset, 0px 2px 4px -3px rgba(255, 255, 255, 0.5) inset;
+  box-shadow: -15px 0px 20px -10px rgba(255, 255, 255, 0.1) inset, -3px 0px 6px -4px rgba(255, 255, 255, 0.3) inset, 0px 2px 4px -3px rgba(255, 255, 255, 0.5) inset;
+}
+/* line 173, ../sass/physician.scss */
+.menu-toggle a {
+  display: block;
+  width: 60px;
+  height: 45px;
+  background-image: url(../img/sjh-brand-sprite.png);
+  opacity: .4;
+  background-size: 600px;
+  background-position: 16px 15px;
+}
+
+/* line 184, ../sass/physician.scss */
+.pocket-menu {
+  position: absolute;
+  z-index: 999;
+  height: 85px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+}
+/* line 192, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav {
+  width: 260px;
+  margin-left: 60px;
+  height: 60px;
+  overflow: hidden;
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  -ms-border-radius: 0 3px 3px 0;
+  -o-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  -webkit-box-shadow: -8px 2px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: -8px 2px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: -8px 2px 10px rgba(0, 0, 0, 0.4);
+  background-color: black;
+}
+/* line 206, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li {
+  width: 25%;
+  display: block;
+  float: left;
+  background: rgba(0, 81, 149, 0.7);
+}
+/* line 212, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li a {
+  height: 60px;
+  display: block;
+  border-right: 1px solid #252525;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url(../img/phys-sprite.png);
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+/* line 220, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* line 224, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-patients a {
+  background-position-x: 17px;
+  background-position-y: 18px;
+}
+/* line 225, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-patients ul li a {
+  background-position-y: 0;
+  text-decoration: none;
+}
+/* line 226, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-messages a {
+  background-position-x: 22px;
+  background-position-y: -82px;
+}
+/* line 227, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-messages a span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 18px;
+  margin-top: 18px;
+  margin-left: 24px;
+}
+/* line 230, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-apps a {
+  background-position-x: 19px;
+  background-position-y: -184px;
+}
+/* line 231, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-store a {
+  background-position-x: 21px;
+  background-position-y: -283px;
+  opacity: .2;
+  cursor: default;
+}
+/* line 232, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-settings a {
+  background-position-x: 20px;
+  background-position-y: -483px;
+}
+/* line 233, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.nav-search a {
+  background-position-x: 19px;
+  background-position-y: -390px;
+}
+/* line 235, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li .pocket-menu-sub-nav {
+  -webkit-transition: margin-top 0.3s;
+  -moz-transition: margin-top 0.3s;
+  -o-transition: margin-top 0.3s;
+  transition: margin-top 0.3s;
+  z-index: -1;
+  position: absolute;
+  margin-top: -60px;
+  left: 0;
+  height: 40px;
+  width: 320px;
+  background: #111;
+}
+/* line 245, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li .pocket-menu-sub-nav li {
+  background: rgba(0, 81, 149, 0.3);
+  width: 50%;
+}
+/* line 248, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li .pocket-menu-sub-nav li a {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 81, 149, 0.6)), color-stop(100%, rgba(0, 81, 149, 0)));
+  background-image: -webkit-linear-gradient(rgba(0, 81, 149, 0.6), rgba(0, 81, 149, 0));
+  background-image: -moz-linear-gradient(rgba(0, 81, 149, 0.6), rgba(0, 81, 149, 0));
+  background-image: -o-linear-gradient(rgba(0, 81, 149, 0.6), rgba(0, 81, 149, 0));
+  background-image: linear-gradient(rgba(0, 81, 149, 0.6), rgba(0, 81, 149, 0));
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #5f9baf;
+  width: 100%;
+  text-align: center;
+}
+/* line 258, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li .pocket-menu-sub-nav li.active a {
+  background-image: none;
+  color: white;
+}
+/* line 267, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(90%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 90%);
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 90%);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 90%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 90%);
+}
+/* line 271, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active a.nav-patients {
+  background-position-x: -83px;
+}
+/* line 272, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active a.nav-messages {
+  background-position-x: -78px;
+}
+/* line 273, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active a.nav-apps {
+  background-position-x: -81px;
+}
+/* line 274, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active a.nav-store {
+  background-position-x: -79px;
+}
+/* line 275, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active a.nav-search {
+  background-position-x: -81px;
+}
+/* line 276, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active a:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+/* line 278, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li.active .pocket-menu-sub-nav {
+  margin-top: -100px;
+}
+/* line 281, ../sass/physician.scss */
+.pocket-menu .pocket-menu-nav li:last-child a {
+  border-right: none;
+}
+/* line 287, ../sass/physician.scss */
+.pocket-menu .pocket-menu-brand {
+  z-index: 3;
+}
+/* line 289, ../sass/physician.scss */
+.pocket-menu .pocket-menu-brand .panel-brand {
+  display: block;
+  width: 200px;
+  height: 25px;
+  float: left;
+  background: url(../img/sjh-brand-sprite.png) 10px -760px;
+}
+/* line 296, ../sass/physician.scss */
+.pocket-menu .pocket-menu-brand .panel-close {
+  display: block;
+  float: right;
+  margin-right: 10px;
+  margin-top: 2px;
+  color: white;
+  font-size: 16px;
+}
+
+/* line 312, ../sass/physician.scss */
+.list li, .list_scroll li {
+  padding: 0;
+  overflow: hidden;
+}
+/* line 316, ../sass/physician.scss */
+.list li li, .list_scroll li li {
+  cursor: pointer;
+  border-top: 1px solid black;
+  margin: 0;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  width: 300px;
+}
+/* line 325, ../sass/physician.scss */
+.list li li:hover, .list_scroll li li:hover {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(95, 155, 175, 0.2)), color-stop(30%, rgba(95, 155, 175, 0.1)), color-stop(70%, rgba(95, 155, 175, 0.1)), color-stop(100%, rgba(95, 155, 175, 0.2)));
+  background-image: -webkit-linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  background-image: -moz-linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  background-image: -o-linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  background-image: linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  -webkit-box-shadow: 30px 0 30px -5px rgba(95, 155, 175, 0.1) inset, -30px 0 30px -5px rgba(95, 155, 175, 0.1) inset;
+  -moz-box-shadow: 30px 0 30px -5px rgba(95, 155, 175, 0.1) inset, -30px 0 30px -5px rgba(95, 155, 175, 0.1) inset;
+  box-shadow: 30px 0 30px -5px rgba(95, 155, 175, 0.1) inset, -30px 0 30px -5px rgba(95, 155, 175, 0.1) inset;
+  color: white;
+}
+/* line 330, ../sass/physician.scss */
+.list li li:hover .user-avatar img, .list_scroll li li:hover .user-avatar img {
+  opacity: .6;
+}
+/* line 333, ../sass/physician.scss */
+.list li li.dummy, .list_scroll li li.dummy {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(95, 155, 175, 0.2)), color-stop(30%, rgba(95, 155, 175, 0.1)), color-stop(70%, rgba(95, 155, 175, 0.1)), color-stop(100%, rgba(95, 155, 175, 0.2)));
+  background-image: -webkit-linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  background-image: -moz-linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  background-image: -o-linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  background-image: linear-gradient(left, rgba(95, 155, 175, 0.2), rgba(95, 155, 175, 0.1) 30%, rgba(95, 155, 175, 0.1) 70%, rgba(95, 155, 175, 0.2));
+  -webkit-box-shadow: 30px 0 30px -5px rgba(95, 155, 175, 0.1) inset, -30px 0 30px -5px rgba(95, 155, 175, 0.1) inset;
+  -moz-box-shadow: 30px 0 30px -5px rgba(95, 155, 175, 0.1) inset, -30px 0 30px -5px rgba(95, 155, 175, 0.1) inset;
+  box-shadow: 30px 0 30px -5px rgba(95, 155, 175, 0.1) inset, -30px 0 30px -5px rgba(95, 155, 175, 0.1) inset;
+}
+/* line 337, ../sass/physician.scss */
+.list li li .contact-name, .list_scroll li li .contact-name {
+  font-size: 18px;
+  display: block;
+  color: #5f9baf;
+}
+/* line 339, ../sass/physician.scss */
+.list li li .item-wrapper, .list_scroll li li .item-wrapper {
+  padding: 10px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 300px;
+  height: 60px;
+  clear: both;
+  background: #000000;
+}
+/* line 347, ../sass/physician.scss */
+.list li li.list-vcard, .list_scroll li li.list-vcard, .list li li.list-app, .list_scroll li li.list-app {
+  line-height: 18px;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  width: 320px;
+  /*.user-avatar {
+  	margin-right:15px; width:80px; padding:0; background:none;
+  	img {
+  		@include transition(all .4s);
+  		@include filter(grayscale(100%));
+  		opacity:.2;
+  	}
+  }*/
+}
+/* line 363, ../sass/physician.scss */
+.list li li.list-vcard .calendar-day, .list_scroll li li.list-vcard .calendar-day, .list li li.list-app .calendar-day, .list_scroll li li.list-app .calendar-day {
+  margin: 0 15px 0 0;
+  background: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  opacity: .5;
+}
+/* line 370, ../sass/physician.scss */
+.list li li.list-vcard .contact-name, .list_scroll li li.list-vcard .contact-name, .list li li.list-app .contact-name, .list_scroll li li.list-app .contact-name {
+  margin-top: 12px;
+  text-overflow: ellipsis;
+  width: 227px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 377, ../sass/physician.scss */
+.list li li.list-vcard .appt, .list_scroll li li.list-vcard .appt, .list li li.list-app .appt, .list_scroll li li.list-app .appt {
+  font-size: 12px;
+}
+/* line 378, ../sass/physician.scss */
+.list li li.list-vcard .appt a, .list_scroll li li.list-vcard .appt a, .list li li.list-app .appt a, .list_scroll li li.list-app .appt a {
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* line 382, ../sass/physician.scss */
+.list li li.list-vcard.active .item-wrapper, .list_scroll li li.list-vcard.active .item-wrapper, .list li li.list-app.active .item-wrapper, .list_scroll li li.list-app.active .item-wrapper {
+  background: rgba(0, 0, 0, 0.8);
+}
+/* line 383, ../sass/physician.scss */
+.list li li.list-vcard.active .contact-name, .list_scroll li li.list-vcard.active .contact-name, .list li li.list-app.active .contact-name, .list_scroll li li.list-app.active .contact-name {
+  font-size: 18px;
+  margin-top: 10px;
+}
+/* line 384, ../sass/physician.scss */
+.list li li.list-vcard.active .appt a, .list_scroll li li.list-vcard.active .appt a, .list li li.list-app.active .appt a, .list_scroll li li.list-app.active .appt a {
+  color: #ddd;
+}
+/* line 385, ../sass/physician.scss */
+.list li li.list-vcard.active .user-avatar img, .list_scroll li li.list-vcard.active .user-avatar img, .list li li.list-app.active .user-avatar img, .list_scroll li li.list-app.active .user-avatar img {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  opacity: 1;
+}
+/* line 388, ../sass/physician.scss */
+.list li li.list-vcard.dummy .item-wrapper, .list_scroll li li.list-vcard.dummy .item-wrapper, .list li li.list-app.dummy .item-wrapper, .list_scroll li li.list-app.dummy .item-wrapper {
+  background: rgba(0, 0, 0, 0.9);
+}
+/* line 392, ../sass/physician.scss */
+.list li li.list-vcard.dummy .calendar-day, .list_scroll li li.list-vcard.dummy .calendar-day, .list li li.list-app.dummy .calendar-day, .list_scroll li li.list-app.dummy .calendar-day {
+  margin: 0 15px 0 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(253, 66, 57, 0.7)), color-stop(100%, rgba(253, 66, 57, 0.5)));
+  background-image: -webkit-linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-image: -moz-linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-image: -o-linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-image: linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-color: black;
+  border-color: white;
+  opacity: 1;
+}
+/* line 398, ../sass/physician.scss */
+.list li li.list-vcard.dummy .calendar-day span.ampm, .list_scroll li li.list-vcard.dummy .calendar-day span.ampm, .list li li.list-app.dummy .calendar-day span.ampm, .list_scroll li li.list-app.dummy .calendar-day span.ampm {
+  color: white;
+}
+/* line 402, ../sass/physician.scss */
+.list li li.list-vcard .summary, .list_scroll li li.list-vcard .summary, .list li li.list-app .summary, .list_scroll li li.list-app .summary {
+  text-overflow: ellipsis;
+  width: 227px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* line 416, ../sass/physician.scss */
+.list_scroll {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  padding: 0 0 40px 0;
+  bottom: 84px;
+  overflow: hidden;
+}
+/* line 425, ../sass/physician.scss */
+.list_scroll h5 {
+  clear: both;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  margin: 0;
+  width: 310px;
+  font-weight: normal;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+}
+/* line 438, ../sass/physician.scss */
+.list_scroll ul {
+  height: 100%;
+  overflow: auto;
+}
+/* line 442, ../sass/physician.scss */
+.list_scroll li {
+  display: block;
+  clear: both;
+}
+/* line 445, ../sass/physician.scss */
+.list_scroll li.sticky h5 {
+  position: absolute;
+  top: 0;
+  color: white;
+  background: #575a5d;
+  z-index: 999;
+}
+/* line 454, ../sass/physician.scss */
+.list_scroll li.hide {
+  display: none;
+}
+/* line 457, ../sass/physician.scss */
+.list_scroll .list-container, .list_scroll .list-container_today {
+  padding: 0;
+}
+/* line 459, ../sass/physician.scss */
+.list_scroll .list-container h5, .list_scroll .list-container_today h5 {
+  background: #575a5d;
+  color: white;
+}
+/* line 465, ../sass/physician.scss */
+.list_scroll .pagination {
+  height: auto;
+}
+/* line 467, ../sass/physician.scss */
+.list_scroll .pagination button {
+  margin: 0 auto;
+  display: block;
+}
+
+/* line 474, ../sass/physician.scss */
+.canvas {
+  -webkit-transition: left 0.5s;
+  -moz-transition: left 0.5s;
+  -o-transition: left 0.5s;
+  transition: left 0.5s;
+  position: absolute;
+  z-index: 998;
+  left: 320px;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+  background: #eee;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 486, ../sass/physician.scss */
+.app-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  right: 120px;
+  background: #fff;
+}
+
+/* line 496, ../sass/physician.scss */
+.full-wrap.closed .canvas {
+  left: 0;
+}
+
+/* line 2, ../physician/pocket/_pocket--patients.scss */
+.pocket-content.patients .pocket-header .input-prepend input {
+  width: 260px;
+}
+/* line 6, ../physician/pocket/_pocket--patients.scss */
+.pocket-content.patients .pocket-sub {
+  display: none;
+}
+/* line 8, ../physician/pocket/_pocket--patients.scss */
+.pocket-content.patients .pocket-sub.active {
+  display: block;
+}
+/* line 11, ../physician/pocket/_pocket--patients.scss */
+.pocket-content.patients .patient-record--actions {
+  position: absolute;
+  z-index: 0;
+  width: 320px;
+  height: 80px;
+  text-align: center;
+  line-height: 77px;
+}
+/* line 19, ../physician/pocket/_pocket--patients.scss */
+.pocket-content.patients .patient-record--actions a.btn:first-child {
+  margin-right: 10px;
+}
+
+/* line 25, ../physician/pocket/_pocket--patients.scss */
+.patient-record {
+  min-width: 320px;
+}
+
+/* line 30, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header {
+  -webkit-transition: padding-left 0.5s;
+  -moz-transition: padding-left 0.5s;
+  -o-transition: padding-left 0.5s;
+  transition: padding-left 0.5s;
+  padding: 10px 20px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), #ffffff 99%);
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), #ffffff 99%);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0), #ffffff 99%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0), #ffffff 99%);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 2px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 2px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 2px 30px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 999;
+}
+/* line 42, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .inner-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* line 46, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .current-patient {
+  min-width: 250px;
+  float: left;
+}
+/* line 49, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .current-patient .vcard-wrapper {
+  background: none;
+}
+/* line 52, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .current-patient .user-avatar {
+  margin-right: 15px;
+  width: 80px;
+  padding: 0;
+  background: none;
+}
+/* line 55, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .current-patient .calendar-day {
+  margin: 0 15px 0 0;
+  background-color: black;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(253, 66, 57, 0.7)), color-stop(100%, rgba(253, 66, 57, 0.5)));
+  background-image: -webkit-linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-image: -moz-linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-image: -o-linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  background-image: linear-gradient(rgba(253, 66, 57, 0.7), rgba(253, 66, 57, 0.5));
+  border-color: white;
+  opacity: 1;
+}
+/* line 61, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .current-patient .calendar-day span.ampm {
+  color: white;
+}
+/* line 63, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .current-patient .contact-name {
+  display: block;
+  font-size: 20px;
+  margin-top: 5px;
+}
+/* line 70, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .patient-record-header--name {
+  float: left;
+  max-width: 120px;
+  line-height: 20px;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px 0;
+}
+/* line 79, ../physician/pocket/_pocket--patients.scss */
+.patient-record-header .patient--quick-stats {
+  float: right;
+}
+
+/* line 85, ../physician/pocket/_pocket--patients.scss */
+.patient-record--body {
+  padding: 10px;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 0;
+}
+
+/* line 92, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table {
+  border: 1px solid #ccc;
+  margin: 20px auto;
+}
+
+/* line 97, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--header {
+  background: #005195;
+  padding: 10px;
+  overflow: hidden;
+}
+/* line 102, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--header h5 {
+  margin: 0;
+  float: left;
+  color:#FFFFFF;
+}
+/* line 103, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--header .view-all {
+  display: inline-block;
+ padding: 1px 5px;
+ color:#000000;
+}
+/* line 107, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--header .add-to-summary {
+  color: #555;
+  display: block;
+  padding: 1px 5px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #fff;
+}
+
+/* line 117, ../physician/pocket/_pocket--patients.scss */
+.record-table-col_small, .patient-record-table--table .date, .patient-record-table--table .lab-name {
+  width: 70px;
+}
+
+/* line 121, ../physician/pocket/_pocket--patients.scss */
+.record-table-col_medium, .patient-record-table--table td.facility, .patient-record-table--table td.provider {
+  width: 130px;
+}
+
+/* line 125, ../physician/pocket/_pocket--patients.scss */
+.record-table-col_large, .patient-record-table--table td.discharge-report, .patient-record-table--table td.instructions {
+  width: 400px;
+}
+
+/* line 129, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--table {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 132, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--table th, .patient-record-table--table td {
+  vertical-align: text-top;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 138, ../physician/pocket/_pocket--patients.scss */
+.patient-record-table--table thead th {
+  font-weight: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+/* line 159, ../physician/pocket/_pocket--patients.scss */
+.patient-record--nav {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  top: 20px;
+  bottom: 0;
+  width: 120px;
+  background: #000000;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(80%, #000000));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #000000 80%);
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff 80%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff 80%);
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0), #ffffff 80%);
+  -webkit-box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.07) inset, 10px 0 15px rgba(0, 0, 0, 0.03) inset;
+  -moz-box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.07) inset, 10px 0 15px rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.07) inset, 10px 0 15px rgba(0, 0, 0, 0.03) inset;
+}
+
+/* line 172, ../physician/pocket/_pocket--patients.scss */
+.patient-record--nav-item a, .patient-record--nav ul li a {
+  display: block;
+  line-height: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* line 178, ../physician/pocket/_pocket--patients.scss */
+.patient-record--nav-item a:hover, .patient-record--nav ul li a:hover {
+  background: #FFFFFF;
+}
+/* line 180, ../physician/pocket/_pocket--patients.scss */
+.patient-record--nav-item.active a, .patient-record--nav ul li.active a {
+  background: #005195;
+  color: white;
+}
+
+/* line 3, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-scroll {
+  bottom: 110px;
+}
+/* line 4, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message {
+  height: 55px;
+}
+/* line 6, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message .contact-name {
+  font-size: 18px;
+}
+/* line 9, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message p.summary {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* line 12, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message p.summary .subject {
+  font-weight: bold;
+}
+/* line 16, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message .meta-time {
+  color: #555;
+  margin: 0;
+}
+/* line 21, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message .summary {
+  line-height: 16px;
+}
+/* line 22, ../physician/pocket/_pocket--messages.scss */
+.pocket--messages .list-message .badge {
+  background: #444;
+  color: #999;
+  margin-left: 5px;
+}
+
+/* line 3, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .app-name {
+  display: block;
+  font-size: 16px;
+  color: #5f9baf;
+  margin-top: 12px;
+}
+/* line 10, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps #app-0002 .app-icon {
+  background-image: url(../img/sjh-brand-sprite.png);
+  background-position: 11.5px 10px;
+  border: none;
+  background-color: #999;
+}
+/* line 17, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .pocket-header .input-prepend input {
+  width: 260px;
+}
+/* line 21, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .list-app a:hover {
+  color: #5f9baf;
+}
+h6 {
+font-size: 15.9px;
+color: #5f9baf
+}
+
+/* line 25, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .list-app .item-wrapper {
+  -webkit-transition: margin-left 0.3s;
+  -moz-transition: margin-left 0.3s;
+  -o-transition: margin-left 0.3s;
+  transition: margin-left 0.3s;
+  margin-left: 0;
+}
+/* line 29, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .list-app .item-wrapper.adding {
+  margin-left: 320px;
+}
+/* line 34, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .list-app.website.external .item-wrapper {
+  background-image: url(../img/icon-new-window.png);
+  background-repeat: no-repeat;
+  background-position: 290px;
+}
+/* line 40, ../physician/pocket/_pocket--apps.scss */
+.pocket-content.apps .list-app .add-app {
+  display: none;
+}
+
+/* line 3, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .input-prepend input {
+  width: 273px;
+}
+/* line 7, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .list_scroll {
+  top: 250px;
+}
+/* line 11, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .featured-app {
+  width: 300px;
+  height: 150px;
+  background-image: url(../img/mole-ad.png);
+  margin: 10px;
+  position: relative;
+}
+/* line 18, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .featured-app .featured-app--header {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 300px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: normal;
+  padding: 5px;
+}
+/* line 33, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .category-browse {
+  padding: 0 10px;
+  width: 300px;
+}
+/* line 36, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .category-browse .btn {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 260px;
+  background: #202020;
+  border-color: #000;
+  color: #cccccc;
+}
+/* line 43, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .category-browse .dropdown-toggle {
+  width: 40px;
+}
+/* line 44, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .category-browse .dropdown-menu {
+  width: 300px;
+  margin: 0 10px;
+}
+/* line 49, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .list-app .item-wrapper {
+  -webkit-transition: margin-left 0.3s;
+  -moz-transition: margin-left 0.3s;
+  -o-transition: margin-left 0.3s;
+  transition: margin-left 0.3s;
+  margin-left: 0;
+}
+/* line 53, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .list-app .item-wrapper.adding {
+  margin-left: -320px;
+}
+/* line 58, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .add-app {
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+  margin-top: 10px;
+  height: 40px;
+  line-height: 35px;
+  width: 40px;
+  text-align: center;
+  border: 2px solid #111;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 68, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .add-app .add-plus {
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: .8;
+}
+/* line 73, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .add-app:hover {
+  background: rgba(0, 122, 80, 0.3);
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+/* line 76, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .add-app:hover .add-plus {
+  opacity: 1;
+}
+/* line 80, ../physician/pocket/_pocket--store.scss */
+.pocket-content.store .add-app:active {
+  background: rgba(0, 122, 80, 0.8);
+  -webkit-box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.5), 1px 1px 5px rgba(0, 0, 0, 0.3) inset;
+  -moz-box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.5), 1px 1px 5px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.5), 1px 1px 5px rgba(0, 0, 0, 0.3) inset;
+}
+
+/* line 3, ../physician/record/_record--messages.scss */
+.app-container.messages .current-patient .calendar-day {
+  display: none;
+}
+/* line 4, ../physician/record/_record--messages.scss */
+.app-container.messages .current-patient .contact-name {
+  display: block;
+  font-size: 16px;
+  margin-top: 7px;
+}
+
+/* line 13, ../physician/record/_record--messages.scss */
+.navbar-messages {
+  position: fixed;
+  display: block;
+  z-index: 999;
+  top: 75px;
+  right: 119px;
+  left: 320px;
+  border: none;
+}
+.navbar .brand {
+
+color: #FFFFFF;
+
+}
+
+.navbar .nav > li > a {
+color: #FFFFFF;
+
+
+}
+
+/* line 21, ../physician/record/_record--messages.scss */
+.navbar-messages .navbar-inner {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  background:#005195;
+}
+
+/* line 26, ../physician/record/_record--messages.scss */
+.patient-messages {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* line 32, ../physician/record/_record--messages.scss */
+.patient-messages--stream {
+  padding-bottom: 40px;
+}
+
+/* line 35, ../physician/record/_record--messages.scss */
+.conversation {
+  background: white;
+  overflow: hidden;
+  margin-top: 50px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+}
+/* line 40, ../physician/record/_record--messages.scss */
+.conversation .conversation--start-timestamp {
+  clear: both;
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0)), color-stop(51%, rgba(0, 0, 0, 0.8)), color-stop(52%, rgba(0, 0, 0, 0.8)), color-stop(53%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.8) 51%, rgba(0, 0, 0, 0.8) 52%, rgba(255, 255, 255, 0) 53%);
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.8) 51%, rgba(0, 0, 0, 0.8) 52%, rgba(255, 255, 255, 0) 53%);
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.8) 51%, rgba(0, 0, 0, 0.8) 52%, rgba(255, 255, 255, 0) 53%);
+  background-image: linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.8) 51%, rgba(0, 0, 0, 0.8) 52%, rgba(255, 255, 255, 0) 53%);
+}
+/* line 46, ../physician/record/_record--messages.scss */
+.conversation .conversation--start-timestamp p {
+  width: 200px;
+  margin: 0 auto;
+  background: white;
+}
+/* line 53, ../physician/record/_record--messages.scss */
+.conversation .reopen {
+  display: none;
+  z-index: 999;
+}
+/* line 58, ../physician/record/_record--messages.scss */
+.conversation.closed {
+  cursor: pointer;
+  position: relative;
+}
+/* line 61, ../physician/record/_record--messages.scss */
+.conversation.closed .conversation-header {
+  opacity: .3;
+  background: whitesmoke;
+}
+/* line 66, ../physician/record/_record--messages.scss */
+.conversation.closed:hover .reopen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* line 71, ../physician/record/_record--messages.scss */
+.conversation.closed:hover .reopen a {
+  display: block;
+  padding: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  width: 150px;
+  margin: 13px auto;
+  text-align: center;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+/* line 83, ../physician/record/_record--messages.scss */
+.conversation.closed .conversation-body, .conversation.closed .conversation-footer {
+  display: none;
+}
+/* line 88, ../physician/record/_record--messages.scss */
+.conversation .conversation-header {
+  padding: 10px;
+  overflow: hidden;
+}
+/* line 92, ../physician/record/_record--messages.scss */
+.conversation .conversation-header h3 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+/* line 98, ../physician/record/_record--messages.scss */
+.conversation .conversation-header .meta, .conversation .conversation-header .pocket--messages .list-message .meta-time, .pocket--messages .list-message .conversation .conversation-header .meta-time {
+  margin: 0;
+  color: #666;
+}
+/* line 103, ../physician/record/_record--messages.scss */
+.conversation .conversation-header .message-count {
+  background: #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  padding: 10px;
+  font-size: 1.3em;
+  text-align: center;
+  width: 20px;
+}
+/* line 112, ../physician/record/_record--messages.scss */
+.conversation .conversation-header .message-count.new {
+  background: #005195;
+  color: white;
+}
+/* line 119, ../physician/record/_record--messages.scss */
+.conversation .previous-messages {
+  display: none;
+}
+/* line 121, ../physician/record/_record--messages.scss */
+.conversation .previous-messages.visible {
+  display: block;
+}
+/* line 126, ../physician/record/_record--messages.scss */
+.conversation .message-bundle {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding: 5px;
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 21, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(42.85714%, rgba(255, 255, 255, 0)), color-stop(42.85714%, rgba(0, 0, 0, 0.4)), color-stop(42.85714%, rgba(0, 0, 0, 0.4)), color-stop(47.61905%, rgba(255, 255, 255, 0)), color-stop(95.2381%, rgba(255, 255, 255, 0)), color-stop(95.2381%, rgba(0, 0, 0, 0.4)), color-stop(95.2381%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(255, 255, 255, 0) 21px);
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(255, 255, 255, 0) 21px);
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(255, 255, 255, 0) 21px);
+  background-image: linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(0, 0, 0, 0.4) 9px, rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 20px, rgba(255, 255, 255, 0) 21px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 139, ../physician/record/_record--messages.scss */
+.conversation .message-bundle.hide {
+  display: none;
+}
+/* line 141, ../physician/record/_record--messages.scss */
+.conversation .message-bundle span {
+  width: 200px;
+  background: whitesmoke;
+  padding: 0 10px;
+  color: #555;
+  font-size: 12px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 150, ../physician/record/_record--messages.scss */
+.conversation .message-bundle:hover {
+  background-color: white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 153, ../physician/record/_record--messages.scss */
+.conversation .message-bundle:hover span {
+  background: white;
+}
+/* line 157, ../physician/record/_record--messages.scss */
+.conversation .message-first {
+  background: whitesmoke;
+  display: block;
+  color: #555;
+  font-size: 12px;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* line 164, ../physician/record/_record--messages.scss */
+.conversation .message-first .name {
+  font-weight: bold;
+}
+/* line 169, ../physician/record/_record--messages.scss */
+.conversation .message {
+  padding: 15px 20px 20px 20px;
+  -webkit-transition: background-color 2s;
+  -moz-transition: background-color 2s;
+  -o-transition: background-color 2s;
+  transition: background-color 2s;
+  background-color: rgba(0, 81, 149, 0);
+}
+/* line 173, ../physician/record/_record--messages.scss */
+.conversation .message.new {
+  background-color: rgba(0, 81, 149, 0.3);
+}
+/* line 176, ../physician/record/_record--messages.scss */
+.conversation .message .message--header {
+  clear: both;
+  overflow: hidden;
+}
+/* line 180, ../physician/record/_record--messages.scss */
+.conversation .message .user-name {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+/* line 187, ../physician/record/_record--messages.scss */
+.conversation .message .message--timestamp {
+  float: right;
+  color: #ccc;
+}
+/* line 191, ../physician/record/_record--messages.scss */
+.conversation .message .alert {
+  text-align: center;
+}
+/* line 195, ../physician/record/_record--messages.scss */
+.conversation .message .message--body p {
+  margin-bottom: 10px;
+}
+/* line 199, ../physician/record/_record--messages.scss */
+.conversation .message .message--attachments {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f5f5f5;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+}
+/* line 204, ../physician/record/_record--messages.scss */
+.conversation .message .message--attachments h5 {
+  margin-top: 0;
+}
+/* line 207, ../physician/record/_record--messages.scss */
+.conversation .message .message--attachments .meta, .conversation .message .message--attachments .pocket--messages .list-message .meta-time, .pocket--messages .list-message .conversation .message .message--attachments .meta-time {
+  display: block;
+  margin-top: 6px;
+  color: #999;
+}
+/* line 212, ../physician/record/_record--messages.scss */
+.conversation .message .message--attachments a {
+  display: block;
+  padding: 5px 0;
+  border-top: 1px solid #ccc;
+}
+/* line 220, ../physician/record/_record--messages.scss */
+.conversation .conversation-footer {
+  padding: 0px 18px 18px;
+  overflow: hidden;
+}
+
+/* line 229, ../physician/record/_record--messages.scss */
+.message--create, .reply--create {
+  background: white;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  /* line 229, ../physician/record/_record--messages.scss */
+  .message--create, .reply--create {
+    width: auto;
+    left: 320px;
+    right: 120px;
+    bottom: 0px;
+  }
+}
+/* line 243, ../physician/record/_record--messages.scss */
+.message--create .subject, .reply--create .subject {
+  height: 30px;
+  width: 100%;
+  margin: 0;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  border: none;
+}
+/* line 251, ../physician/record/_record--messages.scss */
+.message--create label.checkbox, .reply--create label.checkbox {
+  display: block;
+  float: left;
+  background: none;
+  padding: 4px 5px 4px 25px;
+  margin-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 260, ../physician/record/_record--messages.scss */
+.message--create label.checkbox input, .reply--create label.checkbox input {
+  display: block;
+}
+/* line 265, ../physician/record/_record--messages.scss */
+.message--create .new-message--input, .reply--create .new-message--input {
+  width: auto;
+  display: block;
+  background: rgba(255, 255, 0, 0.02);
+  height: 100px;
+  width: 100%;
+  border: none;
+  resize: none;
+  margin: 0;
+  padding: 10px 18px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 278, ../physician/record/_record--messages.scss */
+.message--create .new-message--input::-webkit-input-placeholder, .reply--create .new-message--input::-webkit-input-placeholder, .message--create .new-message--input::-moz-placeholder, .reply--create .new-message--input::-moz-placeholder {
+  color: #005195;
+  font-size: 12px;
+}
+/* line 282, ../physician/record/_record--messages.scss */
+.message--create .new-message--input:focus, .reply--create .new-message--input:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 286, ../physician/record/_record--messages.scss */
+.message--create .new-message--input:focus::-webkit-input-placeholder, .reply--create .new-message--input:focus::-webkit-input-placeholder, .message--create .new-message--input:focus::-moz-placeholder, .reply--create .new-message--input:focus::-moz-placeholder {
+  color: #fff;
+}
+/* line 292, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments, .reply--create .message--create-attachments {
+  background: rgba(255, 255, 0, 0.02);
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+/* line 298, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .btn-attach, .reply--create .message--create-attachments .btn-attach {
+  background: rgba(255, 255, 0, 0);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #999;
+  border-color: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+/* line 306, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .btn-attach.hover, .reply--create .message--create-attachments .btn-attach.hover {
+  color: black;
+  border-color: #999;
+  background: white;
+}
+/* line 313, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .file-overlay, .reply--create .message--create-attachments .file-overlay {
+  position: absolute;
+  cursor: pointer;
+  left: -100px;
+  top: 0;
+  opacity: 0;
+}
+/* line 322, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .list-attachments li, .reply--create .message--create-attachments .list-attachments li {
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0 0;
+  background: #eee;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+/* line 332, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .list-attachments li .btn-remove, .reply--create .message--create-attachments .list-attachments li .btn-remove {
+  display: block;
+  position: absolute;
+  right: 7px;
+  color: #999;
+  top: 24px;
+  font-size: 20px;
+}
+/* line 340, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .list-attachments li .meta, .reply--create .message--create-attachments .list-attachments li .meta, .message--create .message--create-attachments .list-attachments li .pocket--messages .list-message .meta-time, .pocket--messages .list-message .message--create .message--create-attachments .list-attachments li .meta-time, .reply--create .message--create-attachments .list-attachments li .pocket--messages .list-message .meta-time, .pocket--messages .list-message .reply--create .message--create-attachments .list-attachments li .meta-time {
+  margin: 0;
+}
+/* line 344, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .list-attachments li .file-size, .reply--create .message--create-attachments .list-attachments li .file-size {
+  margin-right: 17px;
+}
+/* line 348, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .list-attachments li input, .reply--create .message--create-attachments .list-attachments li input {
+  width: 95%;
+  background: #f9f9f9;
+}
+/* line 352, ../physician/record/_record--messages.scss */
+.message--create .message--create-attachments .list-attachments li.hide, .reply--create .message--create-attachments .list-attachments li.hide {
+  display: none;
+}
+/* line 359, ../physician/record/_record--messages.scss */
+.message--create #submitReplyButton, .reply--create #submitReplyButton {
+  margin-left: 10px;
+}
+/* line 363, ../physician/record/_record--messages.scss */
+.message--create .message--create--actions, .reply--create .message--create--actions {
+  padding: 10px 10px 5px;
+  overflow: hidden;
+}
+/* line 368, ../physician/record/_record--messages.scss */
+.message--create.new, .new.reply--create {
+  height: 200px;
+}
+/* line 371, ../physician/record/_record--messages.scss */
+.message--create.new .new-message--input, .new.reply--create .new-message--input {
+  top: 40px;
+}
+
+@media (max-width: 1024px) {
+  /* line 381, ../physician/record/_record--messages.scss */
+  .closed .patient-messages--create {
+    left: 80px;
+    right: 200px;
+    bottom: 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* line 3, ../sass/_physician-responsive.scss */
+  .patient-messages--new {
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    transition: left 0.5s;
+    bottom: 17px;
+    left: 395px;
+    right: 195px;
+    width: auto;
+  }
+  
+  
+  
+  /* line 10, ../sass/_physician-responsive.scss */
+  .patient-messages--new .new-message--input {
+    width: 97%;
+  }
+
+  /* line 16, ../sass/_physician-responsive.scss */
+  .full-wrap.closed .patient-messages--new {
+    left: 75px;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 22, ../sass/_physician-responsive.scss */
+  .patient--quick-stats {
+    display: none;
+  }
+}
+
+
+.app-container .Phy-Control .move-right{
+    float:right;
+}
+.patient-record
+{
+
+}

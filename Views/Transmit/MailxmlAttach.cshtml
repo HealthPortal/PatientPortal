@@ -1,0 +1,25 @@
+﻿@model HealthPortal.Models.PDFViewModel
+
+@{
+    ViewBag.Title = "MailxmlAttach";
+    Layout = "~/Views/Shared/_PdfLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+
+
+            function messagesent() {
+                alert("Your File has been sent..");
+                window.location.href ='@Url.Action("Patient","Home")';
+            }
+
+    </script>
+</head>
+<body onload="messagesent();">
+
+</body>
+</html>

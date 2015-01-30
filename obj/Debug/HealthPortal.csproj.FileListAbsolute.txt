@@ -1,0 +1,240 @@
+H:\someepj\2512\HealthPortal\HealthPortal\bin\HealthPortal.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+H:\someepj\2512\HealthPortal\HealthPortal\bin\Antlr3.Runtime.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\EntityFramework.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\Microsoft.Web.Infrastructure.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\Newtonsoft.Json.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Net.Http.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Helpers.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Http.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Mvc.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Optimization.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Providers.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Razor.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.WebPages.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\WebGrease.dll
+H:\someepj\2512\HealthPortal\HealthPortal\bin\EntityFramework.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\Newtonsoft.Json.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Net.Http.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Helpers.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Http.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Mvc.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.Razor.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.WebPages.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.xml
+H:\someepj\2512\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.xml
+H:\someepj\2512\HealthPortal\HealthPortal\obj\Debug\ResolveAssemblyReference.cache
+H:\someepj\2512\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+H:\someepj\2512\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\HealthPortal.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\HealthPortal.pdb
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\Antlr3.Runtime.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\EntityFramework.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\Microsoft.Web.Infrastructure.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\Newtonsoft.Json.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Net.Http.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Net.Http.Formatting.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Net.Http.WebRequest.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Helpers.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Http.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Http.WebHost.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Mvc.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Optimization.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Providers.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Razor.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.WebPages.Deployment.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.WebPages.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.WebPages.Razor.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\WebGrease.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\EntityFramework.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\Newtonsoft.Json.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Net.Http.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Net.Http.Formatting.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Net.Http.WebRequest.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Helpers.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Http.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Http.WebHost.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Mvc.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.Razor.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.WebPages.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.WebPages.Deployment.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\bin\System.Web.WebPages.Razor.xml
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\obj\Debug\ResolveAssemblyReference.cache
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\obj\Debug\HealthPortal.dll
+H:\someepj\2512\HealthPortal - Copy\HealthPortal\obj\Debug\HealthPortal.pdb
+H:\someepj\2512\merge\HealthPortal\HealthPortal\obj\Debug\ResolveAssemblyReference.cache
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\HealthPortal.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\Antlr3.Runtime.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\EntityFramework.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\Microsoft.Web.Infrastructure.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\Newtonsoft.Json.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Net.Http.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Helpers.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Http.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Mvc.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Optimization.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Providers.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Razor.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.WebPages.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\WebGrease.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\EntityFramework.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\Newtonsoft.Json.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Net.Http.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Helpers.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Http.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Mvc.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.Razor.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.WebPages.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.xml
+H:\someepj\2512\merge\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+H:\someepj\2512\merge\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\HealthPortal.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\Antlr3.Runtime.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\EntityFramework.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\Microsoft.Web.Infrastructure.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\Newtonsoft.Json.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Net.Http.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Helpers.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Http.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Mvc.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Optimization.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Providers.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Razor.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.WebPages.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\WebGrease.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\EntityFramework.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\Newtonsoft.Json.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Net.Http.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Helpers.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Http.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Mvc.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.Razor.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.WebPages.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.xml
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\obj\Debug\ResolveAssemblyReference.cache
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+H:\someepj\2512\merge\forrole\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\HealthPortal.dll.config
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\HealthPortal.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\Antlr3.Runtime.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\EntityFramework.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\Microsoft.Web.Infrastructure.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\MongoDB.Bson.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\MongoDB.Driver.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\Newtonsoft.Json.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Net.Http.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Helpers.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Http.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Mvc.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Optimization.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Providers.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Razor.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.WebPages.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\WebGrease.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\MongoDB.Bson.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\MongoDB.Driver.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\EntityFramework.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\Newtonsoft.Json.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Net.Http.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Helpers.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Http.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Mvc.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.Razor.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.WebPages.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.xml
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\obj\Debug\HealthPortal.csprojResolveAssemblyReference.cache
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+H:\someepj\2512\merge\forrole\updateon5feb\new1\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\HealthPortal.dll.config
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\HealthPortal.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\Antlr3.Runtime.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\EntityFramework.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\itextsharp.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\Microsoft.Web.Infrastructure.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\MongoDB.Bson.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\MongoDB.Driver.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\Newtonsoft.Json.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\RazorPDF.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Net.Http.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Helpers.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Http.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Mvc.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Optimization.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Providers.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Razor.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.WebPages.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\WebGrease.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\MongoDB.Bson.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\MongoDB.Driver.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\EntityFramework.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\Newtonsoft.Json.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Net.Http.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Net.Http.Formatting.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Net.Http.WebRequest.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Helpers.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Http.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Http.WebHost.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Mvc.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.Razor.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.WebPages.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.WebPages.Deployment.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\System.Web.WebPages.Razor.xml
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+H:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\obj\Debug\HealthPortal.csprojResolveAssemblyReference.cache
+F:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\obj\Debug\HealthPortal.csprojResolveAssemblyReference.cache
+F:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\HealthPortal.dll.config
+F:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\HealthPortal.dll
+F:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+F:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+F:\someepj\2512\merge\forrole\updateon5feb\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+C:\Users\Admin\Downloads\HealthPortal\HealthPortal\HealthPortal\bin\HealthPortal.dll.config
+C:\Users\Admin\Downloads\HealthPortal\HealthPortal\HealthPortal\bin\HealthPortal.dll
+C:\Users\Admin\Downloads\HealthPortal\HealthPortal\HealthPortal\bin\HealthPortal.pdb
+C:\Users\Admin\Downloads\HealthPortal\HealthPortal\HealthPortal\obj\Debug\HealthPortal.dll
+C:\Users\Admin\Downloads\HealthPortal\HealthPortal\HealthPortal\obj\Debug\HealthPortal.pdb
+C:\Users\Admin\Downloads\HealthPortal\HealthPortal\HealthPortal\obj\Debug\HealthPortal.csprojResolveAssemblyReference.cache

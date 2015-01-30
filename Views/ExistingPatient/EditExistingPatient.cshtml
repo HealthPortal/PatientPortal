@@ -1,0 +1,1787 @@
+﻿@model HealthPortal.Models.PDFViewModel
+@using System.Linq;
+@{
+    ViewBag.Title = "EditExistingPatient";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Form</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
+    <link href="../../css/addpatient.css" rel="Stylesheet" type="text/css" />
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"
+            type="text/javascript"></script>
+   
+    <script src="../../Scripts/modals.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+
+
+        $(document).ready(function () {
+
+            $('input.edit').click(function () {
+                var that = this;
+                var formel = $(this).attr('data-id');
+                var toggleedit = $('#' + formel).find('.editfields');
+                var toggleenctype = $('#' + formel).find('.enc-type');
+
+                if ($(toggleedit).has('attr', 'disabled')) {
+                    $(toggleedit).removeAttr('disabled');
+                    $(toggleenctype).removeAttr('disabled');
+                    $(that).attr('disabled', true);
+                    
+                }
+                
+            });
+           
+
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#content div").hide(); // Initially hide all content
+            $("#pattabs li:first").attr("id", "current"); // Activate first tab
+            $("#content div:first").fadeIn(); // Show first tab content
+            $('#pattabs a').click(function (e) {
+                e.preventDefault();
+                $("#content div").hide(); //Hide all content
+                $("#pattabs li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current"); // Activate this
+                $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+            });
+
+
+            function closenotification() {
+                $('#notification .success').find('.close').click(function () {
+                    $('.success').fadeOut('slow', function () {
+                        $('.success').remove();
+                    });
+                });
+                $('#notification .error .close').find('.close').click(function () {
+                    $('.error').fadeOut('slow', function () {
+                        $('.error').remove();
+                    });
+                });
+            }
+
+            $('.MyPhysician .phyupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+                var MyPhysician = {
+                    UserId: userid,
+                    _id: itemid,
+                    Name: $('.mydropdown').val(),
+                    StreetAddress:$('#StreetAddress').val(),
+                    Locality: $('#Locality').val(),
+                    Region:$('#Region').val(),
+                    PostalCode: $('#PostalCode').val(),
+                    PrimaryPhone: $('#PrimaryPhone').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Physicians',
+                    type: 'Put',
+                    data: JSON.stringify(MyPhysician),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" onclick="closenotification();" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+
+
+            });
+
+            $('.Demographics .Demogrsupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var PatientMD = {
+                    UserId: userid,
+                    _id:itemid,
+                    PatientName: $('#PatientName').val(),
+                    Image:$('#Image').val(),
+                    Sex: $('#Sex').val(),
+                    DateOfBirth: $('#DOB').val(),
+                    Race: $('#Race').val(),
+                    Height: $('#PatientHeight').val(),
+                    Weight: $('#PatientWeight').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/PatientDemographics',
+                    type: 'Put',
+                    data: JSON.stringify(PatientMD),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+
+
+            });
+
+            $('.Vitals .vitalsupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var VitalSign = {
+                    UserId: userid,
+                    _id: itemid,
+                    BMI: $('#' + itemid).find('#BMI').val(),
+                    BloodPressure: $('#' + itemid).find('#BloodPressure').val(),
+                    Height: $('#' + itemid).find('#Height').val(),
+                    Weight: $('#' + itemid).find('#Weight').val(),
+                    RecordedDate: $('#' + itemid).find('#RecordedDate').val(),
+                    EncounterType: enctype
+                };
+
+                $.ajax({
+                    url: 'http://localhost:56393/api/Vitals',
+                    type: 'Put',
+                    data: JSON.stringify(VitalSign),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+
+
+            });
+
+            
+            $('.Issuesallergie .medalgupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var MedicationAllergie = {
+                    UserId: userid,
+                    _id: itemid,
+                    Allergen: $('#' + itemid).find('#Allergen').val(),
+                    Reaction: $('#' + itemid).find('#Reaction').val(),
+                    Status: $('#' + itemid).find('#Algstatus').val(),
+                    RxNormCode: $('#' + itemid).find('#AlgRxNormCode').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Allergies',
+                    type: 'Put',
+                    data: JSON.stringify(MedicationAllergie),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            
+            $('.Issuesproblem .problemupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+                var Problem = {
+                    UserId: userid,
+                    _id: itemid,
+                    ProblemCause: $('#' + itemid).find('#ProblemCause').val(),
+                    Status: $('#' + itemid).find('#ProbStatus').val(),
+                    ProblemReportedDate: $('#' + itemid).find('#ProblemReported').val(),
+                    StandardCode: $('#' + itemid).find('#ProbStandardCode').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Problems',
+                    type: 'Put',
+                    data: JSON.stringify(Problem),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+
+            });
+
+            $('.Medications .medicationsupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var Medications = {
+                    UserId: userid,
+                    _id: itemid,
+                    MedicationsName: $('#' + itemid).find('#Medname').val(),
+                    DosageForm: $('#' + itemid).find('#DosageForm').val(),
+                    SIG: $('#' + itemid).find('#SIG').val(),
+                    Status: $('#' + itemid).find('#MedStatus').val(),
+                    DateOfPrescription: $('#' + itemid).find('#DateOfPrescription').val(),
+                    StandardCode: $('#' + itemid).find('#StandardCode').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Medications',
+                    type: 'Put',
+                    data: JSON.stringify(Medications),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('.Vaccinations .vaccupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var Vaccination = {
+                    UserId: userid,
+                    _id: itemid,
+                    VaccineName: $('#' + itemid).find('#VaccineName').val(),
+                    VaccineStatus: $('#' + itemid).find('#VaccineStatus').val(),
+                    DateAdministered: $('#' + itemid).find('#DateAdministered').val(),
+                    CVXCode: $('#CVXCode')('#' + itemid).find.val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Vaccinations',
+                    type: 'Put',
+                    data: JSON.stringify(Vaccination),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            
+            $('.procedure .procupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+                var ProcedureDetail = {
+                    UserId: userid,
+                    _id: itemid,
+                    ProcedureName: $('#' + itemid).find('#ProcedureName').val(),
+                    ProcedureDate: $('#' + itemid).find('#ProcedureDate').val(),
+                    SNOMEDCT: $('#' + itemid).find('#SNOMEDCT').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Procedures',
+                    type: 'Put',
+                    data: JSON.stringify(ProcedureDetail),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            
+            });
+
+            $('.goal .goalupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+                var CarePlan = {
+                    UserId: userid,
+                    _id: itemid,
+                    Goal: $('#' + itemid).find('#Goal').val(),
+                    Instructions: $('#' + itemid).find('#Instruction').val(),
+                    SNOMEDCT: $('#' + itemid).find('#GoalSNOMEDCT').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/CarePlans',
+                    type: 'Put',
+                    data: JSON.stringify(CarePlan),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('.socialhistry .sochistupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+                var SocialHistory = {
+                    UserId: userid,
+                    _id: itemid,
+                    SocialHistoryItem: $('#' + itemid).find('#SocHisitem').val(),
+                    Description: $('#' + itemid).find('#Description').val(),
+                    SNOMEDCT: $('#' + itemid).find('#SocSNOMEDCT').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/SocialHistories',
+                    type: 'Put',
+                    data: JSON.stringify(SocialHistory),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('.EncounterDiagnosis .encdiagupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var EncounterDiagnosis = {
+                    UserId: userid,
+                    _id: itemid,
+                    Diagnosis: $('#' + itemid).find('#EncDiagnosis').val(),
+                    SNOMEDCT: $('#' + itemid).find('#EncDiagSNOMEDCT').val(),
+                    Status: $('#' + itemid).find('#EncDiagStatus').val(),
+                    StartDate: $('#' + itemid).find('#EncDiagStartDate').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/EncounterDiagnosis',
+                    type: 'Put',
+                    data: JSON.stringify(EncounterDiagnosis),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('.Immunizations .immusupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+
+            var Immunization = {
+                    PatientId: userid,
+                    _id: itemid,
+                    DATE: $('#' + itemid).find('#ImmuDATE').val(),
+                    NAME: $('#' + itemid).find('#ImmuNAME').val(),
+                    PROVIDER: $('#' + itemid).find('#ImmuPROVIDER').val(),
+                    INSTRUCTIONS: $('#' + itemid).find('#ImmuINSTRUCTIONS').val(),
+                    TYPE: $('#' + itemid).find('#ImmuTYPE').val(),
+                    Dose: $('#' + itemid).find('#ImmuDose').val(),
+                    Rate: $('#' + itemid).find('#ImmuRate').val()
+                    
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Immunizations',
+                    type: 'Put',
+                    data: JSON.stringify(Immunization),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('.EncounterInformation .EncInfoupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var EncounterInformation = {
+                    UserId: userid,
+                    _id: itemid,
+                    AdmissionDate: $('#' + itemid).find('#AdmisssionDate').val(),
+                    DischargeDate: $('#' + itemid).find('#DischargeDate').val(),
+                    Admissiondischargelocation: $('#' + itemid).find('#Admissiondischargelocation').val(),
+                    EncounterType: enctype
+                };
+
+                $.ajax({
+                    url: 'http://localhost:56393/api/EncounterInformations',
+                    type: 'Put',
+                    data: JSON.stringify(EncounterInformation),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('.Labs .Labsupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var LabResult = {
+                    UserId: userid,
+                    _id: itemid,
+                    OrderableTestName: $('#' + itemid).find('#OrdTestName').val(),
+                    LONICCode: $('#' + itemid).find('#LabsLOINCCode').val(),
+                    TestResultValue: $('#' + itemid).find('#TestResval').val(),
+                    DatePerformed: $('#' + itemid).find('#DatePerformed').val(),
+                    EncounterType: $('#' + itemid).find('#LabsencType').val(),
+                    
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/LabResult',
+                    type: 'Put',
+                    data: JSON.stringify(LabResult),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('.CognitiveStatus .CognStupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+            var CognitiveAndFunctionalStatus = {
+                UserId: userid,
+                _id: itemid,
+                Description: $('#' + itemid).find('#CogStaDescription').val(),
+                SNOMEDCT: $('#' + itemid).find('#CogStaSNOMEDCT').val(),
+                ReportedDate: $('#' + itemid).find('#ReportedDate').val(),
+                Status: $('#' + itemid).find('#CognStatus').val(),
+                EncounterType: enctype
+            };
+                $.ajax({
+                    url: 'http://localhost:56393/api/CognFunctStatus',
+                    type: 'Put',
+                    data: JSON.stringify(CognitiveAndFunctionalStatus),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('.ReasonForHospitalization .ReasHospupdate').click(function () {
+            var userid = $(this).attr('data-id');
+            var itemid = $(this).attr('txt-id');
+            var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var ReasonForHospitalization = {
+                    UserId: userid,
+                    _id: itemid,
+                    Reason: $('#' + itemid).find('#ReasonHospInstructions').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/ReasonForHospital',
+                    type: 'Put',
+                    data: JSON.stringify(ReasonForHospitalization),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('.billing .billingupdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var InsuranceBilling = {
+                    UserId: userid,
+                    _id: itemid,
+                    Date: $('#Date').val(),
+                    Diagnosis: $('#' + itemid).find('#billingDiagnosis').val(),
+                    ICDCode: $('#' + itemid).find('#ICDCode').val(),
+                    Charges: $('#' + itemid).find('#Charges').val(),
+                    Payments: $('#' + itemid).find('#Payments').val(),
+                    Balance: $('#' + itemid).find('#Balance').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/InsuranceBilling',
+                    type: 'Put',
+                    data: JSON.stringify(InsuranceBilling),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+            $('.appointments .AptmntUpdate').click(function () {
+                var userid = $(this).attr('data-id');
+                var itemid = $(this).attr('txt-id');
+                var enctype = $('#' + itemid).find('.enc-type').val();
+
+                var Appointments = {
+                    UserId: userid,
+                    _id: itemid,
+                    Date: $('#' + itemid).find('#Date').val(),
+                    Reason: $('#' + itemid).find('#Reason').val(),
+                    Time: $('#' + itemid).find('#Time').val(),
+                    Physician: $('#' + itemid).find('#Physician').val(),
+                    CenterName: $('#' + itemid).find('#CenterName').val(),
+                    Address: $('#' + itemid).find('#Address').val(),
+                    EncounterType: enctype
+                };
+                $.ajax({
+                    url: 'http://localhost:56393/api/Appointment/',
+                    type: 'Put',
+                    data: JSON.stringify(Appointments),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (data != null) {
+                            $('#notification').html('<div class="success" style="display: none;">Your data has been updated successfully..<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (data = null) {
+                            $('#notification').html('<div class="error" style="display: none;">An Error Occured While Updating data.<img src="../../Images/close.png" alt="" class="close" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        closenotification();
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+
+        });
+        $(document).ready(function () {
+
+            $('.actions').click(function () {
+                var options = {
+                    "backdrop": "static"
+                }
+                $('#uploadModal').modal(options);
+                var accessadmin = "<a class=" + "admincheck" + " id=" + "Addnew" + " ><span>Add New Patient/Physician</span></a></br>";
+                accessadmin += "<a href=" + "@Url.Action("Index", "ExistingPatient")" + " class=" + "admincheck" + " id=" + "viewexist" + " ><span>View Existing Patient/Physician</span></a></br>";
+                accessadmin += "<a href=" + "@Url.Action("Index", "ViewReport")" + "#" + " class=" + "admincheck" + " id=" + "ViewReports" + " ><span>View Patient Reports</span></a></br>";
+
+                $(".modal-body .span9").html(accessadmin);
+
+
+                $("#uploadModal .modal-body .span9 #Addnew").unbind("click").on("click", function () {
+                    window.location.href = '@Url.Action("Register","Account")';
+                });
+
+            });
+        });
+    </script>
+   
+</head>
+
+<body>
+    <header class="header">
+        <h1 style="text-align: center;color: #015BA7;  font-size: 1.1em;">Patient management center</h1>
+        <div class="menu-toggle">
+            <a class="nav-toggle"></a>
+        </div>
+        <nav class="headerTools right">
+         
+            <a href="@Url.Action("ExistingPatient", "ExistingPatient")" class="search" style="margin-left: -130px;background-position: -282px -203px;margin-top: -35px;"></a>
+            <a href="#" class="msg" style="margin-left: -61px;background-position: -143px -7px;margin-top: -45px;"></a>
+            <a href="#uploadModal" class="actions" style="margin-right: -76px;background-position: -57px -300px;margin-top: -45px;"></a>
+        </nav>
+    </header>
+    <div id="uploadModal" class="modal hide fade" style="display: none;">
+        <div class="modal-header">
+            <a href="javascript:void(0);" class="close btnclose" data-dismiss="modal" aria-hidden="true">
+                &times;
+            </a>
+        </div>
+        <div class="modal-body">
+            <div class="row download-pdf-ccda">
+                <div class="span9">
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="btn btnok pull-left" data-dismiss="modal">Ok</a>
+            <a class="btn btnclose pull-right" data-dismiss="modal">Close</a>
+        </div>
+    </div>
+    <div id="notification"></div>
+  <!-- <center style="margin-top: 11px; margin-bottom: -114px; margin-left: 412px; width: 439px; font-size: 33px; ">Edit Existing Patient Details</center>-->
+    <input type="hidden" id="newpatient" value='' />
+    <div class="full-wrap ">
+        <ul id="pattabs">
+
+
+            <li><a href="#" title="tabdemo" style="margin-top: 5px;">Demographics</a></li>
+            <li><a href="#" title="tabMyPhy" style="">MyPhysicians</a></li>
+            <li><a href="#" title="tabvitals" style="">Vitals</a></li>
+            <li><a href="#" title="tabissues" style="">Issues</a></li>
+            <li><a href="#" title="tabmed" style="">Medication</a></li>
+            <li><a href="#" title="tabhist" style="">History</a></li>
+            <li><a href="#" title="tabencdiag" style="">EncounterDiagnosis</a></li>
+            <li><a href="#" title="tabimmu" style="">Immunizations</a></li>
+            <li><a href="#" title="tabencinfo" style="">EncounterInformation</a></li>
+            <li><a href="#" title="tablab" style="">LaboratoryTest</a></li>
+            <li><a href="#" title="tabcogst" style="">CognitiveStatus</a></li>
+            <li><a href="#" title="tabreas" style="">Reason</a></li>
+            <li><a href="#" title="tabbilling" style="">Billing</a></li>
+            <li><a href="#" title="tabAppointment" style="">Appointment</a></li>
+        </ul>
+        <div id="content" class="pattabcontent">
+
+            <div id="tabdemo">
+                @if (Model.PatientMDS.Any())
+                {
+                    <center style="margin-bottom: -20px;">Demographics</center><br>
+
+                    foreach (var item in Model.PatientMDS)
+                    {
+                        <form class="Demographics" id="@item._id">
+                            <a data-toggle="modal" href="#ProfileModal" class=""><img src="@item.Image" style=" width:17%;" /></a>
+                            <a class="btn btn-large" style="float:right;margin-right: 157px;margin-top:12px;font-size:17px;background-color:whitesmoke;-webkit-border-radius:10px;text-align:center;color:#777;">@item.PatientName</a>
+
+                            <table class="user-info-table" style=" float: right; margin-top: -45px; width: 48%; margin-right: 151px;">
+                                <tbody>
+                                    <tr class="Info">
+                                        <th>26 yrs</th>
+                                        <th>6' 4"</th>
+                                        <th>@item.Weight</th>
+                                    </tr>
+                                    <tr class="detail">
+                                        <td id="dob">@item.DateOfBirth</td>
+                                        <td>(@item.Height cm)</td>
+
+                                        <td>(72kg)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <p class="contact"><label for="PatientName">Patient Name</label></p>
+                            <input id="PatientName" name="PatientName" class="editfields" disabled="disabled" value="@item.PatientName" type="text">
+
+                            <p class="contact"><label for="Sex">Sex</label></p>
+                            <input id="Sex" name="Sex" class="editfields" value="@item.Sex" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="DOB">Date Of Birth</label></p>
+                            <input id="DOB" name="DOB" class="datepicker editfields" disabled="disabled" value="@item.DateOfBirth" type="text">
+
+                            <p class="contact"><label for="PatientHeight">Height</label></p>
+                            <input id="PatientHeight" name="PatientHeight" class="editfields" disabled="disabled" value="@item.Height" type="text">
+
+                            <p class="contact"><label for="PatientWeight">Weight</label></p>
+                            <input id="PatientWeight" name="PatientWeight" class="editfields" disabled="disabled" value="@item.Weight" type="text">
+
+                            <p class="contact"><label for="Race">Race</label></p>
+                            <input id="Race" name="Race" class="editfields" value="@item.Race" disabled="disabled" type="text">
+                            <br>
+                            @if (item.EncounterType.Contains("P"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("I"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I" selected="selected">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("A"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A" selected="selected">Ambulatory</option>
+
+                                </select>
+                            }
+                            <br />
+                            <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                            <input name="submit" class="Demogrsupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                        </form>
+                    }
+                }
+            </div>
+
+            <div id="tabMyPhy">
+                @if (Model.MyPhysicians.Any())
+                {
+                <center style="margin-bottom: -20px">MyPhysicians</center><br>
+
+                foreach (var item in Model.MyPhysicians)
+                {
+
+                <form class="MyPhysician" id="@item._id">
+                    <p class="contact"><label for="name">Physician Name</label></p>
+                    @if (item.Name == "Dr.Martin Green")
+                    {
+                    <select size="4" disabled="disabled" name="Name" class="mydropdown editfields" data-id="@item._id">
+                        <option value="Dr.Martin Green" selected="selected">Dr.Martin Green</option>
+                        <option value="Dr.Martin Rodriguez">Dr.Martin Rodriguez</option>
+                        <option value="Dr.Rahul Sharma">Dr.Rahul Sharma</option>
+                    </select>
+                    }
+                    else if (item.Name == "Dr.Martin Rodriguez")
+                    {
+                    <select disabled="disabled" name="Name" class="mydropdown editfields" data-id="@item._id">
+                        <option value="Dr.Martin Green">Dr.Martin Green</option>
+                        <option value="Dr.Martin Rodriguez" selected="selected">Dr.Martin Rodriguez</option>
+                        <option value="Dr.Rahul Sharma">Dr.Rahul Sharma</option>
+                    </select>
+                    }
+                    else if (item.Name == "Dr.Rahul Sharma")
+                    {
+                    <select disabled="disabled" name="Name" class="mydropdown editfields" data-id="@item._id">
+                        <option value="Dr.Martin Green">Dr.Martin Green</option>
+                        <option value="Dr.Martin Rodriguez">Dr.Martin Rodriguez</option>
+                        <option value="Dr.Rahul Sharma" selected="selected">Dr.Rahul Sharma</option>
+                    </select>
+                    }
+
+                    <p class="contact"><label for="StreetAddress">Street Address</label></p>
+                    <input id="StreetAddress" name="StreetAddress" disabled="disabled" value="@item.StreetAddress" class="editfields" type="text">
+
+                    <p class="contact"><label for="Locality">Locality</label></p>
+                    <input id="Locality" name="Locality" value="@item.Locality" disabled="disabled" class="editfields" type="text">
+
+                    <p class="contact"><label for="Region">Region</label></p>
+                    <input id="Region" name="Region" class="editfields" disabled="disabled" value="@item.Region" type="text">
+
+                    <p class="contact"><label for="PostalCode">PostalCode</label></p>
+                    <input id="PostalCode" name="PostalCode" class="editfields" disabled="disabled" value="@item.PostalCode" type="text">
+
+                    <p class="contact"><label for="PrimaryPhone">PrimaryPhone</label></p>
+                    <input id="PrimaryPhone" name="PrimaryPhone" class="editfields" disabled="disabled" value="@item.PrimaryPhone" type="text">
+
+                    <br />
+                    @if (item.EncounterType.Contains("P"))
+                    {
+                    <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                        <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                        <option value="I">Inpatient</option>
+                        <option value="A">Ambulatory</option>
+
+                    </select>
+                    }
+                    else if (item.EncounterType.Contains("I"))
+                    {
+                    <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                        <option value="P">Inpatient And Ambulatory</option>
+                        <option value="I" selected="selected">Inpatient</option>
+                        <option value="A">Ambulatory</option>
+
+                    </select>
+                    }
+                    else if (item.EncounterType.Contains("A"))
+                    {
+                    <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                        <option value="P">Inpatient And Ambulatory</option>
+                        <option value="I">Inpatient</option>
+                        <option value="A" selected="selected">Ambulatory</option>
+
+                    </select>
+                    }
+                    <br />
+                    <input name="button" class="edit" data-id="@item._id" type="button" value="Edit" />
+                    <input name="submit" class="phyupdate" data-id="@item.UserId" txt-id="@item._id" type="button" value="Update" />
+                </form>
+                }
+                }
+            </div>
+            <div id="tabvitals">
+                @if (Model.PatientMDS.Any())
+                {
+                    <center style="margin-bottom: -20px;">Vitals</center><br>
+
+                    foreach (var item in Model.VitalSigns)
+                    {
+
+                        <form class="Vitals" id="@item._id">
+                            <p class="contact"><label for="BMI">BMI</label></p>
+                            <input id="BMI" name="BMI" class="editfields" disabled="disabled" value="@item.BMI" type="text">
+
+                            <p class="contact"><label for="BloodPressure">Blood Pressure</label></p>
+                            <input id="BloodPressure" name="BloodPressure" class="editfields" disabled="disabled" value="@item.BloodPressure" type="text">
+
+                            <p class="contact"><label for="Height">Height</label></p>
+                            <input id="Height" name="Height" class="editfields" value="@item.Height" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="Weight">Weight</label></p>
+                            <input id="Weight" name="Weight" class="editfields" value="@item.Weight" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="RecordedDate">Recorded Date</label></p>
+                            <input id="RecordedDate" name="RecordedDate" class="datepicker editfields" disabled="disabled" value="@item.RecordedDate" tabindex="5" type="text">
+                            <br>
+                            @if (item.EncounterType.Contains("P"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("I"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I" selected="selected">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("A"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A" selected="selected">Ambulatory</option>
+
+                                </select>
+                            }
+                            <br />
+                            <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                            <input name="submit" class="vitalsupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                        </form>
+                    }
+                }
+
+            </div>
+            <div id="tabissues">
+                <center style="margin-bottom: -20px;">Allergies</center><br>
+
+                @foreach (var item in Model.MedicationAllergies)
+                {
+
+                    <form class="Issuesallergie" id="@item._id">
+
+                        <p class="contact"><label for="Allergen">Allergen</label></p>
+                        <input id="Allergen" name="Allergen" class="editfields" disabled="disabled" value="@item.Allergen" type="text">
+
+                        <p class="contact"><label for="Reaction">Reaction</label></p>
+                        <input id="Reaction" name="Reaction" class="editfields" disabled="disabled" value="@item.Reaction" type="text">
+
+                        <p class="contact"><label for="Algstatus">Status</label></p>
+                        <input id="Algstatus" name="Algstatus" class="editfields" disabled="disabled" value="@item.Status" type="text">
+
+                        <p class="contact"><label for="AlgRxNormCode">RxNormCode</label></p>
+                        <input id="AlgRxNormCode" name="AlgRxNormCode" class="editfields" disabled="disabled" value="@item.RxNormCode" type="text">
+                        <br>
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="medalgupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                        <br />
+                    </form>
+                }
+
+
+                <center style="margin-bottom: -20px;margin-top: 30px;">Problems</center><br>
+                @foreach (var item in Model.Problems)
+                {
+
+                    <form class="Issuesproblem" id="@item._id">
+
+                        <p class="contact"><label for="ProblemCause">ProblemCause</label></p>
+                        <input id="ProblemCause" name="ProblemCause" class="editfields" disabled="disabled" value="@item.ProblemCause" type="text">
+
+                        <p class="contact"><label for="ProbStatus">Status</label></p>
+                        <input id="ProbStatus" name="ProbStatus" class="editfields" disabled="disabled" value="@item.Status" type="text">
+
+                        <p class="contact"><label for="ProblemReported">ProblemReported</label></p>
+                        <input id="ProblemReported" name="ProblemReported" disabled="disabled" class="datepicker editfields" value="@item.ProblemReportedDate" tabindex="7" type="text">
+
+                        <p class="contact"><label for="ProbStandardCode">StandardCode</label></p>
+                        <input id="ProbStandardCode" name="ProbStandardCode" disabled="disabled" class="editfields" value="@item.StandardCode" type="text">
+                        <br>
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="problemupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+
+            </div>
+            <div id="tabmed">
+                <center style="margin-bottom: -20px;">Medications</center><br>
+
+                @foreach (var item in Model.Medications)
+                {
+                    <form class="Medications" id="@item._id">
+                        <p class="contact"><label for="Medname">Medication Name</label></p>
+                        <input id="Medname" name="Medname" class="editfields" disabled="disabled" value="@item.MedicationsName" type="text">
+
+                        <p class="contact"><label for="DosageForm">DosageForm</label></p>
+                        <input id="DosageForm" name="DosageForm" class="editfields" disabled="disabled" value="@item.DosageForm" type="text">
+
+                        <p class="contact"><label for="SIG">SIG</label></p>
+                        <input id="SIG" name="SIG" class="editfields" disabled="disabled" value="@item.SIG" type="text">
+
+                        <p class="contact"><label for="MedStatus">Status</label></p>
+                        <input id="MedStatus" name="MedStatus" class="editfields" disabled="disabled" value="@item.Status" type="text">
+
+                        <p class="contact"><label for="DateOfPrescription">DateOfPrescription</label></p>
+                        <input id="DateOfPrescription" name="DateOfPrescription" disabled="disabled" class="datepicker editfields" value="@item.DateOfPrescription" tabindex="5" type="text">
+
+                        <p class="contact"><label for="StandardCode">StandardCode</label></p>
+                        <input id="StandardCode" name="StandardCode" class="editfields" disabled="disabled" value="@item.StandardCode" type="text">
+
+                        <br>
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="medicationsupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+
+
+            </div>
+            <div id="tabhist">
+                <center style="margin-bottom: -20px;">My Vaccination</center><br>
+
+                @foreach (var item in Model.Vaccinations)
+                {
+                    <form class="Vaccinations" id="@item._id">
+                        <p class="contact"><label for="VaccineName">VaccineName</label></p>
+                        <input id="VaccineName" name="VaccineName" class="editfields" disabled="disabled" value="@item.VaccineName" type="text">
+
+                        <p class="contact"><label for="VaccineStatus">VaccineStatus</label></p>
+                        <input id="VaccineStatus" name="VaccineStatus" class="editfields" disabled="disabled" value="@item.VaccineStatus" type="text">
+
+                        <p class="contact"><label for="DateAdministered">DateAdministered</label></p>
+                        <input id="DateAdministered" name="DateAdministered" disabled="disabled" class="datepicker editfields" value="@item.DateAdministered" tabindex="3" type="text">
+
+                        <p class="contact"><label for="CVXCode">CVXCode</label></p>
+                        <input id="CVXCode" name="CVXCode" class="editfields" disabled="disabled" value="@item.CVXCode" type="text">
+                        <br />
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="vaccupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+
+
+                <center style="margin-bottom: -20px; margin-top: 30px;">Procedures</center><br>
+                @foreach (var item in Model.ProcedureDetails)
+                {
+                    <form class="procedure" id="@item._id">
+                        <p class="contact"><label for="ProcedureName">ProcedureName</label></p>
+                        <input id="ProcedureName" name="ProcedureName" class="editfields" disabled="disabled" value="@item.ProcedureName" type="text">
+
+                        <p class="contact"><label for="ProcedureDate">ProcedureDate</label></p>
+                        <input id="ProcedureDate" name="ProcedureDate" class="datepicker editfields" disabled="disabled" value="@item.ProcedureDate" tabindex="6" type="text">
+
+                        <p class="contact"><label for="SNOMEDCT">SNOMEDCT</label></p>
+                        <input id="SNOMEDCT" name="SNOMEDCT" class="editfields" disabled="disabled" value="@item.SNOMEDCT" type="text">
+                        <br />
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="procupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+
+                <center style="margin-bottom: -20px; margin-top: 30px;">CarePlan</center><br>
+                @foreach (var item in Model.CarePlans)
+                {
+                    <form class="goal" id="@item._id">
+
+                        <p class="contact"><label for="Goal">Goal</label></p>
+                        <input id="Goal" name="Goal" class="editfields" disabled="disabled" value="@item.Goal" type="text">
+
+                        <p class="contact"><label for="Instruction">Instruction</label></p>
+                        <input id="Instruction" name="Instruction" class="editfields" disabled="disabled" value="@item.Instructions" type="text">
+
+                        <p class="contact"><label for="GoalSNOMEDCT">SNOMEDCT</label></p>
+                        <input id="GoalSNOMEDCT" name="GoalSNOMEDCT" class="editfields" disabled="disabled" value="@item.SNOMEDCT" type="text"> <br>
+                        <br />
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="goalupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+
+                <center style="margin-bottom: -20px; margin-top: 30px;">Social History</center><br>
+                @foreach (var item in Model.SocialHistories)
+                {
+                    <form class="socialhistry" id="@item._id">
+
+                        <p class="contact"><label for="SocHisitem">Social History Item </label></p>
+                        <input id="SocHisitem" name="SocHisitem" class="editfields" disabled="disabled" value="@item.SocialHistoryItem" type="text">
+
+                        <p class="contact"><label for="Description">Description</label></p>
+                        <input id="Description" name="Description" class="editfields" disabled="disabled" value="@item.Description" type="text">
+
+                        <p class="contact"><label for="SocSNOMEDCT">SNOMED-CT</label></p>
+                        <input id="SocSNOMEDCT" name="SocSNOMEDCT" class="editfields" disabled="disabled" value="@item.SNOMEDCT" type="text"> <br>
+                        <br />
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="sochistupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+
+            </div>
+
+            <div id="tabencdiag">
+                <center style="margin-bottom: -20px;">Encounter Diagnosis</center><br>
+                @foreach (var item in Model.EncounterDisgnos)
+                {
+                    <form class="EncounterDiagnosis" id="@item._id">
+                        <p class="contact"><label for="EncDiagnosis">Diagnosis</label></p>
+                        <input id="EncDiagnosis" name="EncDiagnosis" class="editfields" disabled="disabled" value="@item.Diagnosis" type="text">
+
+                        <p class="contact"><label for="EncDiagSNOMEDCT">SNOMED-CT</label></p>
+                        <input id="EncDiagSNOMEDCT" name="EncDiagSNOMEDCT" class="editfields" disabled="disabled" value="@item.SNOMEDCT" type="text">
+
+                        <p class="contact"><label for="EncDiagStatus">Status</label></p>
+                        <input id="EncDiagStatus" name="EncDiagStatus" class="editfields" disabled="disabled" value="@item.Status" type="text">
+
+                        <p class="contact"><label for="EncDiagStartDate">Start Date</label></p>
+                        <input id="EncDiagStartDate" name="EncDiagStartDate" class="datepicker editfields" disabled="disabled" value="@item.StartDate" tabindex="4" type="text">
+                        <br>
+                        <select name="enc-type" class="enc-type" data-id="@item._id">
+
+                            <option value="I" selected="selected">Inpatient</option>
+
+
+                        </select>
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="encdiagupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+
+                }
+            </div>
+
+            <div id="tabimmu">
+                <center style="margin-bottom: -20px;">Immunizations</center><br>
+                @foreach (var item in Model.Immunizations)
+                {
+
+                    <form class="Immunizations" id="@item._id">
+                        <p class="contact"><label for="ImmuDATE">DATE</label></p>
+                        <input id="ImmuDATE" name="ImmuDATE" class="datepicker editfields" disabled="disabled" value="@item.DATE" type="text">
+
+                        <p class="contact"><label for="ImmuNAME">NAME</label></p>
+                        <input id="ImmuNAME" name="ImmuNAME" class="editfields" disabled="disabled" value="@item.NAME" type="text">
+
+                        <p class="contact"><label for="ImmuPROVIDER">PROVIDER</label></p>
+                        <input id="ImmuPROVIDER" name="ImmuPROVIDER" class="datepicker editfields" tabindex="3" disabled="disabled" value="@item.PROVIDER" type="text">
+
+
+                        <p class="contact"><label for="ImmuINSTRUCTIONS">INSTRUCTIONS</label></p>
+                        <input id="ImmuINSTRUCTIONS" name="ImmuINSTRUCTIONS" class="editfields" disabled="disabled" value="@item.INSTRUCTIONS" type="text">
+
+                        <p class="contact"><label for="ImmuTYPE">TYPE</label></p>
+                        <input id="ImmuTYPE" name="ImmuTYPE" class="editfields" disabled="disabled" value="@item.TYPE" type="text">
+
+                        <p class="contact"><label for="ImmuDose">Dose</label></p>
+                        <input id="ImmuDose" name="ImmuDose" class="editfields" tabindex="3" disabled="disabled" value="@item.Dose" type="text">
+
+
+                        <p class="contact"><label for="ImmuRate">Rate</label></p>
+                        <input id="ImmuRate" name="ImmuRate" class="editfields" disabled="disabled" value="@item.Rate" type="text">
+
+
+                        <br>
+
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="immusupdate" data-id="@item.PatientId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+            </div>
+            <div id="tabencinfo">
+                <center style="margin-bottom: -20px;">EncounterInfo</center><br>
+                @foreach (var item in Model.EncounterInfos)
+                {
+
+                    <form class="EncounterInformation" id="@item._id">
+                        <p class="contact"><label for="AdmisssionDate">Admission Date</label></p>
+                        <input id="AdmisssionDate" name="AdmisssionDate" class="datepicker editfields" disabled="disabled" value="@item.AdmissionDate" tabindex="1" type="text">
+
+
+                        <p class="contact"><label for="DischargeDate">Discharge Date</label></p>
+                        <input id="DischargeDate" name="DischargeDate" class="datepicker editfields" disabled="disabled" value="@item.DischargeDate" type="text">
+
+                        <p class="contact"><label for="Admissiondischargelocation">Admission and Discharge Location</label></p>
+                        <input id="Admissiondischargelocation" name="Admissiondischargelocation" disabled="disabled" value="@item.Admissiondischargelocation" class="editfields" type="text">
+
+
+                        <br>
+                        <select name="enc-type" class="enc-type" data-id="@item._id">
+
+                            <option value="I" selected="selected">Inpatient</option>
+
+
+                        </select>
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="EncInfoupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+            </div>
+            <div id="tablab">
+                <center style="margin-bottom: -20px;">Labs Test</center><br>
+                @foreach (var item in Model.LabResults)
+                {
+                    <form class="Labs" id="@item._id">
+                        <p class="contact"><label for="OrdTestName">Orderable Test Name</label></p>
+                        <input id="OrdTestName" name="OrdTestName" class="editfields" disabled="disabled" value="@item.OrderableTestName" type="text">
+
+                        <p class="contact"><label for="LabsLOINCCode">LOINC Code</label></p>
+                        <input id="LabsLOINCCode" name="LabsLOINCCode" class="editfields" disabled="disabled" value="@item.LONICCode" type="text">
+
+                        <p class="contact"><label for="TestResval">Test Result Value</label></p>
+                        <input id="TestResval" name="TestResval" class="editfields" disabled="disabled" value="@item.TestResultValue" type="text">
+
+
+                        <p class="contact"><label for="DatePerformed">Date Performed</label></p>
+                        <input id="DatePerformed" name="DatePerformed" class="datepicker editfields" disabled="disabled" value="@item.DatePerformed" tabindex="4" type="text">
+
+                        <br>
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="Labsupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+            </div>
+            <div id="tabcogst">
+                <center style="margin-bottom: -20px;">CognitiveStatus</center><br>
+                @foreach (var item in Model.CognFunStatus)
+                {
+                    <form class="CognitiveStatus" id="@item._id">
+                        <p class="contact"><label for="CogStaDescription">Description</label></p>
+                        <input id="CogStaDescription" name="CogStaDescription" class="editfields" disabled="disabled" value="@item.Description" type="text">
+
+                        <p class="contact"><label for="CogStaSNOMEDCT">SNOMED-CT</label></p>
+                        <input id="CogStaSNOMEDCT" name="CogStaSNOMEDCT" class="editfields" disabled="disabled" value="@item.SNOMEDCT" type="text">
+
+                        <p class="contact"><label for="ReportedDate">Reported Date</label></p>
+                        <input id="ReportedDate" name="ReportedDate" class="datepicker editfields" disabled="disabled" tabindex="3" value="@item.ReportedDate" type="text">
+
+
+
+                        <p class="contact"><label for="CognStatus">Status</label></p>
+                        <input id="CognStatus" name="CognStatus" class="editfields" disabled="disabled" value="@item.Status" type="text">
+
+                        <br>
+                        @if (item.EncounterType.Contains("P"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("I"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I" selected="selected">Inpatient</option>
+                                <option value="A">Ambulatory</option>
+
+                            </select>
+                        }
+                        else if (item.EncounterType.Contains("A"))
+                        {
+                            <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                <option value="P">Inpatient And Ambulatory</option>
+                                <option value="I">Inpatient</option>
+                                <option value="A" selected="selected">Ambulatory</option>
+
+                            </select>
+                        }
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="CognStupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+            </div>
+            <div id="tabreas">
+                <center style="margin-bottom: -20px;">Reason For Hospitalization </center><br>
+                @foreach (var item in Model.Reasonhospitals)
+                {
+                    <form class="ReasonForHospitalization" id="@item._id">
+
+                        <p class="contact"><label for="ReasonHospInstructions">Reason For Hospitalization</label></p>
+                        <input id="ReasonHospInstructions" style="height: 213px;" name="ReasonHospInstructions" disabled="disabled" class="editfields" value="@item.Reason" type="text">
+
+                        <br>
+                        <select name="enc-type" class="enc-type" data-id="@item._id">
+                            <option value="I" selected="selected">Inpatient</option>
+                        </select>
+                        <br />
+                        <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                        <input name="submit" class="ReasHospupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                    </form>
+                }
+            </div>
+
+            <div id="tabbilling">
+                @if (Model.InsuranceBillings.Any())
+                {
+                    <center style="margin-bottom: -20px;">Billing</center><br>
+
+                    foreach (var item in Model.InsuranceBillings)
+                    {
+
+                        <form class="billing" id="@item._id">
+                            <p class="contact"><label for="ICDCode">ICD Code</label></p>
+                            <input id="ICDCode" name="ICDCode" class="editfields" disabled="disabled" value="@item.ICDCode" type="text">
+
+                            <p class="contact"><label for="Diagnosis">Diagnosis</label></p>
+                            <input id="billingDiagnosis" name="Diagnosis" class="editfields" disabled="disabled" value="@item.Diagnosis" type="text">
+
+                            <p class="contact"><label for="Charges">Charges</label></p>
+                            <input id="Charges" name="Charges" class="editfields" value="@item.Charges" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="Payments">Payments</label></p>
+                            <input id="Payments" name="Payments" class="editfields" value="@item.Payments" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="Balance">Balance</label></p>
+                            <input id="Balance" name="Balance" class="editfields" value="@item.Balance" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="Date">Date</label></p>
+                            <input id="Date" name="Date" class="datepicker editfields" disabled="disabled" value="@item.Date" tabindex="5" type="text">
+                            <br>
+                            @if (item.EncounterType.Contains("P"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("I"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I" selected="selected">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("A"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A" selected="selected">Ambulatory</option>
+
+                                </select>
+                            }
+                            <br />
+                            <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                            <input name="submit" class="billingupdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                        </form>
+                    }
+                }
+            </div>
+
+            <div id="tabAppointment">
+                @if (Model.Appointments.Any())
+                {
+                    <center style="margin-bottom: -20px;">Appointments</center><br>
+
+                    foreach (var item in Model.Appointments)
+                    {
+
+                        <form class="appointments" id="@item._id">
+
+                            <p class="contact"><label for="Date">Date</label></p>
+                            <input id="Date" name="Date" class="datepicker editfields" disabled="disabled" value="@item.Date" tabindex="5" type="text">
+
+                            <p class="contact"><label for="Reason">Reason</label></p>
+                            <input id="Reason" name="Reason" class="editfields" disabled="disabled" value="@item.Reason" type="text">
+
+                            <p class="contact"><label for="Time">Time</label></p>
+                            <input id="Time" name="Time" class="editfields" disabled="disabled" value="@item.Time" type="text">
+
+                            <p class="contact"><label for="Physician">Physician</label></p>
+                            <input id="Physician" name="Physician" class="editfields" value="@item.Physician" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="CenterName">CenterName</label></p>
+                            <input id="CenterName" name="CenterName" class="editfields" value="@item.CenterName" disabled="disabled" type="text">
+
+                            <p class="contact"><label for="Address">Address</label></p>
+                            <input id="Address" name="Address" class="editfields" value="@item.Address" disabled="disabled" type="text">
+
+
+                            <br>
+                            @if (item.EncounterType.Contains("P"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P" selected="selected">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("I"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I" selected="selected">Inpatient</option>
+                                    <option value="A">Ambulatory</option>
+
+                                </select>
+                            }
+                            else if (item.EncounterType.Contains("A"))
+                            {
+                                <select disabled="disabled" name="enc-type" class="enc-type" data-id="@item._id">
+                                    <option value="P">Inpatient And Ambulatory</option>
+                                    <option value="I">Inpatient</option>
+                                    <option value="A" selected="selected">Ambulatory</option>
+
+                                </select>
+                                }
+                                <br />
+                                <input name="button" class="edit" data-id="@item._id" type="button" value="Edit">
+                                <input name="submit" class="AptmntUpdate" data-id="@item.UserId" txt-id="@item._id" value="Update" type="button" />
+                            </form>
+                            }
+                            }
+                        </div>
+
+                    </div>
+        </div>
+    
+</body>
+</html>
+
+<div>
+   <!-- @Html.ActionLink("Back to List", "ExistingPatient")-->
+</div>
+

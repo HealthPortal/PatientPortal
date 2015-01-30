@@ -1,0 +1,432 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>Health Activity</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/gumby.css">
+    <script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".logbar").hide();
+            $(".logbut").addClass("plus").show();
+            $('.logbut').toggle(
+                function () {
+                    $(".logbar").slideDown().slideToggle("fast");
+                    $(this).addClass("plus");
+                    $(this).removeClass("minus");
+                },
+                function () {
+                    $(".logbar").slideUp().slideToggle("fast");
+                    $(this).addClass("minus");
+                    $(this).removeClass("plus");
+                }
+            );
+            
+      
+            
+        });
+
+
+    </script>
+    <script src="Scripts/modernizr-2.6.2.min.js"></script>
+    <script src="Scripts/gumby.min.js"></script>
+    <script src="Scripts/jquery.easing.1.3.js"></script>
+    <script src="Scripts/plugins-ck.js"></script>
+    <script src="Scripts/main.js"></script>
+    <style type="text/css">
+        .hero img, object, embed {
+            max-width: 100%;
+            height: auto;
+            float: left;
+            margin-left: -486px;
+            margin-top: -29px;
+        }
+
+        .row .six.columns img {
+            margin-top: -9px;
+            max-width: 100%;
+            margin-left: 4px;
+            height: 314px;
+            width: 518px;
+        }
+
+        .paneltitle {
+            width: 400px;
+            height: 1px;
+            color: #4c4431;
+            font-weight: bold;
+            font-size: 21px;
+            margin: 17px 0;
+            background-image: url(Images/leftpaneltop.jpg);
+            padding: 8px 0px 29px 3px;
+        }
+    </style>
+
+
+</head>
+
+<body class="sub patient-portal-overview fixed-header">
+    <div class="navcontain">
+        <nav id="main-navbar" class="navbar fixed" gumby-fixed="top" style="top: 0px;">
+            <a class="toggle" gumby-trigger="#main-navbar > .row > ul" href="#">
+                <i class="icon-menu"></i>
+            </a>
+            <div class="row">
+                <div class="three columns logo">
+                    <a href="/">
+                        <span>Intelligent Infotech</span>
+                        <img src="Images/MyLogo.gif" alt="Intelligent Infotech Patient Portal">
+                    </a>
+                </div>
+                <div id="logincontainer">
+                    <span>Hello there Guest Please </span><a href="#" class="logbut show_hide">Login</a>
+                </div>
+                <div class="logbar">
+                    <div class="arrow" style="border-bottom-color: #131313;"></div>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+                       
+                                <div class="editor-label">
+                                    @Html.LabelFor(m => m.UserName)
+                                </div>
+                                <div class="editor-field">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "logbox" })
+                                    @Html.ValidationMessageFor(m => m.UserName)
+                                </div>
+
+                                <div class="editor-label">
+                                    @Html.LabelFor(m => m.Password)
+                                </div>
+                                <div class="editor-field">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "logbox" })
+                                    @Html.ValidationMessageFor(m => m.Password)
+                                </div>
+
+                                <div class="editor-label">
+                                    @Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox" })
+                                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                                </div>
+
+                                <p>
+                                    <input type="submit" class="btn btn-lg btn-primary logbutton" value="Log In" />
+                                </p>
+                           
+                    }
+              
+                </div>
+
+            </div>
+         
+        </nav>
+    </div>
+    <div class="container sub-header">
+        <div class="row">
+            <div class="twelve columns">
+                <p>Patient Portal Overview</p>
+            </div>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-text">
+            <img border="0" src="Images/LastFinal.png" width="600" height="228">
+            <h2>Finally, there's a Patient Portal that patients will want to use...while your organization satisfies all meaningful use requirements.</h2>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <span itemscope="" itemtype="http://schema.org/SoftwareApplication">
+            <section class="row">
+                <article class="twelve columns">
+                    <div class="paneltitle">Patient Portal by Intelligent Infotech</div>
+                </article>
+            </section>
+            <!-- <section class="row">
+              <article class="twelve columns">
+                <div class="laptop">
+                  <div class="laptop-video">
+                    <div class="laptop-video-wrapper">
+                     <iframe src="http://player.vimeo.com/video/57475199?autoplay=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section> -->
+            <section class="row">
+                <article class="five columns">
+                    <p>Intelligent Infotech provides patients exactly what they are looking for in a <strong>Patient Portal</strong> resulting in consistent use and ongoing patient engagement.</p>
+                    <p>Now provider practices get what they want - patients who stay connected to their practice while staying actively engaged in their healthcare.</p>
+                    <p><em>The Intelligent Infotech Patient Portal delivers functionality that both patients and providers are looking for such as:</em></p>
+                    <ul class="big-check-list">
+                        <li><a href="/meaningful-use/">Meaningful Use Stage 2 Qualification</a></li>
+                        <li>Ability for patients to schedule their own appointments</li>
+                        <li>Online forms that import into provider EHRs</li>
+                        <li>Visit notes and discharge instruction delivery</li>
+                        <li><a href="/personal-health-record">Interactive Personal Health Record (PHR)</a></li>
+                    </ul>
+                </article>
+                <article class="six columns push_one">
+                    <img itemprop="screenshot" alt="Showcasing the Technology behind the Portal" src="Images/patient-portal1.gif">
+                    <p class="mice-type">Satisfy Meaningful Use requirements and allow your patients to actively manage their own healthcare with the easy to use features of the Intelligent Infotech Patient Portal.</p>
+                    <!-- <p class="price-info">Each of the Intelligent Infotech solutions is very cost effective <strong>starting as low as $99 per provider monthly</strong>.</p> -->
+                    <div class="row text-center"><div class="medium info btn icon-right entypo icon-forward"><a href="/contact.php?product=PatientPortal&amp;interest=pricing">Contact us for custom pricing</a></div></div>
+                </article>
+            </section>
+        </span>
+    </div>
+    <div class="wrapper shaded">
+        <section class="row">
+            <article class="twelve columns">
+                <div class="paneltitle" style="width:270px;">EHR and PMS Integration</div>
+            </article>
+            <article>
+            <p>Intelligent Infotech provides the most comprehensive integration with electronic health records (EHR) and practice management systems (PMS) available today.<strong>The Intelligent Infotech Patient Portal integrates to your entire EHR to deliver workflow functionality that provider practices need while delivering your patients the functionality they demand.</strong></p>
+            <p>Intelligent Infotech can integrate with any EHR and PMS vendor and we are constantly evolving our list of partner systems (vendor libraries) that we integrate with.</p>
+          </article>
+        </section>
+        <section class="row">
+            <article class="five columns">
+                <p>
+                    <em>
+                        Intelligent Infotech's.
+                        EHR and PMS technology includes:
+                    </em>
+                </p>
+                <ul class="standard-list">
+                    <li>Demographics</li>
+                    <li>Insurances</li>
+                    <li>Appointments</li>
+                    <li>Histories (Family, social, past medical/surgical)</li>
+                    <li>Vitals</li>
+                </ul>
+                <ul class="standard-list">
+                    <li>Visit/Encounter Summaries</li>
+                    <li>Medications</li>
+                    <li>Allergies</li>
+                    <li>Labs &amp; Diagnostic Results</li>
+                    <li>Patient Statement Balance</li>
+                </ul>
+            </article>
+            <article class="six columns push_one fancy-call-out">
+                <div class="row">
+                    <div class="ribbon-wrapper twelve columns">
+                        <div class="ribbon-front">
+                            <h3>Intelligent Infotech Patient Portal works with all EHR &amp; PMS vendors</h3>
+                        </div>
+                        <div class="ribbon-edge-topleft"></div>
+                        <div class="ribbon-edge-topright"></div>
+                        <div class="ribbon-edge-bottomleft"></div>
+                        <div class="ribbon-edge-bottomright"></div>
+                        <div class="ribbon-back-left"></div>
+                        <div class="ribbon-back-right"></div>
+                    </div>
+                </div>
+                <div class="row works-list">
+                    <h3 class="only-show-phones">Intelligent Infotech Patient Portal works with all EHRs &amp; PMS</h3>
+                    <ul class="six columns split-list">
+                        <li>RelayHealth</li>
+                        <li>NextGen</li>
+                        <li>MyWay</li>
+                    </ul>
+                    <ul class="six columns split-list">
+                        <li>Allscripts</li>
+                        <li>Greenway</li>
+                        <li>e-MDs</li>
+                    </ul>
+                </div>
+                <div class="row text-center space"><div class="medium info btn icon-right entypo icon-forward"><a href="/contact.php?product=PatientPortal&amp;interest=EHRintegration">Contact us for more information <br> on specific EHR/PMS integrations!</a></div></div>
+            </article>
+        </section>
+        <section class="row">
+            <article class="twelve columns text-center library-wrapper">
+                <img alt="vendor-libraries" src="Images/library-icon.png">
+                <!-- <img alt="Intelligent Infotech has developed vendor-libraries with a number of EHR Systems" src="img/vendors-section-callout.gif"> -->
+                <h3>Intelligent Infotech has developed vendor libraries with a number of EHR Systems and can accept any industry standard data format method such as HL7, XML, CCD, API.</h3>
+            </article>
+        </section>
+    </div>
+    <div class="wrapper">
+        <section class="row">
+            <article class="twelve columns">
+                <div class="paneltitle" style="width:251px;">Patient Portal Features</div>
+            </article>
+
+        </section>
+        <section class="row">
+            <article class="four columns">
+                <div class="features-box pp-features">
+                    <!-- <p><a class="pp-group1" href="#pp_content">Appointment Requests</a></p> -->
+                    <a class="pp-group1 cboxElement" href="#pp_content"></a>
+                    <h3 class="overview-box1">Medications</h3>
+                    <p>Patients can request appointments anytime, day or night.&nbsp;<span class="more-feature">More</span></p>
+                </div>
+            </article>
+            <article class="four columns">
+                <div class="features-box pp-features">
+                    <!-- <p><a class="pp-group1" href="#pp_content2">Live Appointment Scheduling</a></p> -->
+                    <a class="pp-group1 cboxElement" href="#pp_content2"></a>
+                    <h3 class="overview-box2">Secure Messaging</h3>
+                    <p>Intelligent Infotech gives you the option to allow your patients to schedule <span class="more-feature">More</span></p>
+                </div>
+            </article>
+            <article class="four columns">
+                <div class="features-box pp-features last">
+                    <a class="pp-group1 cboxElement" href="#pp_content3"></a>
+                    <h3 class="overview-box3">Authorization</h3>
+                    <p>Patients can now receive reminders and alerts via text and email.&nbsp;<span class="more-feature">More</span></p>
+                </div>
+            </article>
+        </section>
+        <section class="row">
+            <article class="four columns">
+                <div class="features-box pp-features">
+                    <a class="pp-group1 cboxElement" href="#pp_content4"></a>
+                    <h3 class="overview-box4">PDF & CCDA Reports of Patients</h3>
+                    <p>Automate delivery for patient visit and discharge instructions.&nbsp;<span class="more-feature">More</span></p>
+                </div>
+            </article>
+            <article class="four columns">
+                <div class="features-box pp-features">
+                    <a class="pp-group1 cboxElement" href="#pp_content5"></a>
+                    <h3 class="overview-box5">Transmit Reports To Patients</h3>
+                    <p>Save time and satisfy patients by automating results delivery.&nbsp;<span class="more-feature">More</span></p>
+                </div>
+            </article>
+        </section>
+        <!-- modal content -->
+        <div style="display: none;">
+            <div id="pp_content" style="padding: 10px; background: #fff;">
+                <p><img src="img/Meds.png" alt="Medications"></p>
+                <h3>Medications</h3>
+                <p>Patients can request appointments anytime, day or night. If the appointment requested requires specific forms to be filled out, patients will be prompted to fill out your online forms. The appointment requests are routed to an individual or group of users so staff can respond when it’s convenient.</p>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="pp_content2" style="padding: 10px; background: #fff;">
+                <p><img src="img/Messages.png" alt="Secure Messaging"></p>
+                <h3>Secure Messaging</h3>
+                <p>Intelligent Infotech gives you the option to allow your patients to schedule their own appointments, freeing up your staff to work with patients in the office. You are able to determine which providers will allow live scheduling and you can establish what types of appointments patients can schedule. When completed, the scheduled appointment will show on your practice management schedule without any staff intervention.</p>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="pp_content3" style="padding: 10px; background: #fff;">
+                <p><img src="img/Auth.png" alt="Authorization"></p>
+                <h3>Authorization</h3>
+                <p>Appointment reminders, medication refill calls, and patient recalls can be automated through email, text, and automated calling. Staff will no longer need to make tedious calls to patients to remind them of upcoming appointments or that their medications have been refilled. Patients can be alerted through one or all methods if desired. In addition to reducing staff workload and enhancing workflow efficiency, you will also comply with Meaningful Use requirements.</p>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="pp_content4" style="padding: 10px; background: #fff;">
+                <p><img src="img/View.png" alt="Visit Summaries and Discharge Instructions"></p>
+                <h3>PDF & CCDA Reports of Patients</h3>
+                <p>When patients see their outpatient providers or are discharged from the hospital, practices and hospitals are now required to provide patients with their respective visit note and discharge instructions. The Intelligent Infotech Patient Portal automates this process and securely delivers an electronic copy directly to the patient. The patient is alerted to review the information and practices can report on this quality measure as required for meaningful use.</p>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="pp_content5" style="padding: 10px; background: #fff;">
+                <p><img src="img/transmit.png" alt="Labs and Diagnostic Test Results to Patients"></p>
+                <h3>Transmit Reports To Patients</h3>
+                <p>Delivering test results to patients has never been this easy and efficient. The Intelligent Infotech Patient Portal will automate the delivery of lab and diagnostic test results to patients. No more mailing letters or postcards to patients or trying to track them down to deliver them their results. Patients can now receive their results through an automated and timely process.</p>
+            </div>
+        </div>
+        <!-- end modal content -->
+
+    </div>
+    <div id="footer-nav" class="wrapper">
+        <section class="row">
+            <article class="twelve columns">
+                <h3>Learn how you can connect in more ways.</h3>
+            </article>
+        </section>
+        <section class="row">
+            <article class="one columns">
+                <img src="img/footer-nav-practice.gif" alt="Accountable Care Solutions ACO">
+            </article>
+            <article class="five columns">
+                <h5><a href="/integration-engine-overview">Accountable Care Solutions</a></h5>
+                <p>The Intelligent Infotech Integration Engine simplifies connectivity and interfacing between practices and organizations such as <span class="d39i7ju" id="d39i7ju_9">hospitals</span>, reference labs, diagnostic centers, and HIEs.</p>
+            </article>
+            <article class="one columns">
+                <img src="img/footer-nav-communities.gif" alt="Health Information Exchange HIE">
+            </article>
+            <article class="five columns">
+                <h5><a href="/information-exchange-overview">Health Information Exchange</a></h5>
+                <p>The Intelligent Infotech HIE introduces an <span class="d39i7ju" id="d39i7ju_11">information exchange</span> suite designed to anchor patient care coodination by providing the tools necessary to deliver aggregated and standardized patient data.</p>
+            </article>
+        </section>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="nine columns">
+                <div class="row hide-on-phones">
+                    <ul class="foot-links four columns">
+                        <li class="group-head"><a href="/patient-portal-overview">Patient Portal</a></li>
+                        <li><a href="/results-manager">Results Manager</a></li>
+                        <li><a href="/marketing-manager">Marketing Manager</a></li>
+                        <li><a href="/personal-health-record">Personal Health Record</a></li>
+                    </ul>
+                    <ul class="foot-links four columns">
+                        <li class="group-head"><a href="/integration-engine-overview">Accountable Care Solutions</a></li>
+                        <li><a href="/hospitals">For Hospitals</a></li>
+                        <li><a href="/reference-labs">Reference Labs</a></li>
+                        <li><a href="/hie-connectivity">HIE Connectivity</a></li>
+                    </ul>
+                    <ul class="foot-links four columns">
+                        <li class="group-head"><a href="/information-exchange-overview">Health Information Exchange</a></li>
+                        <li><a href="/coordination-care">Coordination of Care</a></li>
+                        <li><a href="/patient-engagement">Patient Engagement</a></li>
+                        <li><a href="/accountable-care">Accountable Care</a></li>
+                    </ul>
+                </div>
+                <div class="row space hide-on-phones">
+                    <ul class="foot-links four columns">
+                        <li class="group-head"><a href="/who-we-serve/">Who We Serve</a></li>
+                        <li><a href="/who-we-serve/solutions-physician-practices">Physician Practices</a></li>
+                        <li><a href="/who-we-serve/solutions-hospitals">Hospitals</a></li>
+                        <li><a href="/who-we-serve/solutions-patients">Patients</a></li>
+                        <li><a href="/who-we-serve/solutions-employers">Employers</a></li>
+                        <li><a href="/who-we-serve/solutions-ehr-vendors">EHR Vendors</a></li>
+                        <li><a href="/who-we-serve/solutions-resellers">Resellers</a></li>
+                    </ul>
+                    <ul class="foot-links four columns">
+                        <li class="group-head"><a href="/about/">About Intelligent Infotech</a></li>
+                        <li><a href="/about/leadership/">Leadership</a></li>
+                        <li><a href="/about/partners">Partners</a></li>
+                        <li><a href="/about/careers">Careers</a></li>
+                    </ul>
+                    <ul class="foot-links four columns">
+                        <li class="group-head"><a href="/resources">Resources</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/news-events/">News &amp; Events</a></li>
+                        <li><a href="/meaningful-use/">Meaningful Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="three columns">
+                <p>Questions?</p>
+                <div class="medium primary btn"><a href="/contact">Contact Us</a></div>
+                <p class="space">Or Call (866) 957-8890</p>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="three columns push_nine">
+                <p class="mice-type">©2014 Intelligent Infotech | (866) 957-8890</p>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

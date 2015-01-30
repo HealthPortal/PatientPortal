@@ -1,0 +1,213 @@
+﻿@model HealthPortal.Models.Contact
+@{
+    ViewBag.Title = "Contact";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contact|IntelligenceInfotech</title>
+    <link rel="stylesheet" type="text/css" href="../../css/css.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/gumby.css">
+    <script type="text/javascript" src="../../../../Scripts/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script type="text/javascript">
+       
+        function ShowError() {
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-error");
+            $("#status").html("<strong>Error!</strong> There was an error posting the contact form. Please try again later.");
+        }
+
+        function ShowSuccess() {
+            $("#target").removeClass();
+            $("#target").addClass("alert alert-success");
+        }
+
+    </script>
+    <script src="../../Scripts/modernizr-2.6.2.min.js"></script>
+    <script src="../../Scripts/gumby.min.js"></script>
+    <script src="../../Scripts/jquery.easing.1.3.js"></script>
+    <script src="../../Scripts/plugins-ck.js"></script>
+    <script src="../../Scripts/main.js"></script>
+    <style type="text/css">
+        .hero img, object, embed {
+            max-width: 100%;
+            height: auto;
+            float: left;
+            margin-left: -486px;
+            margin-top: -29px;
+        }
+
+        .row .six.columns img {
+            margin-top: -9px;
+            max-width: 100%;
+            margin-left: 4px;
+            height: 314px;
+            width: 518px;
+        }
+
+        .paneltitle {
+            width: 400px;
+            height: 1px;
+            color: #4c4431;
+            font-weight: bold;
+            font-size: 21px;
+            margin: 17px 0;
+            background-image: url(../../../../Images/leftpaneltop.jpg);
+            padding: 8px 0px 29px 3px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <div class="navcontain">
+            <nav id="main-navbar" class="navbar fixed" gumby-fixed="top" style="top: 0px;">
+                <a class="toggle" gumby-trigger="#main-navbar > .row > ul" href="#">
+                    <i class="icon-menu"></i>
+                </a>
+                <div class="row">
+                    <div class="three columns logo">
+                        <a href="/">
+                            <span>Intelligent Infotech</span>
+                            <img src="../../Images/MyLogo.gif" alt="Intelligent Infotech Patient Portal">
+                        </a>
+                    </div>
+                    <div id="logincontainer" style="text-align: right; width: 200px;">
+                        <span>Go back</span>
+                        <a href="@Url.Action("LogIn","Account")" class="logbut">Home</a>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+        <div class="container sub-header">
+            <div class="row">
+                <div class="four columns">
+                    <h3>Contact</h3>
+                </div>
+            </div>
+        </div>
+        <section class="row" style="margin-left:84px">
+            <div id="status"></div>
+            @using (Ajax.BeginForm("SendMail", "Account", new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "target",
+    OnFailure = "ShowError()",
+    OnSuccess = "ShowSuccess()"
+}))
+            {
+                @*<form id="form1_contact" action="~/Account/Contact" method="post">*@
+                <h2>We would love to hear from you.</h2>
+
+                <p>Complete our easy to use form and we will respond as soon as possible.</p>
+                <ul class="six columns">
+                    <li class="field">
+                        <!-- <label for="form1_first_name">First Name</label> -->
+                        @*<input id="form1_first_name" name="first_name" class="text input" type="text" placeholder="First Name" required="required">*@
+                        @Html.TextBoxFor(model => model.FirstName, new Dictionary<string, object> { { "class", "text input" }, { "placeholder", "First Name" }, { "required", "required" } })
+                    </li>
+                    <li class="field">
+                        @*<input id="form1_last_name" name="last_name" class="text input" type="text" placeholder="Last Name" required="required">*@
+                        @Html.TextBoxFor(model => model.LastName, new Dictionary<string, object> { { "class", "text input" }, { "placeholder", "Last Name" }, { "required", "required" } })
+                    </li>
+                    <li class="field">
+                        @*<input id="form1_practice_name" name="practice_name" class="text input" type="text" placeholder="Practice Name" required="required">*@
+                        @Html.TextBoxFor(model => model.PracticeName, new Dictionary<string, object> { { "class", "text input" }, { "placeholder", "Practice Name" }, { "required", "required" } })
+                    </li>
+                    <li class="field">
+                        @* <input id="form1_email" name="email" class="email input" type="email" placeholder="you@company.com" required="required">*@
+                        @Html.TextBoxFor(model => model.Email, new Dictionary<string, object> { { "class", "email input" }, { "placeholder", "you@company.com" }, { "required", "required" }, { "type", "email" } })
+                    </li>
+                    <li class="field">
+                        @* <input id="form1_phone" name="phone" class="text input" type="text" placeholder="text Number" required="required">*@
+                        @Html.TextBoxFor(model => model.PhoneNumber, new Dictionary<string, object> { { "class", "text input" }, { "placeholder", "Phone Number" }, { "required", "required" } })
+                    </li>
+                    <li class="field">
+                        @*<textarea id="form1_message" name="message" class="input textarea" cols="30" rows="4" placeholder="Comments" required="required"></textarea>*@
+                        @Html.TextAreaFor(model => model.Comments, new Dictionary<string, object> { { "class", "input textarea" }, { "placeholder", "Comments" }, { "required", "required" } })
+                    </li>
+                    <li class="medium default btn"><input id="form1_submit" name="submit" value="Send" type="submit"><input type="hidden" name="cms-form" value=""></li>
+                </ul>
+                <article class="four columns push_one">
+                    <h2>Contact Us</h2>
+                    <p>Phone: <span class="tele" style="color: #0d86a8;">(317)570-5841</span><br><a href="mailto:rsbohra@gmail.com">pricing@intellinfotech.com</a></p>
+                    <p>10909 Alamosa Dr.<br>Suite 100<br>Fishers IN 46038</p>
+                </article>
+            }
+            @*</form>*@
+        </section>
+        <div id="footer">
+            <div class="row">
+                <div class="nine columns">
+                    <div class="row hide-on-phones">
+                        <ul class="foot-links four columns">
+                            <li class="group-head"><a href="/patient-portal-overview">Patient Portal</a></li>
+                            <li><a href="/results-manager">Results Manager</a></li>
+                            <li><a href="/marketing-manager">Marketing Manager</a></li>
+                            <li><a href="/personal-health-record">Personal Health Record</a></li>
+                        </ul>
+                        <ul class="foot-links four columns">
+                            <li class="group-head"><a href="/integration-engine-overview">Accountable Care Solutions</a></li>
+                            <li><a href="/hospitals">For Hospitals</a></li>
+                            <li><a href="/reference-labs">Reference Labs</a></li>
+                            <li><a href="/hie-connectivity">HIE Connectivity</a></li>
+                        </ul>
+                        <ul class="foot-links four columns">
+                            <li class="group-head"><a href="/information-exchange-overview">Health Information Exchange</a></li>
+                            <li><a href="/coordination-care">Coordination of Care</a></li>
+                            <li><a href="/patient-engagement">Patient Engagement</a></li>
+                            <li><a href="/accountable-care">Accountable Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="row space hide-on-phones">
+                        <ul class="foot-links four columns">
+                            <li class="group-head"><a href="/who-we-serve/">Who We Serve</a></li>
+                            <li><a href="/who-we-serve/solutions-physician-practices">Physician Practices</a></li>
+                            <li><a href="/who-we-serve/solutions-hospitals">Hospitals</a></li>
+                            <li><a href="/who-we-serve/solutions-patients">Patients</a></li>
+                            <li><a href="/who-we-serve/solutions-employers">Employers</a></li>
+                            <li><a href="/who-we-serve/solutions-ehr-vendors">EHR Vendors</a></li>
+                            <li><a href="/who-we-serve/solutions-resellers">Resellers</a></li>
+                        </ul>
+                        <ul class="foot-links four columns">
+                            <li class="group-head"><a href="/about/">About Intelligent Infotech</a></li>
+                            <li><a href="/about/leadership/">Leadership</a></li>
+                            <li><a href="/about/partners">Partners</a></li>
+                            <li><a href="/about/careers">Careers</a></li>
+                        </ul>
+                        <ul class="foot-links four columns">
+                            <li class="group-head"><a href="/resources">Resources</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/news-events/">News &amp; Events</a></li>
+                            <li><a href="/meaningful-use/">Meaningful Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="three columns">
+                    <p>Questions?</p>
+                    <div class="medium primary btn"><a href="@Url.Action("Contact","Account")">Contact Us</a></div>
+    <p class="space">Or Call (317)570-5841</p>
+    <div>
+
+    </div>
+</div>
+            </div>
+            <div class="row">
+                <div class="three columns push_nine">
+                    <p class="mice-type">©2014 Intelligent Infotech | (317)570-5841</p>
+
+                </div>
+            </div>
+</body>
+</html>

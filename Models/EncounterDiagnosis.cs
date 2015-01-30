@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
+
+namespace HealthPortal.Models
+{
+    public class EncounterDiagnosis
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
+        public Int32 DiagnosisId { get; set; }
+        public string UserId { get; set; }
+        public string Diagnosis { get; set; }
+        public string SNOMEDCT { get; set; }
+        public string StartDate { get; set; }
+        public string Status { get; set; }
+        public string EncounterType { get; set; }
+    }
+}

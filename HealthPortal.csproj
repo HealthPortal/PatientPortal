@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94489AA4-AA04-4502-9F1C-3E0D9F68A203}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthPortal</RootNamespace>
+    <AssemblyName>HealthPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.4.1.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorPDF">
+      <HintPath>..\packages\RazorPDF.1.0.0\lib\net40\RazorPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CustomHandleErrorAttribute.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdmissionsController.cs" />
+    <Compile Include="Controllers\AllergiesController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
+    <Compile Include="Controllers\AppointmentNew.cs" />
+    <Compile Include="Controllers\AuthenticateUserController.cs" />
+    <Compile Include="Controllers\AuthModel.cs" />
+    <Compile Include="Controllers\CognFunctStatusController.cs" />
+    <Compile Include="Controllers\EncounterDiagnosisController.cs" />
+    <Compile Include="Controllers\EncounterInformationsController.cs" />
+    <Compile Include="Controllers\HealthactivityController.cs" />
+    <Compile Include="Controllers\InsuranceBillingController.cs" />
+    <Compile Include="Controllers\Result.cs" />
+    <Compile Include="Controllers\UpdateInfo.cs" />
+    <Compile Include="Controllers\ViewInsBillPdfController.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\AppointmentRepository.cs" />
+    <Compile Include="Models\AuthModel.cs" />
+    <Compile Include="Models\EncounterReportViewModel.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExistingPatientController.cs" />
+    <Compile Include="Controllers\LabResultController.cs" />
+    <Compile Include="Controllers\Message.cs" />
+    <Compile Include="Controllers\ReasonForHospitalController.cs" />
+    <Compile Include="Controllers\SocialHistoriesController.cs" />
+    <Compile Include="Controllers\ViewReportController.cs" />
+    <Compile Include="Models\aspnet_Roles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_UsersInRoles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthenticationUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthUser.cs" />
+    <Compile Include="Controllers\BinaryContentResult.cs" />
+    <Compile Include="Controllers\CarePlansController.cs" />
+    <Compile Include="Controllers\CCDAViewController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\ConversationController.cs" />
+    <Compile Include="Controllers\ConversationsController.cs" />
+    <Compile Include="Controllers\DemographicsController.cs" />
+    <Compile Include="Controllers\DiagnosisController.cs" />
+    <Compile Include="Controllers\EncountersController.cs" />
+    <Compile Include="Controllers\GetAccessUsers.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImmunizationsController.cs" />
+    <Compile Include="Controllers\LabsController.cs" />
+    <Compile Include="Controllers\LoginviewModel.cs" />
+    <Compile Include="Controllers\MedicationsController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\MyDaysController.cs" />
+    <Compile Include="Controllers\PatientDetailsController.cs" />
+    <Compile Include="Controllers\PatientDemographicsController.cs" />
+    <Compile Include="Controllers\PatientsController.cs" />
+    <Compile Include="Controllers\PdfModel.cs" />
+    <Compile Include="Controllers\PDFViewController.cs" />
+    <Compile Include="Controllers\PhyAllergiesController.cs" />
+    <Compile Include="Controllers\PhyMedicationsController.cs" />
+    <Compile Include="Controllers\PhyProceduresController.cs" />
+    <Compile Include="Controllers\PhysicianDetailsController.cs" />
+    <Compile Include="Controllers\PhysiciansController.cs" />
+    <Compile Include="Controllers\ProblemsController.cs" />
+    <Compile Include="Controllers\ProceduresController.cs" />
+    <Compile Include="Controllers\TransmitController.cs" />
+    <Compile Include="Controllers\UploadImageController.cs" />
+    <Compile Include="Controllers\VaccinationsController.cs" />
+    <Compile Include="Controllers\VerificationController.cs" />
+    <Compile Include="Controllers\VitalsController.cs" />
+    <Compile Include="Controllers\WallPostController.cs" />
+    <Compile Include="Controllers\XmlResult.cs" />
+    <Compile Include="Models\Admission.cs" />
+    <Compile Include="Models\Allergy.cs" />
+    <Compile Include="Models\CarePlan.cs" />
+    <Compile Include="Models\CarePlanModel.cs" />
+    <Compile Include="Models\CognitiveAndFunctionalStatus.cs" />
+    <Compile Include="Models\CognitiveFunctionalModel.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ConversationsDetail.cs" />
+    <Compile Include="Models\Demographic.cs" />
+    <Compile Include="Models\Diagnosi.cs" />
+    <Compile Include="Models\Encounter.cs" />
+    <Compile Include="Models\EncounterDiagnosis.cs" />
+    <Compile Include="Models\EncounterDiagnosisModel.cs" />
+    <Compile Include="Models\EncounterInfoModel.cs" />
+    <Compile Include="Models\EncounterInformation.cs" />
+    <Compile Include="Models\EncounterReport.cs" />
+    <Compile Include="Models\EncounterReportModel.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
+    <Compile Include="Models\ExistingPatient.cs" />
+    <Compile Include="Models\HealthActivityModel.cs" />
+    <Compile Include="Models\IAppointment.cs" />
+    <Compile Include="Models\ICarePlanRepository.cs" />
+    <Compile Include="Models\ICognitiveFunctionalStatus.cs" />
+    <Compile Include="Models\IEncounterDiagnosis.cs" />
+    <Compile Include="Models\IEncounterInformation.cs" />
+    <Compile Include="Models\IEncounterReport.cs" />
+    <Compile Include="Models\IInsuranceBillRepository.cs" />
+    <Compile Include="Models\ILabResult.cs" />
+    <Compile Include="Models\IMessageReport.cs" />
+    <Compile Include="Models\Immunization.cs" />
+    <Compile Include="Models\InsuranceBilling.cs" />
+    <Compile Include="Models\InsuranceBillingViewModel.cs" />
+    <Compile Include="Models\InsuranceBillRepository.cs" />
+    <Compile Include="Models\IPatientRepository.cs" />
+    <Compile Include="Models\IReasonhospitalizaion.cs" />
+    <Compile Include="Models\ISocialHistory.cs" />
+    <Compile Include="Models\IVitalsRepository.cs" />
+    <Compile Include="Models\Lab.cs" />
+    <Compile Include="Models\LabResult.cs" />
+    <Compile Include="Models\LabResultModel.cs" />
+    <Compile Include="Models\Medication.cs" />
+    <Compile Include="Models\MedicationAllergie.cs" />
+    <Compile Include="Models\MessageReport.cs" />
+    <Compile Include="Models\MessageReportModel.cs" />
+    <Compile Include="Models\MessageReportViewModel.cs" />
+    <Compile Include="Models\MessagesDetail.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyDay.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientDetail.cs" />
+    <Compile Include="Models\PatientRepository.cs" />
+    <Compile Include="Models\PDFViewModel.cs" />
+    <Compile Include="Models\PhyMedication.cs" />
+    <Compile Include="Models\PhysicianImage.cs" />
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostComment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Problem.cs" />
+    <Compile Include="Models\Procedure.cs" />
+    <Compile Include="Models\ProcedureDetail.cs" />
+    <Compile Include="Models\ReasonForHospitalization.cs" />
+    <Compile Include="Models\ReasonHospitalModel.cs" />
+    <Compile Include="Models\SocialHistory.cs" />
+    <Compile Include="Models\SocialHistoryModel.cs" />
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vaccination.cs" />
+    <Compile Include="Controllers\WatchListsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AdmissionModel.cs" />
+    <Compile Include="Models\AllergyModel.cs" />
+    <Compile Include="Models\ConversationModel.cs" />
+    <Compile Include="Models\CustomAuthorize.cs" />
+    <Compile Include="Models\DemographicsModel.cs" />
+    <Compile Include="Models\DiagnosisModel.cs" />
+    <Compile Include="Models\EncountersModel.cs" />
+    <Compile Include="Models\IAdmissionsRepository.cs" />
+    <Compile Include="Models\IAllergyRepository.cs" />
+    <Compile Include="Models\IConversationRepository.cs" />
+    <Compile Include="Models\IdemographicsRepository.cs" />
+    <Compile Include="Models\IDiagnosisRepository.cs" />
+    <Compile Include="Models\IEncountersRepository.cs" />
+    <Compile Include="Models\IImmunizationsRepository.cs" />
+    <Compile Include="Models\ILabRepository.cs" />
+    <Compile Include="Models\ILoginModel.cs" />
+    <Compile Include="Models\IMedicationRepository.cs" />
+    <Compile Include="Models\IMessagesRepository.cs" />
+    <Compile Include="Models\ImmunizationModel.cs" />
+    <Compile Include="Models\IMyDayRepository.cs" />
+    <Compile Include="Models\IPatientdetailRepository.cs" />
+    <Compile Include="Models\IPatientMDRepository.cs" />
+    <Compile Include="Models\IPhyAllergyRepository.cs" />
+    <Compile Include="Models\IPhyMedicationsRepository.cs" />
+    <Compile Include="Models\IPhyProceduresRepository.cs" />
+    <Compile Include="Models\IPhysicianDetailsRepository.cs" />
+    <Compile Include="Models\IPhysicianRepository.cs" />
+    <Compile Include="Models\IProblemRepository.cs" />
+    <Compile Include="Models\IProcedureRepository.cs" />
+    <Compile Include="Models\IVaccinationRepository.cs" />
+    <Compile Include="Models\IWatchListRepository.cs" />
+    <Compile Include="Models\LabsModel.cs" />
+    <Compile Include="Models\MedicationModel.cs" />
+    <Compile Include="Models\MessagesModel.cs" />
+    <Compile Include="Models\MyDayModel.cs" />
+    <Compile Include="Models\MyHttpControllerHandler.cs" />
+    <Compile Include="Models\MyHttpControllerRouteHandler.cs" />
+    <Compile Include="Models\MyPhysician.cs" />
+    <Compile Include="Models\PatientDetailsModel.cs" />
+    <Compile Include="Models\PatientMD.cs" />
+    <Compile Include="Models\PatientMDRepository.cs" />
+    <Compile Include="Models\PhyAllergyModel.cs" />
+    <Compile Include="Models\PhyMedicationModel.cs" />
+    <Compile Include="Models\PhyProceduresModel.cs" />
+    <Compile Include="Models\PhysicianDetailsModel.cs" />
+    <Compile Include="Models\PhysicianModel.cs" />
+    <Compile Include="Models\ProblemModel.cs" />
+    <Compile Include="Models\ProcedureModel.cs" />
+    <Compile Include="Models\SessionableControllerHandler.cs" />
+    <Compile Include="Models\SessionStateRouteHandler.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\VaccinationModel.cs" />
+    <Compile Include="Models\ViewModels.cs" />
+    <Compile Include="Models\VitalSign.cs" />
+    <Compile Include="Models\VitalsModel.cs" />
+    <Compile Include="Models\WatchList.cs" />
+    <Compile Include="Models\WatchListModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Account\Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Verify.aspx.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\Verify.aspx.designer.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\LogOnUserControl.ascx.cs">
+      <DependentUpon>LogOnUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\LogOnUserControl.ascx.designer.cs">
+      <DependentUpon>LogOnUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\HealthPortal.dll" />
+    <Content Include="bin\HealthPortal.pdb" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MongoDB.Bson.dll" />
+    <Content Include="bin\MongoDB.Bson.xml" />
+    <Content Include="bin\MongoDB.Driver.dll" />
+    <Content Include="bin\MongoDB.Driver.xml" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\RazorPDF.dll" />
+    <Content Include="bin\System.Net.Http.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Net.Http.WebRequest.dll" />
+    <Content Include="bin\System.Net.Http.WebRequest.xml" />
+    <Content Include="bin\System.Net.Http.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="css\existingpatient.css" />
+    <Content Include="css\addpatient.css" />
+    <Content Include="css\css.css" />
+    <Content Include="css\gumby.css" />
+    <Content Include="css\HomeCss\grid.css" />
+    <Content Include="css\HomeCss\ie.css" />
+    <Content Include="css\HomeCss\reset.css" />
+    <Content Include="css\HomeCss\style.css" />
+    <Content Include="css\newlogin.css" />
+    <Content Include="css\newwire.css" />
+    <Content Include="css\oldwireframe.css" />
+    <Content Include="css\tcal.css" />
+    <Content Include="css\theme.default.css" />
+    <Content Include="css\wireframe.css" />
+    <Content Include="custom\cs_arrow_down.png" />
+    <Content Include="custom\cs_arrow_down_hover.png" />
+    <Content Include="custom\cs_arrow_up.png" />
+    <Content Include="custom\cs_arrow_up_hover.png" />
+    <Content Include="custom\level_n-1.png" />
+    <Content Include="custom\level_n-2.png" />
+    <Content Include="custom\level_n-3.png" />
+    <Content Include="custom\manage_arrow_down.png" />
+    <Content Include="custom\manage_arrow_down_hover.png" />
+    <Content Include="custom\manage_arrow_up.png" />
+    <Content Include="custom\manage_arrow_up_hover.png" />
+    <Content Include="custom\menu_arrow_left.png" />
+    <Content Include="custom\menu_arrow_left_hover.png" />
+    <Content Include="custom\menu_arrow_right.png" />
+    <Content Include="custom\menu_arrow_right_hover.png" />
+    <Content Include="custom\signout.png" />
+    <Content Include="custom\signout_hover.png" />
+    <Content Include="custom\tlp_amber_2.png" />
+    <Content Include="custom\tlp_amber_2_fsisac.png" />
+    <Content Include="custom\tlp_green_2.png" />
+    <Content Include="custom\tlp_green_2_fsisac.png" />
+    <Content Include="custom\tlp_red_2.png" />
+    <Content Include="custom\tlp_red_2_fsisac.png" />
+    <Content Include="custom\tlp_white_2.png" />
+    <Content Include="custom\tlp_white_2_fsisac.png" />
+    <Content Include="HealthPortal.Publish.xml" />
+    <Content Include="Images\attention.png" />
+    <Content Include="Images\Backgrnd.jpg" />
+    <Content Include="Images\bgcube.jpg" />
+    <Content Include="Images\big-check.png" />
+    <Content Include="Images\cal.gif" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\Cross.jpg" />
+    <Content Include="Images\cs_arrow_down.png" />
+    <Content Include="Images\cs_arrow_up.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\first.gif" />
+    <Content Include="Images\hospital-background.jpg" />
+    <Content Include="Images\Icons1.jpg" />
+    <Content Include="Images\Icons2.jpg" />
+    <Content Include="Images\last.gif" />
+    <Content Include="Images\LastFinal.png" />
+    <Content Include="Images\leftpaneltop.jpg" />
+    <Content Include="Images\library-icon.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\MyLogo.gif" />
+    <Content Include="Images\MyLogo.png" />
+    <Content Include="Images\newlogo.jpg" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\next_mon.gif" />
+    <Content Include="Images\next_year.gif" />
+    <Content Include="Images\no_cal.gif" />
+    <Content Include="Images\patient-portal1.gif" />
+    <Content Include="Images\prev.gif" />
+    <Content Include="Images\prev_mon.gif" />
+    <Content Include="Images\prev_year.gif" />
+    <Content Include="Images\success.png" />
+    <Content Include="Images\tabs-bg.jpg" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Images\warning.png" />
+    <Content Include="img\a8a56c1d-203c-4c53-9d95-972dec7a2ef5.png" />
+    <Content Include="img\Auth.png" />
+    <Content Include="img\border.png" />
+    <Content Include="img\controls.png" />
+    <Content Include="img\footer-nav-communities.gif" />
+    <Content Include="img\footer-nav-practice.gif" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\loading_background.png" />
+    <Content Include="img\Meds.png" />
+    <Content Include="img\Messages.png" />
+    <Content Include="img\overlay.png" />
+    <Content Include="img\phy.jpg" />
+    <Content Include="img\pp-features-all.gif" />
+    <Content Include="img\slideback.png" />
+    <Content Include="img\slideforward.png" />
+    <Content Include="img\sprite.png" />
+    <Content Include="img\transmit.png" />
+    <Content Include="img\View.png" />
+    <Content Include="obj\Debug\HealthPortal.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HealthPortal.dll" />
+    <Content Include="obj\Debug\HealthPortal.pdb" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model2.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model2.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\PatientDemo.Designer.cs.dll" />
+    <Content Include="obj\Release\CSAutoParameterize.parameters.xml" />
+    <Content Include="obj\Release\HealthPortal.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\HealthPortal.dll" />
+    <Content Include="obj\Release\HealthPortal.pdb" />
+    <Content Include="obj\Release\Package\FilePreviewParameter.xml" />
+    <Content Include="obj\Release\Package\HealthPortal.SourceManifest.xml" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\HealthPortal.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\itextsharp.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\MongoDB.Bson.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\MongoDB.Driver.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\RazorPDF.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Net.Http.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Net.Http.Formatting.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Net.Http.WebRequest.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Helpers.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Http.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Http.WebHost.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Mvc.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Optimization.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Providers.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Razor.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\WebGrease.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\Site.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery-ui.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\bootstrap-responsive.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\bootstrap.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\jquery.jscrollpane.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\login.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\newwire.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\oldwireframe.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\pdfstyle.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\phynewwire.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\physician.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\wireframe.css" />
+    <Content Include="obj\Release\Package\PackageTmp\css\working.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Global.asax" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\HealthCare.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\HealthCare1.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\HealthCare2.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\img.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\img1.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\img2.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\Patient.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\Patient1.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\Patient2.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\Physician.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\Physician1.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\HealthImages\Physician2.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\ico\favicon.ico" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\accent.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\bullet.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\heroAccent.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList0.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList1.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList2.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList3.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList4.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList5.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList6.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList7.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList8.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\orderedList9.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\profileimages\1.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Images\profileimages\user.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\4455a2ba-9240-4497-8f95-cd454b801908.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\a8a56c1d-203c-4c53-9d95-972dec7a2ef5.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\b6c625f5-653a-429f-b134-5b4d128ce4e8.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\c4f316e8-10e9-4d6c-b5a4-77d6888050fa.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\dr.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\dr2.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\fuelband.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\glyphicons-halflings.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\Heena.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\Icons_120x120_allscripts.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\Icons_120x120_physconn.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\images.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\ins-1.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\ins-2.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\lab.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\marygrant.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\me.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\mole-icon.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\nike.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\pharm.jpg" />
+    <Content Include="obj\Release\Package\PackageTmp\img\phys-sprite.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\sjh-brand-sprite.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\sjo.htm" />
+    <Content Include="obj\Release\Package\PackageTmp\img\staticmap.png" />
+    <Content Include="obj\Release\Package\PackageTmp\img\wikipedia.png" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\affix.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\application.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\appnew.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\appnew1.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\backbone-min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\backbone.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\backbonevalidation.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-alert.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-button.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-carousel.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-popover.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-tooltip.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-transition.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap-typeahead.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstraptab.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\collapse.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\controltab.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\dropdown.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\fortab2.js" />
+    <None Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.7.1.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.autosize-min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.timeago.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="obj\Release\Package\PackageTmp\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.validate.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.validate.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\json2.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\js\jquery.jsscrollpane.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\js\jquery.mousewheel.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\js\jquery.stickysectionheaders.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\js\jquery.timeago.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\js\moment.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\js\mwheelIntent.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\knockout-2.2.0.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\mobile.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\modals.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\modernizr-2.6.2.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\newtab.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\newtrail\apptrial.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\Phyportal.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\scrollspy.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\session.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\underscore-min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\underscore.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\wallpost.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\wallpostnew.js" />
+    <None Include="obj\Release\Package\PackageTmp\Scripts\_references.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\ChangePassword.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\Confirmation.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\LogOn.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\Register.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\Verify.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Account\Welcome.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\About.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\Admin.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\Index.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Shared\Error.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="obj\Release\TempPE\Models.Model1.cs.dll" />
+    <Content Include="obj\Release\TempPE\Models.Model1.Designer.cs.dll" />
+    <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
+    <Content Include="Scripts\gumby.min.js" />
+    <Content Include="Scripts\HomeJs\html5.js" />
+    <Content Include="Scripts\HomeJs\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\HomeJs\PIE.htc" />
+    <Content Include="Scripts\HomeJs\tabs.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.reveal.js" />
+    <Content Include="Scripts\js\jquery.tablePagination.0.5.js" />
+    <Content Include="Scripts\js\jquery.tablesorter.js" />
+    <Content Include="Scripts\js\json2.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\newmobile.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\jquery.jscrollpane.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\pdfstyle.css" />
+    <Content Include="css\phynewwire.css" />
+    <Content Include="css\physician.css" />
+    <Content Include="css\working.css" />
+    <Content Include="ico\favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="HealthImages\HealthCare.jpg" />
+    <Content Include="HealthImages\HealthCare1.jpg" />
+    <Content Include="HealthImages\HealthCare2.jpg" />
+    <Content Include="HealthImages\img.jpg" />
+    <Content Include="HealthImages\img1.jpg" />
+    <Content Include="HealthImages\img2.jpg" />
+    <Content Include="HealthImages\Patient.jpg" />
+    <Content Include="HealthImages\Patient1.jpg" />
+    <Content Include="HealthImages\Patient2.jpg" />
+    <Content Include="HealthImages\Physician.jpg" />
+    <Content Include="HealthImages\Physician1.jpg" />
+    <Content Include="HealthImages\Physician2.jpg" />
+    <Content Include="Images\profileimages\1.png" />
+    <Content Include="Images\profileimages\user.png" />
+    <Content Include="img\4455a2ba-9240-4497-8f95-cd454b801908.png" />
+    <Content Include="img\c4f316e8-10e9-4d6c-b5a4-77d6888050fa.png" />
+    <Content Include="img\dr.jpg" />
+    <Content Include="img\dr2.jpg" />
+    <Content Include="img\fuelband.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\Heena.jpg" />
+    <Content Include="img\b6c625f5-653a-429f-b134-5b4d128ce4e8.png" />
+    <Content Include="img\Icons_120x120_allscripts.png" />
+    <Content Include="img\Icons_120x120_physconn.png" />
+    <Content Include="img\images.jpg" />
+    <Content Include="img\ins-1.png" />
+    <Content Include="img\ins-2.png" />
+    <Content Include="img\lab.jpg" />
+    <Content Include="img\marygrant.jpg" />
+    <Content Include="img\me.jpg" />
+    <Content Include="img\mole-icon.png" />
+    <Content Include="img\nike.jpg" />
+    <Content Include="img\pharm.jpg" />
+    <Content Include="img\phys-sprite.png" />
+    <Content Include="img\sjh-brand-sprite.png" />
+    <Content Include="img\sjo.htm" />
+    <Content Include="img\staticmap.png" />
+    <Content Include="img\wikipedia.png" />
+    <Content Include="Scripts\affix.js" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\backbone-min.js" />
+    <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\backbonevalidation.js" />
+    <Content Include="Scripts\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap-transition.js" />
+    <Content Include="Scripts\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstraptab.js" />
+    <Content Include="Scripts\collapse.js" />
+    <Content Include="Scripts\controltab.js" />
+    <Content Include="Scripts\dropdown.js" />
+    <Content Include="Scripts\fortab2.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.autosize-min.js" />
+    <Content Include="Scripts\jquery.timeago.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\jquery.timeago.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\mobile.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\js\jquery.jsscrollpane.min.js" />
+    <Content Include="Scripts\js\jquery.mousewheel.js" />
+    <Content Include="Scripts\js\jquery.stickysectionheaders.js" />
+    <Content Include="Scripts\js\moment.min.js" />
+    <Content Include="Scripts\js\mwheelIntent.js" />
+    <Content Include="Scripts\modals.js" />
+    <Content Include="Scripts\newtab.js" />
+    <Content Include="Scripts\Patient.js" />
+    <Content Include="Scripts\Phyportal.js" />
+    <Content Include="Scripts\Physician.js" />
+    <Content Include="Scripts\plugins-ck.js" />
+    <Content Include="Scripts\scrollspy.js" />
+    <Content Include="Scripts\session.js" />
+    <Content Include="Scripts\tcal.js" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\wallpost.js" />
+    <Content Include="Scripts\wallpostnew.js" />
+    <Content Include="Views\Account\Confirmation.aspx" />
+    <Content Include="Views\Account\Verify.aspx" />
+    <Content Include="Views\Account\Welcome.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\HomeJs\PIE.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Physician.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\Package\" />
+    <Folder Include="obj\Release\Database\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\Home\" />
+    <Folder Include="obj\Release\TransformWebConfig\transformed\Views\Home\" />
+    <Folder Include="obj\Release\__testMsDeployConnection__\" />
+    <Folder Include="PDFFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PdfLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PDFView\PDFView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PDFView\PDFDownload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="bin\HealthPortal.dll.config" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.ssdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\PatientDemo.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\PatientDemo.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\PatientDemo.ssdl" />
+    <Content Include="obj\Debug\HealthPortal.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\__TestProfilesForFilePreview__\Profile1.pubxml" />
+    <Content Include="obj\Release\CSAutoParameterize\original\Views\Home\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Home\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
+    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Release\edmxResourcesToEmbed\Models\Model1.csdl" />
+    <Content Include="obj\Release\edmxResourcesToEmbed\Models\Model1.msl" />
+    <Content Include="obj\Release\edmxResourcesToEmbed\Models\Model1.ssdl" />
+    <Content Include="obj\Release\HealthPortal.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Release\Package\PackageTmp\Models\Model1.edmx.diagram" />
+    <Content Include="obj\Release\Package\PackageTmp\packages.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\Patient.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\Physician.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\Web.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\PDFView\PDFDownload.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\PDFView\PDFView.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Shared\Site.Master" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Shared\_PdfLayout.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Web.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Views\Transmit\MailPdfAttach.cshtml" />
+    <Content Include="Views\Transmit\MailxmlAttach.cshtml" />
+    <Content Include="Views\UploadImage\Upload.cshtml" />
+    <Content Include="Views\AuthenticateUser\AuthenticateAccess.cshtml" />
+    <Content Include="Views\AuthenticateUser\GetAccessUser.cshtml" />
+    <Content Include="Views\AuthenticateUser\RemoveAccessUser.cshtml" />
+    <Content Include="Views\Verification\Verify.cshtml" />
+    <Content Include="Views\Home\AccessModels.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Contact.cshtml" />
+    <Content Include="Views\Account\SendMail.cshtml" />
+    <Content Include="Views\Home\Patient.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\ExistingPatient\ExistingPatient.cshtml" />
+    <Content Include="Views\ViewReport\Index.cshtml" />
+    <Content Include="Views\ExistingPatient\EditExistingPatient.cshtml" />
+    <Content Include="Views\Home\AddPatientDetails.cshtml" />
+    <Content Include="Views\UploadImage\InscardUpload.cshtml" />
+    <Content Include="Views\UploadImage\InscardUploadImg2.cshtml" />
+    <Content Include="Views\ViewInsBillPdf\InsBillPdf.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56393</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

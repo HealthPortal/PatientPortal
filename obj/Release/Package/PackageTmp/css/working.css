@@ -1,0 +1,10 @@
+/* line 1, ../sass/working.scss */
+a.skinButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5px 15px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}

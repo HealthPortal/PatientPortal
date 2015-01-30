@@ -1,0 +1,110 @@
+﻿
+#msgHolder {
+width:100%;
+border: 7px solid white;
+background: #eee;
+-webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+}
+#msgHolder ul{
+    margin:0px;
+    padding:0px;
+    display: block;
+list-style-type: disc;
+-webkit-margin-before: 0.25em;
+-webkit-margin-after: 0.25em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+
+.postHolder{
+    
+padding: 5px;
+border-bottom: solid 1px #E6E6E6;
+margin: 5px;
+list-style: none;
+background: #eee;
+-webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 15px 0;
+
+}
+
+#msgHolder img{
+
+    
+float: left;
+margin-right: 7px;
+
+}
+.postHolder a{
+    font-weight:bold;
+}
+
+.postHolder p{
+    
+margin: 4px auto 7px 50px;
+
+}
+.postFooter{
+   
+/*font-size: 0.85em;*/
+margin-left: 45px;
+
+}
+.postFooter span{
+  
+color: #7D7D84;
+
+}
+#msgHolder a:hover{text-decoration:underline;}
+#msgHolder a{
+    
+text-decoration: none;
+color: #015BA7;
+font-size:1.1em;
+}
+.postFooter a{
+    
+font-weight: bold;
+
+}
+.postFooter span{
+    font-size:1em;
+}
+
+.commentHolder{
+clear: both;
+background-color: #EEF1F6;
+padding: 5px;
+border-bottom: 1px solid #DEE5EA;
+border-top: 1px solid white;
+list-style: none;
+}
+
+.publishComment{
+    
+text-align: right;
+width: 100%;
+display: none;
+
+}
+.commentTextArea{
+   
+width: 97%;
+border-radius: 7px;
+height: 40px;
+
+}
+
+.btnComment{
+    
+background-color: #5B74A8;
+border: 0 none;
+color: #FFFFFF;
+cursor: pointer;
+font-size: 13px;
+font-weight: bold;
+margin-right: 10px;
+
+text-align: center;
+width: 50px;
+
+}

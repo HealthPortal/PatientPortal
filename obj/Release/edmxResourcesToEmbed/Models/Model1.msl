@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WallModelStoreContainer" CdmEntityContainer="WallEntities">
+    <EntitySetMapping Name="PostComments">
+      <EntityTypeMapping TypeName="WallModel.PostComment">
+        <MappingFragment StoreEntitySet="PostComments">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+          <ScalarProperty Name="CommentedDate" ColumnName="CommentedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="WallModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="PostReceivedBy" ColumnName="PostReceivedBy" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="PostedBy" ColumnName="PostedBy" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="WallModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AvatarExt" ColumnName="AvatarExt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

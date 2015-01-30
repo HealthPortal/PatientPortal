@@ -1,0 +1,2139 @@
+﻿@model HealthPortal.Models.LogOnModel
+@{
+    ViewBag.Title = "Patient";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="" charset="utf-8" />
+    <title>Patient Portal </title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Le styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="../../css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/oldwireframe.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/newwire.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/wireframe.css" rel="Stylesheet" type="text/css" />
+    <link href="../../css/working.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+
+    <script type='text/javascript'>
+        (function (d, t) {
+            var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = '//www.bugherd.com/sidebarv2.js?apikey=ectha9sdh9tzfgzh5tpqag';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+
+        var sess_pollInterval = 60000;
+        var sess_expirationMinutes = 15;
+        var sess_warningMinutes = 14;
+        var sess_intervalID;
+        var sess_lastActivity;
+
+        function initSession() {
+            sess_lastActivity = new Date();
+            sessSetInterval();
+            $(document).bind('keypress.session', function (ed, e) {
+                sessKeyPressed(ed, e);
+            });
+        }
+        function sessSetInterval() {
+            sess_intervalID = setInterval('sessInterval()', sess_pollInterval);
+        }
+        function sessClearInterval() {
+            clearInterval(sess_intervalID);
+        }
+        function sessKeyPressed(ed, e) {
+            sess_lastActivity = new Date();
+        }
+        function sessLogOut() {
+            //window.location.replace = "/";
+            window.location.href = '@Url.Action("LogOff", "Account")';
+
+        }
+        function sessInterval() {
+            var now = new Date();
+            //get milliseconds of differneces
+            var diff = now - sess_lastActivity;
+            //get minutes between differences
+            var diffMins = (diff / 1000 / 60);
+            if (diffMins >= sess_warningMinutes) {
+                //wran before expiring
+                //stop the timer
+                sessClearInterval();
+                //promt for attention
+                var cont = 'Your session will expire in ' + (sess_expirationMinutes - sess_warningMinutes) +
+               ' minutes (as of ' + now.toTimeString() + '), press Yes to remain logged in ' +
+               'or press No to log Out. \nIf you are logged off any changes will be lost.';
+                $('#content').find('p').html(cont);
+                var options = {
+                    "backdrop": "static"
+                }
+                $('#SessionModal').modal(options);
+                var active = "";
+                $('#SessionModal .button').on('click', function () {
+                    if ($(this).hasClass('green')) { active = true; sessionactive(active); }
+                    else if ($(this).hasClass('red')) { active = false; sessionactive(active); }
+                });
+
+
+                function sessionactive(active) {
+
+                    if (active == true) {
+                        now = new Date();
+                        diffMins = (diff / 1000 / 60);
+                        diff = now - sess_lastActivity;
+                        if (diffMins > sess_expirationMinutes) {
+                            sessLogOut();
+                        }
+                        else {
+                            initSession();
+                            sessSetInterval();
+                            sess_lastActivity = new Date();
+                        }
+                    }
+                    else {
+                        sessLogOut();
+                    }
+                }
+            }
+        }
+
+
+        function transmit1click() {
+            document.ccdaform.action = "@Url.Action("MailPdfAttach", "Transmit")";
+            @*document.ccdaform.submit();*@
+        }
+
+        function transmit2click() {
+
+            document.ccdaform.action = "@Url.Action("MailxmlAttach", "Transmit")";
+            @*document.ccdaform.submit();*@
+        }
+
+        function navcollapse() {
+
+            $(".container").find(".navbar").toggleClass("shown");
+            $(".row").find(".sidebar").toggleClass("shown");
+            $(".row").find(".stream").toggleClass("shown");
+            $(".control-panel").find(".affix").toggleClass("shown");
+            $(".controler").find(".nav-tab-wrap").toggleClass("shown");
+            //var span5 = $('.container .row .span5 .controler').width();
+            //var parentWidth = $('.container .row .span5 .controler').offsetParent().width();
+            //$(".container .row .span5 .controler").css("margin-left", "37%");
+            //var percent = 37 + 100 * span5 / parentWidth;
+            //$(".container .row .span7").css("margin-left", percent +"%" );
+            $(".container .span7").toggleClass('madjust');
+        }
+
+        function showHealthrecord() {
+            $('.stream-entries .acc-hide').show();
+            $('.stream-entry--account-settings').hide();
+
+            $(".container").find(".navbar").removeClass("shown");
+            $(".row").find(".sidebar").removeClass("shown");
+            $(".row").find(".stream").removeClass("shown");
+            $(".control-panel").find(".affix").removeClass("shown");
+            $(".controler").find(".nav-tab-wrap").removeClass("shown");
+            $(".row").find(".stream").css({ "opacity": "0", "z-index": "-3" });
+            $(".control-panel").find(".affix").css({ "opacity": "1", "z-index": "3" });
+            $(".container .span7").toggleClass('madjust');
+        }
+        function myhealthactivity() {
+            $('.stream-entries .acc-hide').hide();
+            $('.stream-entry--account-settings').hide();
+            $('.stream-entry--insurance-billing').hide();
+            $(".container").find(".navbar").removeClass("shown");
+            $(".row").find(".sidebar").removeClass("shown");
+            $(".row").find(".stream").removeClass("shown");
+            $(".control-panel").find(".affix").removeClass("shown");
+            $(".controler").find(".nav-tab-wrap").removeClass("shown");
+            $(".row").find(".stream").css({ "opacity": "1", "z-index": "3" });
+            $(".container .span7").toggleClass('madjust');
+            var winWidth = $(window).width();
+            if (winWidth <= 768) {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "-3" });
+            }
+            else {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "3" });
+            }
+
+            $.ajax({
+                url: '@Url.Action("HealthActs", "Healthactivity")',
+                type: 'Post',
+                contentType: "application/json;charset=utf-8",
+                success: function (healthmodels) {
+                    if (healthmodels != null) {
+                        $.each(healthmodels, function (key, value) {
+                            if (value.LabResult != null) {
+                                var templcontent = $('#healthLabResults').find('.entry-wrapper .entry-main');
+                                $(templcontent).find('.entry-header').find('.DatePerformed').html(value.LabResult.DatePerformed);
+                                $(templcontent).find('.entry-body .info-section--table').find('.info-name').html(value.LabResult.OrderableTestName);
+                                $(templcontent).find('.entry-body .info-section--table').find('.meta-labLOINCCode').html(value.LabResult.LONICCode);
+                                $(templcontent).find('.entry-body .info-section--table').find('.meta-TestResultValue').html(value.LabResult.TestResultValue);
+
+                                $('.stream-entry--labresults').addClass('health-stream');
+                                var Labtemp = $('#healthLabResults').html();
+                                $('.stream .stream-entries').append(Labtemp);
+
+                            }
+                            else if (value.AppointmentNew != null) {
+
+                                var tempacontent = $('#healthApptmnt');
+                                $(tempacontent).find('.entry-wrapper').find('.LabDate').html(value.AppointmentNew.Date);
+                                $(tempacontent).find('.entry-main').find('.appt-time').html(value.AppointmentNew.Time);
+                                $(tempacontent).find('.entry-main').find('.reason').html(value.AppointmentNew.Reason);
+                                $(tempacontent).find('.entry-main').find('.Physician').html(value.AppointmentNew.Physician);
+                                $(tempacontent).find('.user-contact .user-contact-info').find('.CenterName').html(value.AppointmentNew.CenterName);
+                                $(tempacontent).find('.user-contact .user-contact-info').find('.info-Address').html(value.AppointmentNew.Address);
+
+                                $('.stream-entry--appointment').addClass('health-stream');
+                                var Aptmnttemp = $('#healthApptmnt').html();
+                                $('.stream .stream-entries').append(Aptmnttemp);
+                            }
+                            else if (value.Medication != null) {
+                                var tempcontent = $('#healthmedications').find('.entry-wrapper .entry-main');
+                                $(tempcontent).find('.entry-header').find('.date-prescription').html(value.Medication.DateOfPrescription);
+                                $(tempcontent).find('.entry-body .medication-info').find('.info-name').html(value.Medication.MedicationsName);
+                                $(tempcontent).find('.entry-body .medication-info').find('.meds-StandardCode').html(value.Medication.StandardCode);
+                                $(tempcontent).find('.entry-body .medication-info').find('.medication--status').html(value.Medication.Status);
+                                $(tempcontent).find('.entry-body .medication-info').find('.medication--sig').html(value.Medication.SIG);
+                                $('.stream-entry--medication').addClass('health-stream');
+                                var medtemp = $('#healthmedications').html();
+                                $('.stream .stream-entries').append(medtemp);
+                            }
+
+                        });
+
+                    }
+                },
+                error: function () {
+                }
+
+            });
+
+        }
+
+        function Shownactivity() {
+            $('.stream-entries .acc-hide').show();
+            $('.stream-entry--account-settings').hide();
+            $(".container").find(".navbar").removeClass("shown");
+            $(".row").find(".sidebar").removeClass("shown");
+            $(".row").find(".stream").removeClass("shown");
+            $(".control-panel").find(".affix").removeClass("shown");
+            $(".controler").find(".nav-tab-wrap").removeClass("shown");
+            $(".row").find(".stream").css({ "opacity": "1", "z-index": "3" });
+            $(".container .span7").toggleClass('madjust');
+            var winWidth = $(window).width();
+            if (winWidth <= 768) {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "-3" });
+            }
+            else {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "3" });
+            }
+
+        }
+
+        function Shownaccountsetting() {
+            $(".container").find(".navbar").removeClass("shown");
+            $(".row").find(".sidebar").removeClass("shown");
+            $(".row").find(".stream").removeClass("shown");
+            $(".control-panel").find(".affix").removeClass("shown");
+            $(".controler").find(".nav-tab-wrap").removeClass("shown");
+            $(".row").find(".stream").css({ "opacity": "1", "z-index": "3" });
+            $(".container .span7").toggleClass('madjust');
+            var winWidth = $(window).width();
+            if (winWidth <= 768) {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "-3" });
+            }
+            else {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "3" });
+            }
+            $('.stream-entries .acc-hide').hide();
+            $('.stream-entry--account-settings').fadeIn('slow');
+        }
+        function Showninsurancebilling() {
+            $(".container").find(".navbar").removeClass("shown");
+            $(".row").find(".sidebar").removeClass("shown");
+            $(".row").find(".stream").removeClass("shown");
+            $(".control-panel").find(".affix").removeClass("shown");
+            $(".controler").find(".nav-tab-wrap").removeClass("shown");
+            $(".row").find(".stream").css({ "opacity": "1", "z-index": "3" });
+            $(".container .span7").toggleClass('madjust');
+            var winWidth = $(window).width();
+            if (winWidth <= 768) {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "-3" });
+            }
+            else {
+                $(".control-panel").find(".affix").css({ "opacity": "0", "z-index": "3" });
+            }
+            $('.stream-entries .acc-hide').hide();
+            $('.stream-entry--insurance-billing').fadeIn('slow');
+        }
+
+        $(document).ready(function () {
+
+            $(window).resize(function () {
+
+                var winWidth = $(window).width();
+                if (winWidth <= 768) {
+
+                    $('.myhlthactivity').click(function () {
+                        $('.span5').find('.controler.affix').addClass('mbshown');
+                        //$(".control-panel").find(".affix").css({ "z-index": "-3 !important" });
+                        $('.stream').removeClass('mbshown');
+                    });
+                    $('.healthrecord').click(function () {
+                        $('.span5').find('.controler.affix').removeClass('mbshown');
+                        $('.stream').addClass('mbshown');
+                    });
+                    $('.Shownactivity').click(function () {
+                        $('.span5').find('.controler.affix').addClass('mbshown');
+                        //$(".control-panel").find(".affix").css({ "z-index": "-3 !important" });
+                        $('.stream').removeClass('mbshown');
+                    });
+                }
+
+            });
+
+            var ipadwidth = $(window).width();
+            if (ipadwidth >= 769 && ipadwidth <= 1024) {
+                var affixwidth = $('.control-panel').find('.controler').width();
+                var affwd = affixwidth + 35;
+
+                $(".container .span7").addClass('madjust');
+                //$('.container').find('.span7.madjust').css("margin-left", affwd + "px");
+                $("<style>.madjust {margin-left :" + affwd + "px}</style>").appendTo("head")
+            }
+
+
+            $('.account-settings--change-password #resetPassword').click(function () {
+                var ChangePasswordModel = {
+                    OldPassword: $('#oldPassword').val(),
+                    NewPassword: $('#newPassword').val(),
+                    ConfirmPassword: $('#repeatPassword').val()
+                };
+                $.ajax({
+                    url: '/Account/ChangePassword/',
+                    type: 'Post',
+                    data: JSON.stringify(ChangePasswordModel),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (result) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (result.Success != null) {
+                            $('#notification').html('<div class="success" style="display: none;">' + result.Success + '<img src="../../Images/close.png"  alt="" class="closen" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (result.Error != null) {
+                            $('#notification').html('<div class="error" style="display: none;">' + result.Error + '<img src="../../Images/close.png" alt="" class="closen" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('.success img, .error img').live('click', function () {
+                $(this).parent().fadeOut('slow', function () {
+                    $(this).remove();
+                });
+            });
+
+
+            $('.account-settings').click(function () {
+                $.ajax({
+                    url: '/Account/PersonalInfo/',
+                    type: 'Post',
+                    contentType: "application/json;charset=utf-8",
+                    success: function (updateinfo) {
+                        $('#EPatientName').val(updateinfo.PatientName);
+                        $('#Sex').val(updateinfo.Sex);
+                        $('#Edob').val(updateinfo.DOB);
+                        $('#EEmailId').val(updateinfo.EmailId);
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            $('#Edit').click(function () {
+                $('.form--fieldset--personal-info').find('.edit').removeAttr('disabled');
+
+            });
+
+            $('#Update').click(function () {
+                var UpdateInfo = {
+                    PatientName: $('#EPatientName').val(),
+                    DOB: $('#Edob').val(),
+                    Sex: $('#Sex').val(),
+                    EmailId: $('#EEmailId').val()
+                };
+                $.ajax({
+                    url: '/Account/UpdatePersonalInfo/',
+                    type: 'Post',
+                    data: JSON.stringify(UpdateInfo),
+                    contentType: "application/json;charset=utf-8",
+                    success: function (result) {
+                        $('.success, .warning, .attention, .information, .error').remove();
+                        if (result.Success != null) {
+                            $('#notify').html('<div class="success" style="display: none;">' + result.Success + '<img src="../../Images/close.png"  alt="" class="closen" /></div>');
+                            $('.success').fadeIn('slow');
+                        }
+                        else if (result.Error != null) {
+                            $('#notify').html('<div class="error" style="display: none;">' + result.Error + '<img src="../../Images/close.png" alt="" class="closen" /></div>');
+                            $('.error').fadeIn('slow');
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+        });
+
+
+
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+
+            var newDate = new Date();
+
+            newDate.setDate(newDate.getDate());
+            $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+            setInterval(function () {
+                var seconds = new Date().getSeconds();
+                $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+            }, 1000);
+
+            setInterval(function () {
+                var minutes = new Date().getMinutes();
+                $("#min").html((minutes < 10 ? "0" : "") + minutes);
+            }, 1000);
+
+            setInterval(function () {
+                var hours = new Date().getHours();
+                $("#hours").html((hours < 10 ? "0" : "") + hours);
+            }, 1000);
+
+
+
+
+        });
+    </script>
+
+</head>
+<body onload="initSession();">
+    <!--<a class="skinButton working" href="#">Skin it</a>-->
+    <input type="hidden" value="@Html.DisplayFor(a=>a.sess_val)" id="UserName" />
+
+    <div id="SessionModal" class="modal hide fade">
+        <div id="heading">
+            Session Timeout-Warning!!
+        </div>
+
+        <div id="content">
+            <p></p>
+
+            <a href="#" data-dismiss="modal" class="button green"><img src="../../Images/tick.png">Yes,Keep Me Signed In!</a>
+
+            <a href="#" data-dismiss="modal" class="button red"><img src="../../Images/cross.png">No,Log Me Out!</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner" id="mobvcard">
+
+                <script id="mobvcardtemplate" type="text/template">
+                    <div class="container">
+                        <button type="button" class="btn btn-navbar" onclick="navcollapse();" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+                            </span>
+                        </button>
+                        <h4 class="navbar-name" data-toggle="dropdown" id="patientname">
+                            @Html.DisplayFor(a => a.sess_val)<span class="caret"></span>
+                        </h4>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0);">@Html.DisplayFor(a => a.sess_val)</a></li>
+                            <li class="divider"></li>
+                            <li><a data-toggle="modal" href="#ViewModal1">View</a></li>
+                            <li><a data-toggle="modal" href="#downloadModal">Download</a></li>
+                            <li><a data-toggle="modal" href="#transmitModal">Transmit</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("LogOff", "Account")">Logout</a></li>
+                        </ul>
+
+                    </div>
+                </script>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="span5 control-panel">
+                <div class="controler affix">
+                    <div id="ptcontrol">
+                    </div>
+                    <script id="vcardtemplate" type="text/template">
+                        <div class="vcard js-vcard clearfix">
+                            <a data-toggle="modal" href="#ProfileModal" class="avatar user-avatar pull-left"><img src="<%= Image %>" /><span id="profilepic"><i class="icon-edit"></i></span></a>
+                            <div class="vcard-info">
+                                <div class="btn-group visible-desktop">
+                                    <a class="btn btn-large" id="patientname">@Html.DisplayFor(a => a.sess_val) </a>
+                                    <a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0);" id="">@Html.DisplayFor(a => a.sess_val)</a></li>
+                                        <li class="divider"></li>
+                                        <li><a data-toggle="modal" href="#ViewModal">View</a></li>
+                                        <li><a data-toggle="modal" href="#downloadModal">Download</a></li>
+                                        <li><a data-toggle="modal" href="#transmitModal">Transmit</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="@Url.Action("LogOff", "Account")">Logout</a></li>
+                                    </ul>
+
+                                </div>
+                                <table class="user-info-table">
+                                    <tbody>
+                                        <tr>
+                                            <th>26 yrs</th>
+                                            <th>6' 4"</th>
+                                            <th><%= Weight%>lbs</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="dob"><%= DateOfBirth%></td>
+                                            <td>(<%= Height%>cm)</td>
+                                            <td>(72kg)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </script>
+                    <div class="app-content stream-entry" style="opacity: 1;">
+                        <div class="nav-tab-wrap">
+                            <ul class="profile-tabs nav nav-tabs">
+                                <li class="profile" id="profile">
+                                    <a href="#app-profile">
+                                        <span>Profile</span>
+                                    </a>
+                                </li>
+                                <li class="vitals" id="vitals">
+                                    <a href="#app-vitals">
+                                        <span>Vitals</span>
+                                    </a>
+                                </li>
+                                <li class="issues" id="issues">
+                                    <a href="#app-issues">
+                                        <span>Issues</span>
+                                    </a>
+                                </li>
+                                <li class="meds" id="meds">
+                                    <a href="#app-meds">
+                                        <span>
+                                            Meds
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="history" id="history">
+                                    <a href="#app-history">
+                                        <span>History</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Profile App -->
+                        <div class="app-pane scroll-pane">
+                            <!-- /profile app -->
+                            <div id="app-profile" class="app-pane-app">
+                                <div class="app-body">
+                                    <div class="phr-data-panel physicians">
+                                        <div class="phr-data--header">
+                                            <div class="h4">
+                                                My Physicians
+                                            </div>
+                                        </div>
+                                        <div class="phr-data--body">
+                                            <script id="profiletemplate" type="text/template">
+                                                <div class="vcard hardblock" data-physican-id="PhysicianID ">
+                                                    <!-- <a href="#" class="user-avatar"><img src="img/avatars/dr.jpg"></a> -->
+                                                    <div class="pull-left">
+                                                        <a href="/#sendMessage/PhysicianID" class="contact-name n">
+                                                            <%= Name %>
+                                                        </a>
+                                                        <p class="meta category">
+                                                        </p>
+                                                        <p class="org">
+                                                        </p>
+                                                        <div class="clearfix address">
+                                                            <span class="street-address">
+                                                                <%= StreetAddress%>
+                                                            </span> <span class="street-address"></span>
+                                                            <br>
+                                                            <span class="locality">
+                                                                <%= Locality %>
+                                                            </span>, <span class="region">
+                                                                <%= Region%>
+                                                            </span> <span class="postal-code">
+                                                                <%=PostalCode%>
+                                                            </span><br>
+                                                            <span class="country"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <a class="hardblock tel primary" href="">Tel:<%= PrimaryPhone%></a> <a href=""
+                                                                                                                               class="btn btn-small new-message" id="<%= Name%>">Send Message</a>
+                                                    </div>
+                                                </div>
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="phr-data-panel pharmacies">
+                                        <div class="phr-data--header">
+                                            <div class="h4">
+                                                My Pharmacies
+                                            </div>
+                                        </div>
+                                        <div class="phr-data--body">
+                                            <!-- <button class="btn edit">Edit Pharmacies</button> -->
+                                            No Pharmacies Available. <a>Add one now?</a>
+                                        </div>
+                                    </div>
+                                    <div class="phr-data-panel emergency-contacts">
+                                        <div class="phr-data--header">
+                                            <div class="h4">
+                                                Emergency Contacts
+                                            </div>
+                                        </div>
+                                        <div class="phr-data--body">
+                                            <!-- <button class="btn edit">Edit Contacts</button> -->
+                                            No Contacts Available. <a>Add one now?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- vitals app -->
+                            <div id="app-vitals" class="app-pane-app">
+                                <script id="vitalstemplate" type="text/template">
+                                    <div class="app-body">
+
+                                        <div class="vital BMI">
+                                            <div class="h4">
+                                                BMI
+                                            </div>
+                                            <div id="table-BMI" class="dataTable">
+                                                <table title="a record of a patients vitals">
+                                                    <tbody>
+
+                                                        <tr>
+
+                                                            <td class="vital--date">
+                                                                <%= RecordedDate%>
+                                                            </td>
+
+                                                            <td class="vital--value">
+                                                                <%= BMI%>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="vital BMI">
+                                            <div class="h4">
+                                                Blood Pressure
+                                            </div>
+                                            <div id="table-BloodPressure" class="dataTable">
+                                                <table title="a record of a patients vitals">
+                                                    <tbody>
+
+                                                        <tr>
+
+                                                            <td class="vital--date">
+                                                                <%= RecordedDate%>
+                                                            </td>
+
+                                                            <td class="vital--value">
+                                                                <%= BloodPressure%>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="vital BMI">
+                                            <div class="h4">
+                                                Height
+                                            </div>
+                                            <div id="table-Height" class="dataTable">
+                                                <table title="a record of a patients vitals">
+                                                    <tbody>
+
+                                                        <tr>
+
+                                                            <td class="vital--date">
+                                                                <%= RecordedDate%>
+                                                            </td>
+
+                                                            <td class="vital--value">
+                                                                <%= Height%>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="vital BMI">
+                                            <div class="h4">
+                                                Weight
+                                            </div>
+                                            <div id="table-Weight" class="dataTable">
+                                                <table title="a record of a patients vitals">
+                                                    <tbody>
+
+                                                        <tr>
+
+                                                            <td class="vital--date">
+                                                                <%=RecordedDate %>
+                                                            </td>
+
+                                                            <td class="vital--value">
+                                                                <%= Weight%>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                            </div>
+                            <!--/vitals app-->
+                            <!-- meds app -->
+                            <!--/meds app-->
+                            <!-- histories app -->
+                            <!--/histories app-->
+                            <div id="app-issues" class="app-pane-app">
+                                <div class="app-body">
+                                    <div class="app-body--block" id="app-issues--allergies">
+                                        <div class="h4">
+                                            Allergies
+                                        </div>
+
+                                        <script id="appissuesallergytemplate" type="text/template">
+                                            <div class="table_collapse issueallerg">
+                                                <div class="collapse-header status">
+                                                    <span class="toggle-pointer"></span><span class="name"><%= Allergen%></span> <span class="status">
+                                                        <%= Status%>
+                                                    </span>
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a record of a patients reaction and the standard Code for an allergy">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    Reaction
+                                                                </th>
+
+                                                                <td>
+                                                                    <%= Reaction%>
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    RxNorm Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= RxNormCode%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </script>
+
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+                                    <div class="app-body--block" id="app-issues--problems">
+                                        <h4>
+                                            Problems
+                                        </h4>
+                                        <script id="appissuesproblemtemplate" type="text/template">
+                                            <div class="table_collapse issueprob">
+                                                <div class="collapse-header status">
+                                                    <span class="toggle-pointer"></span><span class="name"><%= ProblemCause%></span> <span class="status"><%= Status%></span>
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a record of a patients problems and the standard code">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    Problem Reported Date
+                                                                </th>
+                                                                <td>
+                                                                    <%= ProblemReportedDate%>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    Standard Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= StandardCode%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="app-meds" class="app-pane-app">
+                                <div class="app-body">
+                                    <div class="app-body--block" id="app-medications--medication-list">
+                                        <div class="h4">
+                                            Medication List
+                                        </div>
+                                        <script id="app-medstemplate" type="text/template">
+
+                                            <div class="table_collapse medscollap">
+                                                <div class="collapse-header status-PrescriptionStatus">
+                                                    <span class="toggle-pointer"></span><span class="name"><%= MedicationsName%></span>
+                                                    <span class="status"><%= Status%></span>
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a record of a patients medication">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    Dosage Frequency
+                                                                </th>
+                                                                <td>
+                                                                    <%= SIG%>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    Dosage Form
+                                                                </th>
+                                                                <td>
+                                                                    <%= DosageForm%>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    Date Prescribed
+                                                                </th>
+                                                                <td>
+                                                                    <%= DateOfPrescription%>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    RxNorm Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= StandardCode%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="app-history" class="app-pane-app">
+                                <div class="app-body">
+                                    <div class="app-body--block" id="app-history--vaccinations">
+                                        <div class="h4">
+                                            Vaccinations
+                                        </div>
+                                        <script id="apphistoryvaccinetemplate" type="text/template">
+                                            <div class="table_collapse vactbcollapse">
+                                                <div class="collapse-header status">
+                                                    <span class="toggle-pointer"></span><span class="name"><%= VaccineName%></span> <span class="status"><%= VaccineStatus%></span>
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a patients history of immunizations">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    Date Administered
+                                                                </th>
+                                                                <td>
+                                                                    <%= DateAdministered%>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    CVX Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= CVXCode%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+
+                                        </script>
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+                                    <div class="app-body--block" id="app-history--procedures">
+                                        <h4>
+                                            Procedures
+                                        </h4>
+                                        <script id="apphistoryproceduretemplate" type="text/template">
+                                            <div class="table_collapse procdtbcollapse">
+                                                <div class="collapse-header">
+                                                    <span class="toggle-pointer"></span><span class="name"><%=ProcedureName%></span>
+                                                    <span class="status"><%= ProcedureDate%></span>
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a patients history of procedures">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    SNOMEDCT Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= SNOMEDCT%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+                                    <div class="app-body--block" id="app-history--carePlans">
+                                        <h4>
+                                            Care Plans
+                                        </h4>
+                                        <script id="apphistorycareplanstemplate" type="text/template">
+                                            <div class="table_collapse careptbcollapse">
+                                                <div class="collapse-header">
+                                                    <span class="toggle-pointer"></span><span class="name"><%= Goal%></span>
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a patients history of careplans">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="careplan-instructions" colspan="2">
+                                                                    <%= Instructions%>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    SNOMEDCT Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= SNOMEDCT%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+                                    <div class="app-body--block" id="app-history--smokestatus">
+                                        <h4>
+                                            Smoking Status
+                                        </h4>
+                                        <script id="apphistorysmokestatustemplate" type="text/template">
+                                            <div class="table_collapse smoketbcollapse">
+                                                <div class="collapse-header">
+                                                    <span class="toggle-pointer"></span><span class="name"><%= SocialHistoryItem%></span>
+
+                                                </div>
+                                                <div class="collapse-body in">
+                                                    <table title="a patients history of smokingstatus">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    Description
+                                                                </th>
+                                                                <td class="smokestatus-instructions" colspan="2">
+                                                                    <%= Description %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    SNOMEDCT Code
+                                                                </th>
+                                                                <td>
+                                                                    <%= SNOMEDCT%>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <a href="javascript:void(0)" class="panel-viewAll">View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="span7 stream">
+
+                <div class="stream-entries">
+                    <script id="streammessagetemplate" type="text/template">
+                        <div class="stream-entry acc-hide stream-entry_message" id="message" data-message-entry-id="entry-">
+                            <div class="entry-wrapper">
+                                <div class="entry-main">
+                                    <div class="entry-from-user h3">
+                                        <span class="from-user"><%= SenderName %></span> &#8594; <span class="to-user">
+                                            <%= ReceiverName%>
+                                        </span>
+                                    </div>
+                                    <p class="meta meta-ago">
+                                        <%= MessageDateTime%>
+                                    </p>
+                                    <div class="entry-body">
+                                        <%= MessageText%>
+                                    </div>
+                                </div>
+                                <div class="entry_replies hide" id="M<%=MessageID%>">
+                                    <p class="meta meta-ago">
+                                        5 mints ago
+                                    </p>
+                                    <div class="entry-main">
+                                        <div class="entry-body">
+                                            <p>
+                                                <span class="entry-from-user">Mary Grant &mdash; </span>
+                                                Hello There...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="entry_reply-input ">
+                                    <form>
+                                        <textarea title="reply to conversation" placeholder="Enter your reply..."></textarea>
+                                        <button type="submit" class="reply-submit btn btn-small btn-primary pull-right">
+                                            Submit
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <script id="streammedicationstemplate" type="text/template">
+                        <div class="stream-entry acc-hide stream-entry--medication" id="medications">
+                            <div class="entry-wrapper">
+                                <div class="entry-main">
+                                    <div class="entry-header">
+                                        <div class="pull-left">
+                                            <div class="h4">
+                                                Medications
+                                            </div>
+                                            <p class="meta">
+                                                <%= DateOfPrescription%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+
+                                        <div class="medication-info">
+                                            <p class="info-name">
+                                                <%= MedicationsName%>
+                                            </p>
+                                            <p class="pull-left meta">
+                                                <span class="lab-StandardCode"><%= StandardCode%></span>
+                                            </p>
+                                            <div class="pull-right meta">
+                                                Status: <span class="medication--status"><%= Status%></span>
+                                            </div>
+
+                                            <p class="medication--sig">
+                                                <%= SIG%>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <div id="healthmedications" class="hide">
+                        <div class="stream-entry stream-entry--medication">
+                            <div class="entry-wrapper">
+                                <div class="entry-main">
+                                    <div class="entry-header">
+                                        <div class="pull-left">
+                                            <div class="h4">
+                                                Medications
+                                            </div>
+                                            <p class="meta date-prescription">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+
+                                        <div class="medication-info">
+                                            <p class="info-name">
+
+                                            </p>
+                                            <p class="pull-left meta">
+                                                <span class="meds-StandardCode"></span>
+                                            </p>
+                                            <div class="pull-right meta">
+                                                Status: <span class="medication--status"></span>
+                                            </div>
+
+                                            <p class="medication--sig">
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="healthLabResults" class="hide">
+                        <div class="stream-entry stream-entry--labresults">
+                            <div class="entry-wrapper">
+                                <div class="entry-main">
+                                    <h3>Lab Results</h3>
+                                    <p class="meta meta-ago DatePerformed">
+
+                                    </p>
+                                    <div class="entry-body">
+                                        <table class="info-section--table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Test</th>
+                                                    <th>Value/Results</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--  -->
+                                                <tr>
+                                                    <td>
+                                                        <p class="info-name">
+
+                                                        </p>
+                                                        <p class="meta">
+                                                            <span class="meta-labLOINCCode"></span>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="meta-TestResultValue"></span>
+                                                    </td>
+                                                </tr>
+                                                <!--  -->
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="healthApptmnt" class="hide">
+                        <div class="stream-entry stream-entry--appointment">
+                            <div class="entry-wrapper">
+                                <div class="alert alert-error alert-canceled hide">
+                                    This appointment was canceled <span class="moment">today</span>
+                                </div>
+                                <a href="#" class="calendar-day pull-left"><span class="day LabDate"></span></a>
+                                <div class="entry-content" style="background-image:url(http://maps.google.com/maps/api/staticmap?center=33.786745,-117.864246&amp;zoom=13&amp;markers=size:small|33.786745,-117.864246&amp;size=800x500&amp;sensor=true); background-position:-281px -115px; ">
+                                    <div class="entry-main">
+
+                                        <p class="appt-time">
+
+                                        </p>
+                                        <h3 class="reason"> <a href="" class="Physician"></a></h3>
+                                        <div class="user-contact">
+                                            <div class="user-contact-info">
+                                                <h3>
+                                                    <a class="CenterName" href=""></a>
+                                                </h3>
+                                                <p class="info-Address">
+
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="entry_actions">
+                                <a href="" class="btn btn-mini appt-cal">Add To Calendar</a> <a href="#" class="btn btn-mini btn-cancel">Cancel</a>
+                            </div>
+                            <div class="entry_cancel-screen hide">
+                                <div class="cancel-confirm">
+                                    <h5>Are you sure you want to cancel this appointment?</h5>
+                                    <button class="btn btn-danger">No</button> <button class="btn btn-success">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script id="streaminsbilltemplate" type="text/template">
+
+                        <div class="stream-entry stream-page stream-entry--insurance-billing">
+                            <div class="entry-wrapper">
+                                <div class="entry-main">
+                                    <div id="app-insurance" class="app-pane-app active">
+
+                                        <div class="app-body">
+                                            <h4>My Insurance Card <span class="h4-links pull-right"><a href="">Update Images</a></span></h4>
+                                            <a data-toggle="modal" href="#InsuranceModal" class=""><img style="width:400px;height:225px;padding-right:20px;padding-left:20px;" class="insurance-card" src="<%= Image1%>" /><span id="profilepic"><i class="icon-edit"></i></span></a>
+                                            <a data-toggle="modal" href="#InsuranceModalImg2" class=""><img style="width:400px;height:225px;padding-right:20px;padding-left:20px;" class="insurance-card" src="<%= Image2%>" /><span id="profilepic"><i class="icon-edit"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        Charges, Statements &amp; Balances
+                                    </h4>
+                                    <div class="entry-body">
+                                        <p class="pull-left">Questions about your bill? <a href="">Contact Us</a></p>
+                                        <table class="ins-topper pull-right">
+                                            <tbody>
+                                                <tr>
+                                                    <th>$0.00</th>
+                                                    <th>$0.00</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="meta">Past due</td>
+                                                    <td class="meta" style="margin-top: -19px;margin-right: -73px;">
+                                                        TotalBalance
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>$<%= Payments%></td>
+                                                    <td>$<%= Balance%></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="label label-warning label-warning_insurance">
+                                            Unpaid balances may be sent to a collection agency.
+                                        </p>
+                                        <table class="insurance-payments">
+                                            <thead>
+                                                <tr>
+                                                    <th><h3>Payments</h3> <a class="btn-link dropdown" href="">Past 1 year</a></th>
+                                                    <th class="meta" colspan="2">
+                                                        Amount
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="calendar-day pull-left" href="#">
+                                                            <%= Date%>
+                                                            @*<span class="day">13</span>
+                                                                <span class="month">Jul</span>
+                                                                <span class="year">2013</span>*@
+                                                        </a>
+                                                        <div class="pull-left">
+                                                            <a class="contact-name n" href="">
+                                                                @Html.DisplayFor(a => a.sess_val)
+                                                                @*<span class="honorific-prefix">Dr.</span>
+                                                                    <span class="given-name">Jane</span>
+                                                                    <span class="family-name">Doe</span>
+                                                                    <span class="honorific-suffix">Ph.D.</span>*@
+                                                            </a>
+                                                            <p class="meta category">Primary Care Physician</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="" class="insurance_pdf" style="font-weight: bold;font-size: 13px;">View PDF</a>
+                                                        @*<a data-toggle="modal" href="#InsBillingView" ></a>*@
+                                                    </td>
+                                                    <td class="amount">
+                                                        $<%= Charges%>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </script>
+                    <div class="stream-entry stream-page stream-entry--account-settings hide account-settings--Personal-Info">
+                        <div class="reg--step-header">
+                            <h3>Personal Information</h3>
+                            <a href="" class="form--checkoff pull-right"></a>
+                        </div>
+                        <!-- Start Emails -->
+                        <fieldset class="form--fieldset--personal-info">
+                            <div id="notify"></div>
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="PatientName">Patient Name</label>
+                                    <input type="text" name="PatientName" disabled id="EPatientName" class="edit form--PatientName">
+                                </span>
+                            </div>
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="Sex">Sex</label>
+                                    <input type="text" name="Sex" disabled id="Sex" class="edit form--Sex">
+                                </span>
+                            </div>
+
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="dob">Date Of Birth</label>
+                                    <input type="text" name="dob" disabled id="Edob" class="datepicker edit form--dob">
+                                </span>
+                            </div>
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="EmailId">EmailId</label>
+                                    <input type="email" name="EmailId" disabled id="EEmailId" class="edit form--EmailId" style="width: 269px;height: 30px;">
+                                </span>
+                            </div>
+                        </fieldset>
+                        <!-- End Emails -->
+                        <div class="reg--step-footer">
+                            <a href="#" id="Update" class="btn btn-large btn-primary pull-right">Update</a>
+                            <a href="#" id="Edit" class="btn btn-large btn-primary pull-right">Edit</a>
+                        </div>
+                    </div>
+                    <div class="stream-entry stream-page stream-entry--account-settings hide account-settings--change-password">
+                        <div class="reg--step-header">
+                            <h3>Reset Password</h3>
+                            <a href="" class="form--checkoff pull-right"></a>
+                        </div>
+                        <!-- Start Emails -->
+                        <fieldset class="form--fieldset--change-pass">
+                            <div id="notification"></div>
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="oldPassword">Old Password</label>
+                                    <input type="password" name="oldPassword" id="oldPassword" class="form--password">
+                                </span>
+                            </div>
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" name="newPassword" id="newPassword" class="form--password">
+                                </span>
+                            </div>
+
+                            <div class="form--field-container">
+                                <span>
+                                    <label for="repeatPassword">Repeat</label>
+                                    <input type="password" name="repeatPassword" id="repeatPassword" class="form--password">
+                                </span>
+                            </div>
+                        </fieldset>
+                        <!-- End Emails -->
+                        <div class="reg--step-footer">
+                            <a href="#" id="resetPassword" class="btn btn-large btn-primary pull-right">Reset Password</a>
+                        </div>
+                    </div>
+                    <script id="streamappointmentsstemplate" type="text/template">
+                        <div class="stream-entry acc-hide stream-entry--appointment" id="appointment">
+                            <div class="entry-wrapper">
+                                <div class="alert alert-error alert-canceled hide">
+                                    This appointment was canceled <span class="moment">today</span>
+                                </div>
+                                <a href="#" class="calendar-day pull-left"><span class="day"><%= Date %></span></a>
+                                <div class="entry-content" style="background-image:url(http://maps.google.com/maps/api/staticmap?center=33.786745,-117.864246&amp;zoom=13&amp;markers=size:small|33.786745,-117.864246&amp;size=800x500&amp;sensor=true); background-position:-281px -115px; ">
+                                    <div class="entry-main">
+
+                                        <p class="appt-time">
+                                            <%= Time %>
+                                        </p>
+                                        <h3> <%= Reason %> - <a href=""><%= Physician %></a></h3>
+                                        <div class="user-contact">
+                                            <div class="user-contact-info">
+                                                <h3>
+                                                    <a href=""><%= CenterName %></a>
+                                                </h3>
+                                                <p>
+                                                    <%= Address %>
+                                                </p>
+                                                @*<p>
+                                                        Suite 213
+                                                    </p>
+                                                    <p>
+                                                        Napa, CA 94558
+                                                    </p>*@
+                                                @*<table class="user-contact-nums">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    Office
+                                                                </th>
+                                                                <td>
+                                                                    (714) 633-9111
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>*@
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="entry_actions">
+                                <a href="" class="btn btn-mini appt-cal">Add To Calendar</a> <a href="#" class="btn btn-mini btn-cancel">Cancel</a>
+                            </div>
+                            <div class="entry_cancel-screen hide">
+                                <div class="cancel-confirm">
+                                    <h5>Are you sure you want to cancel this appointment?</h5>
+                                    <button class="btn btn-danger">No</button> <button class="btn btn-success" data-id="<%= _id%>">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <script id="streamlabresultstemplate" type="text/template">
+                        <div class="stream-entry acc-hide stream-entry--labresults" id="labresults">
+                            <div class="entry-wrapper">
+                                <div class="entry-main">
+                                    <h3>Lab Results</h3>
+                                    <p class="meta meta-ago">
+                                        <%=DatePerformed%>
+                                    </p>
+                                    <div class="entry-body">
+                                        <table class="info-section--table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Test</th>
+                                                    <th>Value/Results</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--  -->
+                                                <tr>
+                                                    <td>
+                                                        <p class="info-name">
+                                                            <%=OrderableTestName%>
+                                                        </p>
+                                                        <p class="meta">
+                                                            <span id="labLOINCCode"><%=LONICCode%></span>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <span class="lab-result--value">  <%=TestResultValue%></span>
+                                                    </td>
+                                                </tr>
+                                                <!--  -->
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <div class="stream-entry stream-entry--message stream-entry--message_new fade hide">
+                        <div class="entry-header_message_new">
+                            <h3>New Message for <a class="sendTo" href=""></a></h3>
+                            <input type="hidden" class="sendTo" id="txtrecvr" />
+                        </div>
+                        <div class="entry-wrapper">
+
+                            <div class="entry-main_message_new">
+                                <div class="entry-body">
+                                    <textarea class="new-message-textarea" id="txtMessage" data-bind="value: newMessage, jqAutoresize: {}" style="height:3em;" placeholder="Enter your message here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="entry-footer">
+                            <a href="" class="btn btn-cancel pull-left">Cancel</a>
+                            <a href="" class="btn btn-primary btn-post-message pull-right" data-url="/Wall/SavePost" id="btnShare" data-bind="click: addPost">Send</a>
+                        </div>
+                    </div>
+                    <div class="stream-entry stream-authorization stream-authorization_new fade hide">
+                        <form action="@Url.Action("AuthenticateAccess", "AuthenticateUser")" method="post" enctype="multipart/form-data">
+                            <div class=" entry-header_message_new">
+                                <input type="hidden" class="userid" id="userprofile" />
+                            </div>
+                            <div class="entry-wrapper">
+
+                                <div class="entry-main_message_new">
+                                    <div class="entry-body">
+                                        <h3>Grant access to Email Id:</h3>
+                                        <input type="text" name="EmailId" class="emailid" id="emailid" /><br />
+                                        <input type="checkbox" class="check" name="type" value="med" />Medications<br />
+                                        <input type="checkbox" class="check" name="type" value="msg" />Messages<br />
+                                        <input type="checkbox" class="allcheck" name="type" value="a" />All<br />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry-footer">
+                                <a href="" class="btn btn-cancel pull-left">Cancel</a>
+                                <button class="btn btn-primary btn-post-message pull-right" id="btnAdd">Add</button>
+                                <a href="" class="btn btn-primary btn-post-message pull-right" id="btncurrent">Current Access User</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="stream-entry stream-authcurrent stream-authcurrent_new fade hide">
+                        <form id="authcurrent_new" action="@Url.Action("RemoveAccessUser","AuthenticateUser")" method="post" enctype="multipart/form-data">
+
+                            <div class="entry-header_message_new">
+                                <input type="hidden" class="userid" id="userprofile" />
+                            </div>
+                            <div class="entry-wrapper">
+                                <div class="entry-main_message_new">
+                                    <div class="entry-body">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry-footer">
+                                <a href="" class="btn btn-cancel pull-left">Cancel</a>
+                                <a href="" class="btn btn-primary btn-post-message pull-right" id="btnAdd">Add</a>
+                                <button type="submit" class="btn btn-primary btn-post-message pull-right" id="btnremove">Remove</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <ul id="msgHolder" class="acc-hide" data-bind="foreach: posts">
+                        <li class="postHolder">
+                            <img data-bind="attr: { src: PostedByAvatar }"><p><a data-bind="text: PostedByName"></a>: <span data-bind="    html: Message"></span></p>
+                            <div class="postFooter">
+                                <span class="timeago" data-bind="text: PostedDate"></span>&nbsp;<a class="linkComment" href="#" data-bind="    click: toggleComment">Comment</a>
+                                <div class="commentSection">
+                                    <ul data-bind="foreach: PostComments">
+                                        <li class="commentHolder">
+                                            <img data-bind="attr: { src: CommentedByAvatar }"><p><a data-bind="text: CommentedByName"></a>: <span data-bind="    html: Message"></span></p>
+                                            <div class="commentFooter"> <span class="timeago" data-bind="text: CommentedDate"></span>&nbsp;</div>
+                                        </li>
+                                    </ul>
+                                    <div style="display: block" class="publishComment">
+                                        <textarea class="commentTextArea" data-bind="value: newCommentMessage, jqAutoresize: {}" placeholder="write a comment..."></textarea>
+                                        <input type="button" value="Comment" class="btnComment" data-bind="click: addComment" />
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- stream -->
+            <div class="span3 sidebar">
+
+                <div class="sidebar-nav">
+                    <ul class="nav nav-main">
+                        <li class="visible-phone">
+                            <a href="#health-record" class="healthrecord" onclick="showHealthrecord();">
+                                <span class="name">Health Record</span>
+                            </a>
+                        </li>
+                        <li class="split activity active">
+                            <a href="#stream-entry" class="myhlthactivity" onclick="myhealthactivity();">My Health Activity</a>
+                        </li>
+                        <li class="sub" style="display: none">
+                            <ul class="activity-filter">
+                                <li class="selected">
+                                    <input id="filter-all" type="checkbox" checked="checked">
+                                    <label for="filter-prescriptions">
+                                        Prescriptions
+                                    </label>
+                                </li>
+                                <li class="selected">
+                                    <input id="filter-encounters" type="checkbox" checked="checked">
+                                    <label for="filter-encounters">
+                                        Encounters
+                                    </label>
+                                </li>
+                                <li class="selected">
+                                    <input id="filter-results" type="checkbox" checked="checked">
+                                    <label for="filter-results">
+                                        Lab Results
+                                    </label>
+                                </li>
+                                <li class="selected">
+                                    <input id="filter-records" type="checkbox" checked="checked">
+                                    <label for="filter-records">
+                                        Health Record Entries
+                                    </label>
+                                </li>
+                                <li class="selected">
+                                    <input id="filter-nike" type="checkbox" checked="checked">
+                                    <label for="filter-nike">
+                                        Nike +
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="split messages"><a href="#msgHolder" class="Shownactivity" onclick="Shownactivity();">Messages</a></li>
+                        <li class="appointments"><a href="#appointment" class="Shownactivity" onclick="Shownactivity();">Appointments</a></li>
+                        <li class="medications"><a href="#medications" class="Shownactivity" onclick="Shownactivity();">Medications</a></li>
+                        <li class="labResults"><a href="#labresults" class="Shownactivity" onclick="Shownactivity();">Lab Results</a></li>
+                        <li class="insurance-billing"><a href="#insurance-billing" class="Shownactivity" onclick="Showninsurancebilling();">Insurance &amp; Billing</a></li>
+                        <li class="account-settings"><a href="#account-settings" class="Shownactivity" onclick="Shownaccountsetting();">Account Settings</a></li>
+                        <li class="authorization"><a href="#" class="Shownactivity" onclick="Shownactivity();">Authorization</a></li>
+                    </ul>
+                    <ul class="nav nav-liketo hidden-phone">
+                        <li class="nav-header">I'd like to:</li>
+                        <li><a class="locator" href="#doctor">Find a Doctor</a></li>
+                        <li><a class="locator" href="#documents">Find Documents</a></li>
+                        <li><a class="locator" href="#events">Find Classes and Events</a></li>
+                        <li><a href="#">Create an appointment</a></li>
+                        <li><a href="#">Refill a prescription</a></li>
+                    </ul>
+                    <ul class="nav nav-supplement">
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                    <div class="clock">
+                        <div id="Date"></div>
+                        <ul>
+                            <li id="hours"> </li>
+                            <li id="point">:</li>
+                            <li id="min"> </li>
+                            <li id="point">:</li>
+                            <li id="sec"> </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!--/.well -->
+
+            </div>
+
+            <div id="downloadModal" class="modal hide fade" style="display: none;">
+                <div class="alert alert-info modal-alert hide">
+                    <img alt="loading..." src="/img/login-loader.gif" class="pull-left loader" />
+                    <div class="h5">
+                        Preparing if this type download download else view if of health record
+                    </div>
+                </div>
+                <div class="alert alert-error modal-alert hide">
+                    <div class="h5 alert-text">
+                        There has been an error if this.type_download downloading else viewing if
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                    <div class="h4">
+                        Download Your Health Record
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="span9">
+                            <div class="pull-left download-pdf">
+                                <h6>
+                                    PDF
+                                </h6>
+                                <p>
+                                    This file is in a format that can easily be printed. if this type file Download
+                                    else Print if this if you need a human readable version of your record.
+                                </p>
+                                <div class="sample-pdf">
+                                </div>
+                            </div>
+                            <div class="pull-right download-ccda">
+                                <h6>
+                                    CCDA
+                                </h6>
+                                <p>
+                                    This file would be appropriate for giving to a new doctor to import your information
+                                    into their systems.
+                                </p>
+                                <div class="sample-ccda">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row download-pdf-ccda">
+                        <div class="span9">
+                            <div class="pull-left">
+                                <form id="download-pdf" action="@Url.Action("DownloadPdf", "PDFView")" method="get">
+                                    <label for="encounter-type-download-pdf">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="encounter-type-download-pdf" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">
+                                        PDF
+                                    </button>
+
+                                </form>
+                            </div>
+                            <div class="pull-right">
+                                <form id="download-ccda" action="@Url.Action("DownloadXml", "CCDAView")" method="get">
+                                    <label for="encounter-type-download-ccda">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="encounter-type-download-ccda" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select><br>
+                                    <button type="submit" class="btn btn-primary">
+                                        CCDA
+                                    </button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <div id="ViewModal" class="modal hide fade" style="display: none;">
+                <div class="alert alert-info modal-alert hide">
+                    <img alt="loading..." src="/img/login-loader.gif" class="pull-left loader" />
+                    <div class="h5">
+                        Preparing view of health record
+                    </div>
+                </div>
+                <div class="alert alert-error modal-alert hide">
+                    <div class="h5 alert-text">
+                        There has been an error viewing
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                    <div class="h4">
+                        View Your Health Record
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="span9">
+                            <div class="pull-left download-pdf">
+                                <h6>
+                                    PDF
+                                </h6>
+                                <p>
+                                    This file is in a format that can easily be printed. if this type file Download
+                                    else Print if this if you need a human readable version of your record.
+                                </p>
+                                <div class="sample-pdf">
+                                </div>
+                            </div>
+                            <div class="pull-right download-ccda">
+                                <h6>
+                                    CCDA
+                                </h6>
+                                <p>
+                                    This file would be appropriate for giving to a new doctor to import your information
+                                    into their systems.
+                                </p>
+                                <div class="sample-ccda">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row download-pdf-ccda">
+                        <div class="span9">
+                            <div class="pull-left">
+                                <form id="Form1" action="@Url.Action("Index", "PDFView")" method="get">
+                                    <label for="encounter-type-download-pdf">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="Select1" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">
+                                        PDF
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="pull-right">
+                                <form id="Form2" action="@Url.Action("Index","CCDAView")" method="get">
+                                    <label for="encounter-type-download-ccda">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="Select2" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">
+                                        CCDA
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <div id="ViewModal1" class="modal hide fade" style="display: none;">
+                <div class="alert alert-info modal-alert hide">
+                    <img alt="loading..." src="/img/login-loader.gif" class="pull-left loader" />
+                    <div class="h5">
+                        Preparing view of health record
+                    </div>
+                </div>
+                <div class="alert alert-error modal-alert hide">
+                    <div class="h5 alert-text">
+                        There has been an error viewing
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                    <div class="h4">
+                        View Your Health Record
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="span9">
+                            <div class="pull-left download-pdf">
+                                <h6>
+                                    PDF
+                                </h6>
+                                <p>
+                                    This file is in a format that can easily be printed. if this type file Download
+                                    else Print if this if you need a human readable version of your record.
+                                </p>
+                                <div class="sample-pdf">
+                                </div>
+                            </div>
+                            <div class="pull-right download-ccda">
+                                <h6>
+                                    CCDA
+                                </h6>
+                                <p>
+                                    This file would be appropriate for giving to a new doctor to import your information
+                                    into their systems.
+                                </p>
+                                <div class="sample-ccda">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row download-pdf-ccda">
+                        <div class="span9">
+                            <div class="pull-left">
+                                <form id="Form1" action="@Url.Action("Index", "PDFView")" method="get">
+                                    <label for="encounter-type-download-pdf">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="Select1" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">
+                                        PDF
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="pull-right">
+                                <form id="Form2" action="@Url.Action("Index","CCDAView")" method="get">
+                                    <label for="encounter-type-download-ccda">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="Select2" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">
+                                        CCDA
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <div id="transmitModal" class="modal hide fade" style="display: none;">
+                <div class="alert alert-info modal-alert hide">
+                    <img alt="loading..." src="/img/login-loader.gif" class="pull-left loader" />
+                    <div class="h5">
+                        Transmitting health record
+                    </div>
+                </div>
+                <div class="alert alert-success modal-alert hide">
+                    <div class="h5 alert-text">
+                        Successful Transmit
+                    </div>
+                </div>
+                <div class="alert alert-error modal-alert hide">
+                    <div class="h5 alert-text">
+                        There has been an error transmitting
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <a href="" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                    <div class="h4">
+                        Transmit Your Health Record
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This feature will allow you to transmit your health record in the format of your
+                        choosing to an email recipient.
+                    </p>
+                    <form id="transmit-pdf-ccda" name="ccdaform" method="get">
+                        <div class="row">
+                            <div class="span9">
+                                <label for="RecipientEmail">
+                                    Email to transmit to:
+                                </label>
+                                <input type="text" id="RecipientEmail" name="RecipientEmail" placeholder="email@address.com" />
+                            </div>
+                        </div>
+                        <div class="row transmit-pdf-ccda">
+                            <div class="span9">
+                                <div class="pull-left">
+                                    <label for="encounter-type-txt">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype" id="Select1" class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary submit" onclick="transmit1click();">
+                                        Human Readable
+                                    </button>
+                                </div>
+                                <div class="pull-right">
+                                    <label for="encounter-type-transmit-ccda">
+                                        Select Encounter Type:
+                                    </label>
+                                    <select name="encountertype1" data-encounter-type="CCDA" id="encounter-type-transmit-ccda"
+                                            class="encounter-type">
+                                        <option value="P">Inpatient and Ambulatory</option>
+                                        <option value="I">Inpatient</option>
+                                        <option value="A">Ambulatory</option>
+                                        <option value="T">Inpatient Referral/Transition of care</option>
+                                        <option value="R">Ambulatory Referral/Transition of care</option>
+                                    </select>
+                                    <button type="submit" onclick="transmit2click();" class="btn btn-primary submit">
+                                        CCDA
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                    <!-- <button type="submit" id="transmitButton" class="btn pull-right btn-primary">Send</button> -->
+                </div>
+            </div>
+            <div id="ProfileModal" class="modal hide fade" style="display: none;">
+                <div class="modal-header">
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row download-pdf-ccda">
+                        <div class="span9">
+                            <div>
+                                <form action="@Url.Action("Upload", "UploadImage")" method="post" enctype="multipart/form-data">
+                                    <fieldset>
+                                        <legend> Upload Image </legend>
+                                        <input id="file" type="file" name="file" />
+                                        <br />
+                                        <input type="submit" value="Submit" />
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <div id="InsuranceModal" class="modal hide fade" style="display: none;">
+                <div class="modal-header">
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row download-pdf-ccda">
+                        <div class="span9">
+                            <div>
+                                <form action="@Url.Action("InscardUpload", "UploadImage")" method="post" enctype="multipart/form-data">
+                                    <fieldset>
+                                        <legend> Upload Image </legend>
+                                        <input id="file1" type="file" name="file1" />
+                                        <br />
+                                        <input type="submit" value="Submit" />
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <div id="InsuranceModalImg2" class="modal hide fade" style="display: none;">
+                <div class="modal-header">
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row download-pdf-ccda">
+                        <div class="span9">
+                            <div>
+                                <form action="@Url.Action("InscardUploadImg2", "UploadImage")" method="post" enctype="multipart/form-data">
+                                    <fieldset>
+                                        <legend> Upload Image </legend>
+                                        <input id="file2" type="file" name="file2" />
+                                        <br />
+                                        <input type="submit" value="Submit" />
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <div id="InsBillingView" class="modal hide fade" style="display: none;">
+                <div class="alert alert-info modal-alert hide">
+                    <img alt="loading..." src="/img/login-loader.gif" class="pull-left loader" />
+                    <div class="h5">
+                        Preparing view of health record
+                    </div>
+                </div>
+                <div class="modal-body">
+
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn pull-right" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!--/.fluid-container-->
+        <!--/row-->
+        <script src="../../Scripts/jquery-ui-1.8.20.min.js" type="text/javascript"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"
+                type="text/javascript"></script>
+        <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAgX46Zz0gPcCZI6_T68BvV7erBMSqoU0Y&amp;sensor=true"
+                type="text/javascript"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.7/jquery.flot.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/underscore-min.js" type="text/javascript"></script>
+        <script src="../../Scripts/backbone-min.js" type="text/javascript"></script>
+        <script src="../../Scripts/json2.js" type="text/javascript"></script>
+        <script src="../../Scripts/dropdown.js" type="text/javascript"></script>
+        <script src="../../Scripts/controltab.js" type="text/javascript"></script>
+        <script src="../../Scripts/Patient.js" type="text/javascript"></script>
+        <script src="../../Scripts/scrollspy.js" type="text/javascript"></script>
+        <script src="../../Scripts/collapse.js" type="text/javascript"></script>
+        <script src="../../Scripts/modals.js" type="text/javascript"></script>
+        <script src="../../Scripts/affix.js" type="text/javascript"></script>
+        <script src="../../Scripts/session.js" type="text/javascript"></script>
+        <script src="~/Scripts/wallpostnew.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.autosize-min.js" type="text/javascript"></script>
+        <script src="~/Scripts/knockout-2.2.0.js" type="text/javascript"></script>
+        <script src="../../Scripts/js/jquery.timeago.js" type="text/javascript"></script>
+        <script src="../../Scripts/js/jquery.jsscrollpane.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/js/jquery.mousewheel.js" type="text/javascript"></script>
+        <script src="../../Scripts/js/mwheelIntent.js" type="text/javascript"></script>
+        <script src="../../Scripts/newmobile.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

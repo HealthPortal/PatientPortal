@@ -1,0 +1,2606 @@
+/****** Collection: Admissions ******/
+{
+ "AdmissionsId": 1,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport":"Discharge_Report.pdf","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"AdmissionsId": 2,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Martin Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+ "AdmissionsId": 3,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": " Discharge_Report.pdf","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"      
+}
+
+{ 
+ "AdmissionsId": 4,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Martin Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+ "AdmissionsId": 5,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"AdmissionsId": 6,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": " Discharge_Report.pdf","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"AdmissionsId": 7,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"AdmissionsId": 8,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Martin Rodriguez","DischargeReport": " Discharge_Report.pdf","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"AdmissionsId": 9,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": " Discharge_Report.pdf","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"AdmissionsId": 10,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Martin Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"AdmissionsId": 11,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"AdmissionsId": 12,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Martin Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"AdmissionsId": 13,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": " Discharge_Report.pdf","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"AdmissionsId": 14,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Martin Rodriguez","DischargeReport": " Discharge_Report.pdf","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"AdmissionsId": 15,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"AdmissionsId": 16,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": " Discharge_Report.pdf","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"AdmissionsId": 17,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+    "AdmissionsId": 18,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Martin Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"AdmissionsId": 19,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr.Martin Rodriguez","DischargeReport": " Discharge_Report.pdf","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"AdmissionsId": 20,"Cause": "High Fever","Date": "26/11/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Martin Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"AdmissionsId": 21,"Cause": "High Fever","Date": "01/16/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+{
+"AdmissionsId": 22,"Cause": "High Fever","Date": "01/26/12","AdmittingDept": "Emergency","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": " Discharge_Report.pdf","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+/************* Collection: Allergies ************/
+{
+"AllergiesId": 1,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"AllergiesId": 2,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"AllergiesId": 3,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"AllergiesId": 4,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"AllergiesId": 5,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"AllergiesId": 6,"Name": "foodAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"AllergiesId": 7,"Name": "foodAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"AllergiesId": 8,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"AllergiesId": 9,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"AllergiesId": 10,"Name": "foodAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"AllergiesId": 11,"Name": "foodAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"AllergiesId": 12,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"AllergiesId": 13,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"AllergiesId": 14,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"AllergiesId": 15,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"AllergiesId": 16,"Name": "foodAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"AllergiesId": 17,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"AllergiesId": 18,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"AllergiesId": 19,"Name": "foodAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"AllergiesId": 20,"Name": "SkinAllergies","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"AllergiesId": 21,"Name": "Bees","Severity": "Severe","Reaction": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+/****** Collection: Appointments  ******/
+
+{
+"AppointmentsID": 3,"Date": "10/20/2012","Reason": "Follow Up","Time": "3:00 Am","Physician": "Dr.Martin Green","CenterName": "Queen of the Valley Medical Center","Address": "1000 Trancas St.Suite 213 Napa,CA 94558 Office (714) 633-9111","UserId": "62147107-b260-4cd3-8ae4-378c92b09f19","EncounterType": "P,I,A"
+}
+
+{
+"AppointmentsID": 3,"Date": "11/20/2012","Reason": "Dealing With High Blood Pressure","Time": "12:00 Am","Physician": "Dr.Martin Green","CenterName": "Queen of the Valley Medical Center","Address": "1000 Trancas St.Suite 213 Napa,CA 94558 Office(714) 633-9111","UserId": "62147107-b260-4cd3-8ae4-378c92b09f19","EncounterType": "P,I,A"
+}
+
+{
+"AppointmentsID": 2,"Physician": "Dr.Martin Green","CenterName": "Queen of the Valley Medical Center","Date": "09/20/2012","Address": "1000 Trancas St.Suite 213 Napa,CA 94558 Office(714) 633-9111","Reason": "Dealing With High Blood Pressure","Time": "12:00 Am","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","EncounterType": "P,I,A"
+}
+
+{
+"AppointmentsID": 1,"Physician": "dr.martin green","CenterName": "My Valley","Date": "11/04/2014","Address": "104,krishna kunj","Reason": "I've changed my insurance to Blue Cross","Time": "10:00 Am","UserId": "47debfc9-ea47-49e7-8b7c-0a5ee283e89a","EncounterType": "I"
+}
+
+
+/****** Collection: CarePlan  ******/
+
+
+{
+"CarePlanid": 2,"Goal": "weight gain","Instructions": "Eat energy dense foods.","SNOMEDCT": "289169006","UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","EncounterType": "P,A"
+}
+
+{
+"CarePlanid": 1,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 3,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "a24e6d62-414d-4434-bbe3-b3eec3a026e7","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 4,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 5,"Goal": "","Instructions": "","SNOMEDCT": "","UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 6,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "1f68f959-f892-4a13-bc41-211241106810","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 7,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 8,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 9,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 11,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 12,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 14,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 15,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","EncounterType": "I,A"
+}
+
+{
+"CarePlanid": 14,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "d85e4b46-8e97-4309-9c67-181740a26358","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 15,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 16,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 17,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 18,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "6c330889-34e7-427d-b380-dd8bed319179","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 20,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 21,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "4270eb23-a738-465c-9551-4ee73bc69515","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 22,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 23,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 24,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 25,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 27,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 28,"Goal": "weight loss","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "289169006","UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d","EncounterType": "P,I,A"
+}
+
+{
+"CarePlanid": 29,"Goal": "","Instructions": "diet and exercise counseling provided during visit","SNOMEDCT": "","UserId": "505457f2-5235-4fb3-be33-9790602b1ebd","EncounterType": "I,A"
+}
+
+
+/****** Collection: CareTeam  ******/
+
+{
+"CareTeamid": 1,"ProvidersName": "Dr. Martin Green","ProvidersOfficeContactInformation": "Tel: 555-555-1122","ProvidersOfficeAddress": "Get Well Clinic, 1002 Healthcare Dr. Portland, OR 97005","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+{
+"CareTeamid": 2,"ProvidersName": "Dr.Martin Rodriguez","ProvidersOfficeContactInformation": "Tel: 555-555-1122","ProvidersOfficeAddress": "Get Well Clinic, 1002 Healthcare Dr. Portland, OR 97005","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+{
+"CareTeamid": 3,"ProvidersName": "Dr.Fred Green","ProvidersOfficeContactInformation": "Tel: 555-555-1122","ProvidersOfficeAddress": "Get Well Clinic, 1002 Healthcare Dr. Portland, OR 97005","UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8"
+}
+{
+"CareTeamid": 4,"ProvidersName": "Dr.Martin Rodriguez","ProvidersOfficeContactInformation": "Tel: 555-555-1122","ProvidersOfficeAddress": "Get Well Clinic, 1002 Healthcare Dr. Portland, OR 97005","UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8"
+}
+
+
+/****** Collection: CognitiveAndFunctionalStatus   ******/
+
+{
+"CognitiveStatusId": 1,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "P,I"
+}
+
+{
+"CognitiveStatusId": 2,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "P,I"
+}
+
+{
+"CognitiveStatusId": 3,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "P,I"
+}
+
+{
+"CognitiveStatusId": 4,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "P,I"
+}
+
+{
+"CognitiveStatusId": 5,"UserId": "id","Description": "dhhggdf","SNOMEDCT": "545464","ReportedDate": "08/05/2014","Status": "active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 6,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 7,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 8,"UserId": "1f68f959-f892-4a13-bc41-211241106810","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 9,"UserId": "1f68f959-f892-4a13-bc41-211241106810","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 10,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 11,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 12,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 13,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 14,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 15,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 16,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 17,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 18,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","Description": "Dependence on Walking Stick", "SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 19,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","Description": "Memory impairment","SNOMEDCT": "386807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 20,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 21,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","Description": "Memory impairment","SNOMEDCT": "336807006","ReportedDate": "10/5/2012","Status": "Active","EncounterType": "I,A"
+}
+
+{
+"CognitiveStatusId": 22,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","Description": "Dependence on Walking Stick","SNOMEDCT": "105504002","ReportedDate": "9/20/2012","Status": "Active","EncounterType": "I,A"
+}
+
+/****** Collection: Demographics  ******/
+
+{
+"DemoId": 1,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"DemoId": 2,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"DemoId": 3,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"DemoId": 4,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"DemoId": 5,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"DemoId": 6,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"DemoId": 7,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"DemoId": 8,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"DemoId": 9,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"DemoId": 10,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"DemoId": 11,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"DemoId": 12,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"DemoId": 13,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"DemoId": 14,"Name": "Green Martin","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "154lbs","Height": "7ft 1in","Age": "23yrs","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"DemoId": 15,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"DemoId": 16,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"DemoId": 17,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"DemoId": 18,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"DemoId": 19,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"DemoId": 20,"Name": "John Smith","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "164lbs","Height": "6ft 1in","Age": "31yrs","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"DemoId": 21,"Name": "MaryGrant","NextOfKin": "Flip Wilson","Address": "555 Elm Street Elm Grove, CA 55555-5555","PrimaryPhone": "(555) 555-5555","Weight": "160lbs","Height": "6ft 1in","Age": "23yrs","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+
+/****** Collection: Diagnosis   ******/
+
+{
+"DiagnosisId": 1,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"DiagnosisId": 2,"Cause": "Influenza","Date": "01/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Martin Green","DischargeReport": "Discharge_Report.pdf","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"DiagnosisId": 3,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"DiagnosisId": 4,"Cause": "Influenza","Date": "01/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Martin Green","DischargeReport": "Discharge_Report.pdf","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"DiagnosisId": 5,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"DiagnosisId": 6,"Cause": "Influenza","Date": "01/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"DiagnosisId": 7,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"DiagnosisId": 8,"Cause": "Influenza","Date": "01/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Martin Green","DischargeReport": "Discharge_Report.pdf","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"DiagnosisId": 9,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"DiagnosisId": 10,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Martin Green","DischargeReport": "Discharge_Report.pdf","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"DiagnosisId": 11,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"DiagnosisId": 12,"Cause": "Influenza","Date": "01/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Martin Green","DischargeReport": "Discharge_Report.pdf","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"DiagnosisId": 13,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"DiagnosisId": 14,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{"DiagnosisId": 15,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"DiagnosisId": 16,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"DiagnosisId": 17,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"DiagnosisId": 18,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr.Rahul Sharma","DischargeReport": "Discharge_Report.pdf","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"DiagnosisId": 19,"Cause": "Influenza","Date": "01/16/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"DiagnosisId": 20,"Cause": "Influenza","Date": "07/7/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Martin Green","DischargeReport": "Discharge_Report.pdf","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"DiagnosisId": 21,"Cause": "Influenza","Date": "01/26/12","AdmittingDept": "Urgent Care","Facility": "Local Medical Center","Doctor": "Dr Fred Smith","DischargeReport": "Discharge_Report.pdf","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+
+/****** Collection: EncounterDiagnosis   ******/
+
+
+{
+"DiagnosisId": 1,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "P,I"
+}
+
+{
+"DiagnosisId": 2,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "11/02/2012","Status": "Active","EncounterType": "P,I"
+}
+
+{
+"DiagnosisId": 3,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 4,"UserId": "1f68f959-f892-4a13-bc41-211241106810","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 5,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 6,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 7,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 8,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 9,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 10,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 11,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+{
+"DiagnosisId": 12,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","Diagnosis": "Neoplasm of accessory sinus","SNOMEDCT": "126675008","StartDate": "10/02/2012","Status": "Active","EncounterType": "I"
+}
+
+
+/****** Collection: EncounterInformation   ******/
+
+{
+"EncounterID": 1,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "P,I"
+}
+
+{
+"EncounterID": 2,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "P"
+}
+
+{
+"EncounterID": 3,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "P"
+}
+
+{
+"EncounterID": 4,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","AdmissionDate": "10/2/2012","DischargeDate": "8/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "P"
+}
+
+{
+"EncounterID": 5,"UserId": "id","AdmissionDate": null,"DischargeDate": "08/08/2014","Admissiondischargelocation": "admission and discharge","EncounterType": "I"
+}
+
+{
+"EncounterID": 6,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 7,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 8,"UserId": "1f68f959-f892-4a13-bc41-211241106810","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 9,"UserId": "1f68f959-f892-4a13-bc41-211241106810","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 10,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 11,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 12,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 13,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 14,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 15,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 16,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 17,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 18,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 19,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 20,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Get Well Clinic 1002 Healthcare Dr. Portland OR 97005","EncounterType": "I"
+}
+
+{
+"EncounterID": 21,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+{
+"EncounterID": 22,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","AdmissionDate": "10/2/2012","DischargeDate": "10/5/2012","Admissiondischargelocation": "Local Community Hospital, 1000 Hospital Way, Portland OR","EncounterType": "I"
+}
+
+
+/****** Collection: EncounterReport   ******/
+
+{
+"EncounterId": 1,"Encounterdate": {"$date": "2012-01-16T05:05:00.000Z"},"Action": "Add new Medication","PatientId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","UpdateBy": "bbfaab9a-0e62-4f99-85d9-3ee99f152131","RefId": "52fb3e47e4b029a79cd17c60"
+}
+
+{
+"EncounterId": 7,"Encounterdate": {"$date": "2014-01-16T05:05:00.000Z"},"Action": "updated new Vitals","PatientId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","UpdateBy": "bbfaab9a-0e62-4f99-85d9-3ee99f152131","RefId": "52fb4cd6e4b029a79cd17ce0"
+}
+
+{
+"EncounterId": 8,"Encounterdate": {"$date": "2014-12-28T01:28:11.064Z"},"Action": "update LabResult","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","UpdateBy": "bbfaab9a-0e62-4f99-85d9-3ee99f152131","RefId": "5332a70ee4b08a2cfdd33a6e"
+}
+
+{
+"EncounterId": 9,"Encounterdate": {"$date": "2015-01-20T12:19:09.372Z"},"Action": "View Report","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","UpdateBy": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","RefId": "Report"
+}
+
+{
+"EncounterId": 10,"Encounterdate": {"$date": "2015-01-27T09:59:03.556Z"},"Action": "Add new Vaccination","PatientId": "505457f2-5235-4fb3-be33-9790602b1ebd","UpdateBy": "505457f2-5235-4fb3-be33-9790602b1ebd","RefId": "54c76167d9b6ec043cdc1469"
+}
+
+{
+"EncounterId": 11,"Encounterdate": {"$date": "2015-01-27T09:59:03.915Z"},"Action": "Add new ProcedureDetail","PatientId": "505457f2-5235-4fb3-be33-9790602b1ebd","UpdateBy": "505457f2-5235-4fb3-be33-9790602b1ebd","RefId": "54c76167d9b6ec043cdc146b"
+}
+
+{
+"EncounterId": 12,"Encounterdate": {"$date": "2015-01-27T09:59:04.429Z"},"Action": "Add new SocialHistory","PatientId": "505457f2-5235-4fb3-be33-9790602b1ebd","UpdateBy": "505457f2-5235-4fb3-be33-9790602b1ebd","RefId": "54c76168d9b6ec043cdc146d"
+}
+
+{
+"EncounterId": 13,"Encounterdate": {"$date": "2015-01-27T09:59:04.944Z"},"Action": "Add new CarePlan","PatientId": "505457f2-5235-4fb3-be33-9790602b1ebd","UpdateBy": "505457f2-5235-4fb3-be33-9790602b1ebd","RefId": "54c76168d9b6ec043cdc146f"
+}
+
+
+{
+"EncounterId": 14,"Encounterdate": {"$date": "2015-01-27T09:59:51.542Z"},"Action": "Add new LabResult","PatientId": "505457f2-5235-4fb3-be33-9790602b1ebd","UpdateBy": "bbfaab9a-0e62-4f99-85d9-3ee99f152131","RefId": "54c76197d9b6ec043cdc1471"
+}
+
+{
+"EncounterId": 15,"Encounterdate": {"$date": "2015-01-27T10:01:48.340Z"},"Action": "Add new PatientMD","PatientId": "505457f2-5235-4fb3-be33-9790602b1ebd","UpdateBy": "505457f2-5235-4fb3-be33-9790602b1ebd","RefId": "54c7620cd9b6ec043cdc1473"
+}
+
+
+/****** Collection: Encounters   ******/
+
+
+{
+"EncounterId": 1,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"EncounterId": 2,"Date": "01/7/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Martin Green","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"EncounterId": 3,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"EncounterId": 4,"Date": "01/7/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Martin Green","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"EncounterId": 5,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Martin Rodriguez","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"EncounterId": 6,"Date": "01/7/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Martin Green","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"EncounterId": 7,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"EncounterId": 8,"Date": "01/7/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Martin Green","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"EncounterId": 9,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"EncounterId": 10,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Martin Rodriguez","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"EncounterId": 11,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"EncounterId": 12,"Date": "11/26/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"EncounterId": 13,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Rahul Sharma","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"EncounterId": 14,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"EncounterId": 15,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Martin Green","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"EncounterId": 16,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"EncounterId": 17,"Date": "11/26/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Rahul Sharma","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"EncounterId": 18,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"EncounterId": 19,"Date": "11/26/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Martin Green","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"EncounterId": 20,"Date": "01/16/12","Encounter": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr.Rahul Sharma","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"EncounterId": 21,"Date": "01/16/12","EncounterType": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","Facility": "Local Medical Center","Provider": "Dr Fred Smith","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+
+/****** Collection: FootPain    ******/
+
+
+{
+"FootPain": 1,"Subject": "Foot Pain","Started": "05/15/13","Name": "Mary Grant","Msgtext": "I stepped in a hole in the grass while playing frisbee and now the top of my foot has a dull ache."
+}
+
+{
+"FootPain": 2,"Subject": "","Started": "","Name": "Dr. Martin Green","Msgtext": "I'd like to have a closer look. Could you come in to the office tomorrow?"
+}
+
+{
+"FootPain": 3,"Subject": "","Started": "","Name": "Mary Grant","Msgtext": "Certainly. Thanks!"
+}
+
+
+/****** Collection: HeadCold     ******/
+
+{
+"HeadColdId": 1,"Subject": "HeadCold","Started": "08/18/13","Name": "Mary Grant","Msgtext": "I have been congested for over a week now.I think I may have an infection."
+}
+
+{
+"HeadColdId": 2,"Subject": "","Started": "","Name": "Dr. Martin Green","Msgtext": "When you blow your nose is the mucus clear, yellow or greenish in color?"
+}
+
+{
+"HeadColdId": 3,"Subject": "","Started": "","Name": "Mary Grant","Msgtext": "Greenish."
+}
+
+{
+"HeadColdId": 4,"Subject": "","Started": "","Name": "Dr. Martin Green","Msgtext": "I'll get you set up with a prescription for a decongestant and an antibiotic. Should  send them to your primary pharmacy?"
+}
+
+{
+"HeadColdId": 5,"Subject": "","Started": "","Name": "Mar Grant","Msgtext": "Yes Please. Thank you!"
+}
+
+{
+"HeadColdId": 6,"Subject": "","Started": "","Name": "Dr. Martin Green","Msgtext": "No problem. the prescription has been sent and should be ready for pickup shortly."
+}
+
+{
+"HeadColdId": 7,"Subject": "","Started": "","Name": "Mar Grant","Msgtext": "I've developed a cough now as well."
+}
+
+{
+"HeadColdId": 8,"Subject": "","Started": "","Name": "Dr. Martin Green","Msgtext": "Let's see how you do on the medication for a week. Let me know if the symptoms continue."
+}
+
+{
+"HeadColdId": 9,"Subject": "","Started": "","Name": "Mary Grant","Msgtext": "Will do."
+}
+
+
+
+/****** Collection: Immunizations   ******/
+
+{
+"ImmunizationID": 1,"DATE": "01/16/12","NAME": "nomoflu","PROVIDER": "Dr.Martin Green","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "200cc","Rate": "2/yr","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"ImmunizationID": 2,"DATE": "1/16/12","NAME": "nomoflu","PROVIDER": "Dr Fred Smith","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "300cc","Rate": "1/yr","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"ImmunizationID": 3,"DATE": "1/16/12","NAME": "nomoflu","PROVIDER": "Dr.Rahul Sharma","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "200cc","Rate": "2/yr","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"ImmunizationID": 4,"DATE": "01/16/12","NAME": "nomoflu","PROVIDER": "Dr Fred Smith","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "300cc","Rate": "1/yr","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"ImmunizationID": 5,"DATE": "11/16/12","NAME": "nomoflu","PROVIDER": "Dr.Rahul Sharma","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "200cc","Rate": "1/yr","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"ImmunizationID": 6,"DATE": "01/16/12","NAME": "nomoflu","PROVIDER": "Dr Fred Smith","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "300cc","Rate": "2/yr","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"ImmunizationID": 7,"DATE": "11/16/12","NAME": "nomoflu","PROVIDER": "Dr.Rahul Sharma","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "300cc","Rate": "1/yr","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"ImmunizationID": 8,"DATE": "01/16/12","NAME": "nomoflu","PROVIDER": "Dr Fred Smith","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "200cc","Rate": "1/yr","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"ImmunizationID": 9,"DATE": "1/16/12","NAME": "nomoflu","PROVIDER": "Dr.Martin Green","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "300cc","Rate": "2/yr","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"ImmunizationID": 10,"DATE": "01/16/12","NAME": "nomoflu","PROVIDER": "Dr Fred Smith","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "400cc","Rate": "1/yr","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"ImmunizationID": 11,"DATE": "01/26/12","NAME": "nomoflu","PROVIDER": "Dr.Martin Green","INSTRUCTIONS": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.","TYPE": "Influenza","Dose": "200cc","Rate": "2/yr","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+
+/****** Collection: InsuranceBilling   ******/
+
+
+{
+"InsuranceBillingid": 1,"Date": "11/02/2014","Diagnosis": "diagnosissupdate","ICDCode": "xxx5","Charges": 250,"Payments": 400,"Balance": 50,"UserId": "ad0ef239-889b-490d-a83f-7b40cd75c826","EncounterType": "I,A"
+}
+
+{
+"InsuranceBillingid": 1,"Date": "09/20/2012","Diagnosis": "OFFICE VISIT, 25 MINUTES","ICDCode": "XXXX4","Charges": 200,"Payments": 140,"Balance": 60,"Image1": "../../img/InusranceCard1.jpg","Image2": "../../img/InsuranceCard2.jpg","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","EncounterType": "P,I,A"
+}
+
+
+
+/****** Collection: LabResult   ******/
+
+{
+"LabId": 1,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 3,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 4,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,I"
+}
+
+{
+"LabId": 5,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "P,I"
+}
+
+{
+"LabId": 6,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "P,I"
+}
+
+{
+"LabId": 7,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 8,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 9,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 10,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 11,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 12,"UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 13,"UserId": "1f68f959-f892-4a13-bc41-211241106810","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 14,"UserId": "1f68f959-f892-4a13-bc41-211241106810","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 15,"UserId": "1f68f959-f892-4a13-bc41-211241106810","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 16,"UserId": "1f68f959-f892-4a13-bc41-211241106810","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 17,"UserId": "1f68f959-f892-4a13-bc41-211241106810","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 18,"UserId": "1f68f959-f892-4a13-bc41-211241106810","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 19,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 20,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 21,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 22,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 23,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 24,"UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 25,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 26,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 27,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 90,"UserId": "505457f2-5235-4fb3-be33-9790602b1ebd","OrderableTestName": "dqwedqwee","LONICCode": "qEQEQES","TestResultValue": "EWDD","DatePerformed": "","EncounterType": "I,A"
+}
+
+{
+"LabId": 28,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 29,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 30,"UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 31,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 32,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 33,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 34,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 35,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 36,"UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 37,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 38,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 39,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 40,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 41,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 42,"UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 43,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 44,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 45,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 46,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 47,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 48,"UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 49,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 50,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 51,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 52,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 53,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 54,"UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 55,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 56,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 57,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 58,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 59,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 60,"UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","OrderableTestName": "PLT","LONICCode": "26515-7","TestResultValue": "247 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "I,A"
+}
+
+{
+"LabId": 61,"UserId": "d85e4b46-8e97-4309-9c67-181740a26358","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 62,"UserId": "d85e4b46-8e97-4309-9c67-181740a26358","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 63,"UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 64,"UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 65,"UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 66,"UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 67,"UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 68,"UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 69,"UserId": "6c330889-34e7-427d-b380-dd8bed319179","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 70,"UserId": "6c330889-34e7-427d-b380-dd8bed319179","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 71,"UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 72,"UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 73,"UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 74,"UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+
+{
+"LabId": 75,"UserId": "4270eb23-a738-465c-9551-4ee73bc69515","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 76,"UserId": "4270eb23-a738-465c-9551-4ee73bc69515","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 77,"UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 78,"UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 79,"UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 80,"UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 81,"UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 82,"UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 83,"UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 84,"UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 85,"UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 86,"UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 87,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","OrderableTestName": "HGB","LONICCode": "30313-1","TestResultValue": "12.8 g/dl","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+{
+"LabId": 89,"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "10/20/2012","EncounterType": "P,I"
+}
+
+{
+"LabId": 2,"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","OrderableTestName": "WBC","LONICCode": "33765-9","TestResultValue": "17.6 10^3/ul","DatePerformed": "09/20/2012","EncounterType": "P,A"
+}
+
+
+
+/****** Collection: Labs  ******/
+
+
+{
+"LabId": 1,"Test": "Blood Work","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19"
+}
+
+{
+"LabId": 2,"Test": "Urine Tests","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2"
+}
+
+{
+"LabId": 3,"Test": "Blood Work","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec"
+}
+
+{
+"LabId": 4,"Test": "Urine Tests","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1"
+}
+
+{
+"LabId": 5,"Test": "Blood Work","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45"
+}
+
+{
+"LabId": 6,"Test": "Chloride Test","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa"
+}
+
+{
+"LabId": 7,"Test": "Blood Work","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8"
+}
+
+{
+"LabId": 8,"Test": "Chloride Test","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b"
+}
+
+{
+"LabId": 9,"Test": "Blood Work","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09"
+}
+
+{
+"LabId": 10,"Test": "Chloride Test","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "4c52ea42-41a7-467d-9856-95451e64677a"
+}
+
+{
+"LabId": 11,"Test": "Blood Work","Date": "01/16/12","Facility": "Local Medical Center","PatientId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+
+
+/****** Collection: Medication   ******/
+
+{
+"Medicationsid": 1,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 4,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "1/10/2011","StandardCode": "313989","UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 5,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "1/10/2011","StandardCode": "313989","UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 6,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "7/15/2010","StandardCode": "966247","UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 1,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "a24e6d62-414d-4434-bbe3-b3eec3a026e7","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 2,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "a24e6d62-414d-4434-bbe3-b3eec3a026e7","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 3,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "a24e6d62-414d-4434-bbe3-b3eec3a026e7","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 7,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi]","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "04f90982-df81-4850-945c-902c80ed568d","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 9,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 10,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 11,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "7/15/2010","StandardCode": "966247","UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 12,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "1f68f959-f892-4a13-bc41-211241106810","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 13,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "1f68f959-f892-4a13-bc41-211241106810","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 14,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "1f68f959-f892-4a13-bc41-211241106810","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 15,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 16,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 17,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 18,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": "9/20/2012","StandardCode": "309114","UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 19,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 36,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "d85e4b46-8e97-4309-9c67-181740a26358","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 78,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "1/10/2011","StandardCode": "313989","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 20,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "e67fb548-74b8-4811-9419-c042b271e9aa","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 21,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": "9/20/2012","StandardCode": "309114","UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 22,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 23,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 24,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": "9/20/2012","StandardCode": "309114","UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 25,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 26,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 27,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": "9/20/2012","StandardCode": "309114","UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 28,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 29,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 30,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days\\","Status": "Active","DateOfPrescription": "9/20/2012","StandardCode": "309114","UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 31,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 32,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 33,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": "9/20/2012","StandardCode": "309114","UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 34,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 35,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f","EncounterType": "I,A"
+}
+
+{
+"Medicationsid": 37,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "d85e4b46-8e97-4309-9c67-181740a26358","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 38,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247", "UserId": "d85e4b46-8e97-4309-9c67-181740a26358","EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 39,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 40,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 41,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 42,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 43,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 44,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b","EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 45, "MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days","Status": "Active","DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 46,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 47,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi","DosageForm": "Tablet","SIG": "once daily","Status": "Active","DateOfPrescription": "4/15/2010","StandardCode": "966247","UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded","EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 48,"MedicationsName": "Cephalexin 500 MG Oral Capsule","DosageForm": "Capsule","SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012","StandardCode": "309114","UserId": "6c330889-34e7-427d-b380-dd8bed319179","EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 49,"MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule","SIG": "once daily","Status": "Active","DateOfPrescription": "11/10/2011","StandardCode": "313989","UserId": "6c330889-34e7-427d-b380-dd8bed319179","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 50,"MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247","UserId": "6c330889-34e7-427d-b380-dd8bed319179","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 51, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114", "UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351", "EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 52,"MedicationsName": "Fluoxetine 40 MG Oral Capsule","DosageForm": "Capsule","SIG": "once daily", "Status": "Active", "DateOfPrescription": "11/10/2011", "StandardCode": "313989", "UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 53, "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247",  "UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 54, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114", "UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986", "EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 55,"MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "11/10/2011", "StandardCode": "313989",  "UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986", "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 56, "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247", "UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 57, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114", "UserId": "4270eb23-a738-465c-9551-4ee73bc69515", "EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 57, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114", "UserId": "4270eb23-a738-465c-9551-4ee73bc69515", "EncounterType": "P,A"
+}
+
+
+{
+"Medicationsid": 58, "MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "once daily",  "Status": "Active",  "DateOfPrescription": "11/10/2011",    "StandardCode": "313989",    "UserId": "4270eb23-a738-465c-9551-4ee73bc69515",  "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 59, "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247","UserId": "4270eb23-a738-465c-9551-4ee73bc69515", "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 60, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule",  "SIG": "4 times daily for 10 days",  "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114", "UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd", "EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 61,  "MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "11/10/2011", "StandardCode": "313989", "UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 62, "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247", "UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd", "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 63, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114", "UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9", "EncounterType": "P,A"
+}
+
+
+{
+"Medicationsid": 64,"MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "11/10/2011", "StandardCode": "313989", "UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9", "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 65,  "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247", "UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 66,  "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule",  "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012", "StandardCode": "309114",  "UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca", "EncounterType": "P,A"
+}
+
+
+{
+"Medicationsid": 67, "MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule",  "SIG": "once daily",  "Status": "Active",  "DateOfPrescription": "11/10/2011",   "StandardCode": "313989",  "UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca", "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 68,  "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247", "UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 69, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days", "Status": "Active", "DateOfPrescription": " 9/20/2012","StandardCode": "309114", "UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76", "EncounterType": "P,A"
+
+}
+
+
+{
+"Medicationsid": 70,   "MedicationsName": "Fluoxetine 40 MG Oral Capsule",  "DosageForm": "Capsule",  "SIG": "once daily",  "Status": "Active",  "DateOfPrescription": "11/10/2011",  "StandardCode": "313989",  "UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76",  "EncounterType": "P,I"
+}
+
+
+{
+"Medicationsid": 71,  "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi",  "DosageForm": "Tablet",  "SIG": "once daily",  "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247",  "UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 72,  "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule",  "SIG": "4 times daily for 10 days",  "Status": "Active",  "DateOfPrescription": " 9/20/2012",  "StandardCode": "309114",   "UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d",  "EncounterType": "P,A"
+}
+
+{
+"Medicationsid": 73, "MedicationsName": "Fluoxetine 40 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "11/10/2011",  "StandardCode": "313989", "UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d", "EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 74, "MedicationsName": "Levothyroxine Sodium 0.05 MG Oral Tablet [Synthroi", "DosageForm": "Tablet", "SIG": "once daily", "Status": "Active", "DateOfPrescription": "4/15/2010", "StandardCode": "966247", "UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d","EncounterType": "P,I"
+}
+
+{
+"Medicationsid": 2, "MedicationsName": "Cephalexin 500 MG Oral Capsule", "DosageForm": "Capsule", "SIG": "4 times daily for 10 days",  "Status": "Active", "DateOfPrescription": " 10/20/2012", "StandardCode": "309114", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "EncounterType": "P,I"
+}
+
+
+
+
+/****** Collection: MedicationAllergie    ******/
+
+
+{
+"MedicationAllergiesid": 1, "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "EncounterType": "P,I,A"
+}
+
+
+{
+"MedicationAllergiesid": 3,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active", "RxNormCode": "7982", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 2,  "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 4, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "EncounterType": "P,I,A"
+}
+
+
+{
+"MedicationAllergiesid": 1, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982",  "UserId": "a24e6d62-414d-4434-bbe3-b3eec3a026e7", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 2, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "a24e6d62-414d-4434-bbe3-b3eec3a026e7", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 5,  "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad",  "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 6,  "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 7,  "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "1f68f959-f892-4a13-bc41-211241106810",  "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 8,  "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active", "RxNormCode": "1191", "UserId": "1f68f959-f892-4a13-bc41-211241106810", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 9,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active", "RxNormCode": "7982", "UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 10,  "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active",  "RxNormCode": "1191",  "UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b",  "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 11, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "e67fb548-74b8-4811-9419-c042b271e9aa",  "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 12, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "e67fb548-74b8-4811-9419-c042b271e9aa",  "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 13, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982",  "UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 14,  "Allergen": "Aspirin",  "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 15,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives", "Status": "Active",  "RxNormCode": "7982", "UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 16,  "Allergen": "Aspirin", "Reaction": "Nausea",  "Status": "Active", "RxNormCode": "1191", "UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556", "EncounterType": "I,A"
+}
+
+
+{
+"MedicationAllergiesid": 17, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 18,  "Allergen": "Aspirin", "Reaction": "Nausea",  "Status": "Active", "RxNormCode": "1191", "UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c", "EncounterType": "I,A"
+}
+
+{
+ "MedicationAllergiesid": 19, "Allergen": "Penicillin G benzathine", "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9",  "EncounterType": "I,A"
+}
+
+
+{
+"MedicationAllergiesid": 20,  "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 21,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f",  "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 22, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f", "EncounterType": "I,A"
+}
+
+{
+"MedicationAllergiesid": 25, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "d85e4b46-8e97-4309-9c67-181740a26358",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 26, "Allergen": "Aspirin",  "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "d85e4b46-8e97-4309-9c67-181740a26358", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 27, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 28, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "a39383c8-d902-48d7-99d7-b4e2db8ef2bc",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 29,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 30, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "9b9b97c7-94f2-45ec-a2a4-e95b0b1ff19b",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 31, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded", "EncounterType": "P,I,A"
+}
+
+
+{
+"MedicationAllergiesid": 32,  "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "b33450f0-ea11-49f4-a5b6-f91dd622eded", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 33,  "Allergen": "Penicillin G benzathine", "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "6c330889-34e7-427d-b380-dd8bed319179",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 34, "Allergen": "Aspirin", "Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "6c330889-34e7-427d-b380-dd8bed319179", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 35,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 36, "Allergen": "Aspirin","Reaction": "Nausea", "Status": "Active", "RxNormCode": "1191", "UserId": "5c32a99c-1d42-48c1-94a1-49f1c8314351", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 37,  "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986",  "EncounterType": "P,I,A"
+}
+
+
+{
+"MedicationAllergiesid": 38,  "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active", "RxNormCode": "1191", "UserId": "9627f64f-37c1-4fa5-bc4b-eebec9929986", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 39,  "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active",  "RxNormCode": "7982", "UserId": "4270eb23-a738-465c-9551-4ee73bc69515",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 40,  "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active",  "RxNormCode": "1191", "UserId": "4270eb23-a738-465c-9551-4ee73bc69515",  "EncounterType": "P,I,A"
+}
+
+
+{
+"MedicationAllergiesid": 41,  "Allergen": "Penicillin G benzathine", "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 42, "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active",  "RxNormCode": "1191",  "UserId": "193ce8f5-c17b-4bcb-811e-f35c5320abcd",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 43,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active", "RxNormCode": "7982", "UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 44,   "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active",  "RxNormCode": "1191",  "UserId": "9a32f121-b2a2-42f0-8057-060d295c2ed9",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 45, "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active", "RxNormCode": "7982",  "UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca", "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 46,  "Allergen": "Aspirin",  "Reaction": "Nausea",  "Status": "Active",  "RxNormCode": "1191",  "UserId": "5450db66-f755-4f92-b75d-f6903e7bf8ca",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 47,  "Allergen": "Penicillin G benzathine",  "Reaction": "Hives",  "Status": "Active",  "RxNormCode": "7982",  "UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 48,  "Allergen": "Aspirin", "Reaction": "Nausea",  "Status": "Active", "RxNormCode": "1191",  "UserId": "789a91ab-a521-4aeb-8b66-9e9885e6ea76",   "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 49, "Allergen": "Penicillin G benzathine", "Reaction": "Hives", "Status": "Active", "RxNormCode": "7982", "UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d",  "EncounterType": "P,I,A"
+}
+
+{
+"MedicationAllergiesid": 50, "Allergen": "Aspirin", "Reaction": "Nausea",  "Status": "Active",  "RxNormCode": "1191",  "UserId": "c3fe669f-8abc-4b51-b6eb-4a67042c806d",  "EncounterType": "P,I,A"
+}
+
+
+
+/****** Collection: MessageReport    ******/
+
+
+{
+"MessageReportId": 1, "Messagedate": {"$date": "2013-08-09T10:00:00.000Z" }, "SentBy": "4455a2ba-9240-4497-8f95-cd454b801908","SentTo": "a24e6d62-414d-4434-bbe3-b3eec3a026e7"
+}
+
+{
+ "MessageReportId": 2,  "SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "Messagedate": {  "$date": "2014-09-25T23:31:04.504Z"  }
+}
+
+{
+"MessageReportId": 3, "SentBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "SentTo": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "Messagedate": { "$date": "2014-09-26T00:18:36.195Z"    }
+}
+
+
+{
+"MessageReportId": 4, "SentBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "SentTo": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "Messagedate": { "$date": "2013-01-27T13:49:23.974Z"
+    }
+}
+
+{
+"MessageReportId": 5, "SentBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "SentTo": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "Messagedate": {"$date": "2013-01-27T13:52:11.169Z"
+    }
+}
+
+{
+"MessageReportId": 6, "Messagedate": {   "$date": "2013-08-09T10:00:00.000Z"  },  "SentBy": "4455a2ba-9240-4497-8f95-cd454b801908",  "SentTo": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad"
+}
+
+
+{
+"MessageReportId": 7, "SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "1f68f959-f892-4a13-bc41-211241106810",  "Messagedate": { "$date": "2014-09-25T23:31:04.504Z"  }
+}
+
+{
+"MessageReportId": 9,"Messagedate": {"$date": "2014-08-09T10:00:00.000Z" },"SentBy": "4455a2ba-9240-4497-8f95-cd454b801908","SentTo": "e67fb548-74b8-4811-9419-c042b271e9aa"
+}
+
+{
+"MessageReportId": 10, "SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b","Messagedate": {"$date": "2013-09-25T23:31:04.504Z }
+}
+
+
+{
+"MessageReportId": 11,"SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "3733421d-b1bc-42e0-a772-d308ae5d096b", "Messagedate": { "$date": "2014-09-25T23:31:04.504Z" }
+}
+
+{
+"MessageReportId": 12,"SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "3733421d-b1bc-42e0-a772-d308ae5d096b", "Messagedate": {"$date": "2014-09-25T23:31:04.504Z" }
+}
+
+
+{
+"MessageReportId": 13,"SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "66fda59c-3274-40f0-9cf5-e1e4849d8556","Messagedate": {"$date": "2014-09-25T23:31:04.504Z" }
+}
+
+
+{
+"MessageReportId": 14, "SentBy": "4455a2ba-9240-4497-8f95-cd454b801908", "SentTo": "0a416b06-c3cc-453d-9a7d-666faaee913f", "Messagedate": {"$date": "2014-09-25T23:31:04.504Z"  }
+}
+
+
+/****** Collection: MessagesDetails     ******/
+
+
+{
+"MessageID": 1,  "MessageDateTime": "Monday, 10.04 am",  "MessageSequenceNumber": 1, "MessageText": "I got a note from Dr.Gunderson regarding your complaint. Let my office know if you can meet this week.",  "SenderName": "Dr. Sonja Collins M.D.",  "ReceiverName": "Mary Grant",  "Unread": "read", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+{
+"MessageID": 2, "MessageDateTime": "Monday, 10.15 am",  "MessageSequenceNumber": 2,  "MessageText": "Actually I'd like to see you again soon. We need to go over the workout plan for the next month.",  "SenderName": "Dr.Robert Gunderson M.D.",  "ReceiverName": "Mary Grant", "Unread": "read",  "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+{
+"MessageID": 3,  "MessageDateTime": "Monday, 10.30 am", "MessageSequenceNumber": 3, "MessageText": "I've changed my insurance to Blue Cross, what do I have to do to get the updated? ", "SenderName": "Mary Grant", "ReceiverName": "Dr. Sonja Collins M.D.", "Unread": "unread",  "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5"
+}
+
+{
+"MessageID": 4,  "MessageDateTime": "Monday, 10.04 am",  "MessageSequenceNumber": 1,  "MessageText": "I got a note from Dr.Gunderson regarding your complaint. Let my office know if you can meet this week.",  "SenderName": "Dr. Sonja Collins M.D.",  "ReceiverName": "Mary Grant",  "Unread": "read",  "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8"
+}
+
+
+{
+"MessageID": 5,  "MessageDateTime": "Monday, 10.15 am",  "MessageSequenceNumber": 2,  "MessageText": "Actually I'd like to see you again soon. We need to go over the workout plan for the next month.",  "SenderName": "Dr.Robert Gunderson M.D.",  "ReceiverName": "Mary Grant",  "Unread": "read",  "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8"
+}
+
+
+{
+"MessageID": 6,  "MessageDateTime": "Monday, 10.30 am",  "MessageSequenceNumber": 3,  "MessageText": "I've changed my insurance to Blue Cross, what do I have to do to get the updated? ",  "SenderName": "Mary Grant",  "ReceiverName": "Dr. Sonja Collins M.D.",  "Unread": "unread",   "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8"
+}
+
+
+
+/****** Collection: MyApps      ******/
+
+
+{
+"AppsId": 1,  "AppsName": "St. Joseph Hospital of Orange",  "AppsLink": "sjo.org"
+}
+
+{
+"AppsId": 2,  "AppsName": "All Scripts",  "AppsLink": ""
+}
+
+{
+"AppsId": 3,   "AppsName": "Physician Connect",   "AppsLink": "Queen of the Valley Medical Center"
+}
+
+{
+"AppsId": 4,  "AppsName": "Wikipedia",  "AppsLink": "wikipedia.org"
+}
+
+{
+"AppsId": 5,   "AppsName": "Mole App",   "AppsLink": ""
+}
+
+{
+"AppsId": 6,    "AppsName": "Nike +",  "AppsLink": ""
+}
+
+
+
+/****** Collection: MyDay   ******/
+
+
+{
+"MyDayId": 1, "Name": "Corey Deem", "Subject": "Chest and Arm Pain", "Time": "9:00 Am", "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19",  "RowID": 1
+}
+
+{
+"MyDayId": 2, "Name": "Hector Works", "Subject": "Chest and Arm Pain", "Time": "10:00 Am", "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2",   "RowID": 2
+}
+
+{
+"MyDayId": 3,  "Name": "Paige Bulluck",  "Subject": "Chest and Arm Pain",  "Time": "11.00 Am",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa",  "PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec",  "RowID": 3
+}
+
+{
+"MyDayId": 4,  "Name": "Brent Heidt",  "Subject": "Chest and Arm Pain",  "Time": "1:30 Pm",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1",  "RowID": 4
+}
+
+{
+"MyDayId": 5,  "Name": "Leola Guzik",  "Subject": "Chest and Arm Pain",  "Time": "2:00 Pm",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa",  "PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45",  "RowID": 5
+}
+
+{
+"MyDayId": 6,  "Name": "Brent Heidt",  "Subject": "Chest and Arm Pain",  "Time": "2:30 Pm",  "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1", "RowID": 6
+}
+
+{
+"MyDayId": 7, "Name": "Hector Works", "Subject": "Chest and Arm Pain", "Time": "3:00 Pm", "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2",  "RowID": 7
+}
+
+{
+"MyDayId": 8,  "Name": "Corey Deem",  "Subject": "Chest and Arm Pain",  "Time": "6:00 Pm",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa",  "PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19",  "RowID": 8
+}
+
+{
+"MyDayId": 9,  "Name": "Hector Works",  "Subject": "Chest and Arm Pain", "Time": "7:00 Pm", "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2",  "RowID": 9
+}
+
+{
+"MyDayId": 10,  "Name": "Paige Bulluck",  "Subject": "Chest and Arm Pain", "Time": "4.00 Am", "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec",  "RowID": 10
+}
+
+{
+"MyDayId": 11,  "Name": "Corey Deem", "Subject": "Chest and Arm Pain", "Time": "5:00 Am", "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19", "RowID": 11
+}
+
+{
+"MyDayId": 12, "Name": "Leola Guzik", "Subject": "Chest and Arm Pain", "Time": "7:00 Pm", "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45",  "RowID": 12
+}
+
+
+/****** Collection: Myphysicians    ******/
+
+
+
+{
+"Physicianid": 1, "Name": "Dr.Martin Green", "StreetAddress": "1002 Healthcare Dr.", "StreetAddress2": "", "Locality": "Portland", "Region": "OR", "PostalCode": 97005, "Country": "", "PrimaryPhone": "(555)555-1122", "Department": "", "HospitalName": "Get Well Clinic", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "RowID": 1
+}
+
+{
+"Physicianid": 2, "Name": "Dr.Martin Rodriguez", "StreetAddress": "1002 Healthcare Dr.", "StreetAddress2": "", "Locality": "Portland", "Region": "OR",  "PostalCode": 97005, "Country": "", "PrimaryPhone": "(555)555-1122", "Department": "", "HospitalName": "Get Well Clinic", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "RowID": 2
+}
+
+{
+"Physicianid": 3,  "Name": "Dr.Rahul Sharma",  "StreetAddress": "1002 Healthcare Dr.", "StreetAddress2": "", "Locality": "Portland", "Region": "OR", "PostalCode": 97005, "Country": "", "PrimaryPhone": "(555)555-1122", "Department": "", "HospitalName": "Get Well Clinic", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 3
+}
+
+{
+ "Physicianid": 4, "Name": "Dr.Martin Rodriguez", "StreetAddress": "1002 Healthcare Dr.", "StreetAddress2": "",  "Locality": "Portland", "Region": "OR",  "PostalCode": 97005,  "Country": "", "PrimaryPhone": "(555)555-1122", "Department": "", "HospitalName": "Get Well Clinic", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 4
+}
+
+
+
+
+/****** Collection: PatientDemoGraphic     ******/
+
+
+{
+"PatientID": 1,  "PatientName": "Mary Grant",  "Sex": "F",  "DateOfBirth": "3/21/1987", "Race": "White", "Ethnicity": "Not Hispanic or Latino", "PreferredLanguage": "English", "Height": 193, "Weight": 160, "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "Image": "../../img/marygrant.jpg", "RowID": 1
+}
+
+
+{
+"PatientID": 2, "PatientName": "Heena", "Sex": "F", "DateOfBirth": "26/11/1991", "Race": "White", "Ethnicity": "Not Hispanic or latino", "PreferredLanguage": "English", "Height": 150, "Weight": 170, "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "Image": "../../img/Heena.jpg",  "RowID": 2
+}
+
+
+
+
+/****** Collection: PatientDetails      ******/
+
+
+{
+"PhyId": 1,  "PatientName": "Corey Deem", "summary": "Chest and Arm Pain", "Age": "35yrs", "Weight": "185lbs", "Height": "6' 1\"", "DateOfBirth": "04/16/1977", "Time": "9:00 Am", "Hvalue": "183cm", "Wvalue": "83kg",  "PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19", "RowID": 1
+}
+
+{
+"PhyId": 2, "PatientName": "Hector Works",  "summary": "Chest and Arm Pain", "Age": "27yrs", "Weight": "175bs", "Height": "6' 1\"", "DateOfBirth": "04/16/1969", "Time": "10:00 Am", "Hvalue": "173cm", "Wvalue": "75kg", "PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2", "RowID": 2
+}
+
+
+{
+"PhyId": 3,  "PatientName": "Paige Bulluck", "summary": "Chest and Arm Pain", "Age": "35yrs", "Weight": "185lbs", "Height": "7' 1\"", "DateOfBirth": "04/16/1977", "Time": "11.00 Am", "Hvalue": "183cm",  "Wvalue": "83kg",  "PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec",  "RowID": 3
+}
+
+{
+"PhyId": 4, "PatientName": "Brent Heidt", "summary": "Chest and Arm Pain", "Age": "27yrs", "Weight": "175lbs", "Height": "4' 1\"", "DateOfBirth": "04/16/1977", "Time": "1:30 Pm", "Hvalue": "160cm",  "Wvalue": "75kg",  "PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1",  "RowID": 4
+}
+
+{
+"PhyId": 5,  "PatientName": "Leola Guzik", "summary": "Chest and Arm Pain", "Age": "23yrs", "Weight": "175bs", "Height": "6' 1\"", "DateOfBirth": "04/8/1969", "Time": "2:00 Pm", "Hvalue": "173cm", "Wvalue": "75kg",  "PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45",  "RowID": 5
+}
+
+{
+"PhyId": 6,  "PatientName": "Jamie P. Frederickson",  "summary": "Hypertension",  "Age": "35yrs",  "Weight": "185lbs",  "Height": "6' 1\"",  "DateOfBirth": "04/16/1977",  "Time": "9:00 Am",  "Hvalue": "183cm",  "Wvalue": "83kg",  "PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa",  "RowID": 6
+}
+
+{
+"PhyId": 7, "PatientName": "Bill Smith", "summary": "Skin rash on arm", "Age": "27yrs", "Weight": "175bs",  "Height": "6' 1\"", "DateOfBirth": "04/16/1969", "Time": "10:00 Am", "Hvalue": "173cm", "Wvalue": "75kg",  "PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8",  "RowID": 7
+}
+
+{
+"PhyId": 8, "PatientName": "Ryan Oxford", "summary": "Chron's", "Age": "35yrs", "Weight": "185lbs", "Height": "7' 1\"", "DateOfBirth": "04/16/1977", "Time": "11.00 Am", "Hvalue": "183cm", "Wvalue": "83kg", "PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b", "RowID": 8
+}
+
+{
+"PhyId": 9, "PatientName": "Mallory Appleby", "summary": "Sinus Infection", "Age": "27yrs", "Weight": "175lbs", "Height": "4' 1\"", "DateOfBirth": "04/16/1977", "Time": "1:30 Pm", "Hvalue": "160cm", "Wvalue": "75kg", "PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b", "RowID": 9
+}
+
+{
+"PhyId": 10, "PatientName": "Jennifer Stone", "summary": "Spider Bite", "Age": "35yrs", "Weight": "185lbs", "Height": "6' 1\"", "DateOfBirth": "04/16/1977", "Time": "9:00 Am", "Hvalue": "183cm", "Wvalue": "83kg", "PatientId": "4c52ea42-41a7-467d-9856-95451e64677a", "RowID": 10
+}
+
+
+/****** Collection: PhyMedications       ******/
+
+
+{
+"MedicationsId": 1, "Date": "01/16/12", "Name": "Adrugorol","Refills": "6 Months", "Prescriber": "Dr Fred Smith", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "500mg", "Rate": "2 Daily", "PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19", "RowID": 1
+}
+
+{
+"MedicationsId": 2, "Date": "01/26/12",  "Name": "Adrugorol", "Refills": "5 Months", "Prescriber": "Dr.Martin Green", "Instructions": "View Instructions", "Type": "Anti-inflamitory",  "Doseage": "500mg",  "Rate": "1 Daily",  "PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2",  "RowID": 2
+}
+
+{
+"MedicationsId": 3, "Date": "01/16/12", "Name": "Adrugorol", "Refills": "6 Months", "Prescriber": "Dr.Rahul Sharma", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "200mg", "Rate": "2 Daily", "PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec", "RowID": 3
+}
+
+{
+"MedicationsId": 4, "Date": "01/26/12", "Name": "Adrugorol",  "Refills": "6 Months", "Prescriber": "Dr Fred Smith", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "500mg",  "Rate": "3 Daily", "PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1",  "RowID": 4
+}
+
+{
+"MedicationsId": 5, "Date": "01/16/12", "Name": "Adrugorol",  "Refills": "2 Months", "Prescriber": "Dr.Rahul Sharma", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "500mg", "Rate": "1 Daily",  "PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45", "RowID": 5
+}
+
+
+{
+"MedicationsId": 6, "Date": "01/26/12", "Name": "Adrugorol",  "Refills": "6 Months",  "Prescriber": "Dr.Martin Green", "Instructions": "View Instructions",  "Type": "Anti-inflamitory",  "Doseage": "200mg",  "Rate": "2 Daily",  "PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa",  "RowID": 6
+}
+
+{
+"MedicationsId": 7, "Date": "01/16/12", "Name": "Adrugorol", "Refills": "2 Months", "Prescriber": "Dr Fred Smith", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "500mg", "Rate": "1 Daily", "PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8", "RowID": 7
+}
+
+
+{
+"MedicationsId": 8, "Date": "01/26/12", "Name": "Adrugorol", "Refills": "6 Months",  "Prescriber": "Dr.Rahul Sharma",  "Instructions": "View Instructions",  "Type": "Anti-inflamitory",  "Doseage": "200mg",  "Rate": "2 Daily",  "PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b","RowID": 8
+}
+
+{
+"MedicationsId": 9, "Date": "1/16/12", "Name": "Adrugorol", "Refills": "2 Months", "Prescriber": "Dr.Martin Green", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "200mg", "Rate": "1 Daily", "PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09",  "RowID": 9
+}
+
+
+{
+"MedicationsId": 10, "Date": "01/16/12",  "Name": "Adrugorol",  "Refills": "6 Months", "Prescriber": "Dr Fred Smith", "Instructions": "View Instructions", "Type": "Anti-inflamitory", "Doseage": "500mg",  "Rate": "2 Daily", "PatientId": "4c52ea42-41a7-467d-9856-95451e64677a", "RowID": 10
+}
+
+
+
+
+/****** Collection: PhysicianImages        ******/
+
+
+
+{
+"PhyscianId": 1, "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "Image": "../../img/dr.jpg", "PhysicianName": "Dr.Martin Green", "RowID": 1
+}
+
+{
+"PhyscianId": 2, "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "Image": "../../img/lab.jpg", "PhysicianName": "Dr.Martin Rodriguez", "RowID": 2
+}
+
+{
+"PhyscianId": 3,  "UserId": "f40ca8e9-dc6c-44de-9936-266249a7a201", "Image": "../../img/pharm.jpg", "PhysicianName": "Dr.Rahul Sharma", "RowID": 3
+}
+
+
+
+
+/****** Collection: PostComments         ******/
+
+
+
+{
+"CommentId": 11, "PostId": 12, "Message": "Actually I'd like to see you again soon. We need to go over the workout plan for the next month.", "CommentedBy": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "CommentedDate": { "$date": "2014-03-14T03:50:50.798Z" },  "RowID": 1
+}
+
+{
+"CommentId": 12,  "PostId": 12, "Message": "ohk lets meet up soon", "CommentedBy": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "CommentedDate": { "$date": "2014-03-14T03:51:46.553Z" }, "RowID": 2
+}
+
+{
+"CommentId": 13, "PostId": 13, "Message": "ohk will let u know about this soon", "CommentedBy": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "CommentedDate": { "$date": "2014-03-14T03:56:54.673Z" }, "RowID": 3
+}
+
+{
+"CommentId": 45, "PostId": 1, "Message": "ohk mary will let u knw the procedure of this soon..", "CommentedBy": "4455a2ba-9240-4497-8f95-cd454b801908", "CommentedDate": {"$date": "2014-03-23T07:53:20.385Z" }, "RowID": 4
+}
+
+{
+"CommentId": 46, "PostId": 10, "Message": "ohk mary will let u knw soon...", "CommentedBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "CommentedDate": { "$date": "2014-03-26T05:33:25.066Z" }, "RowID": 5
+}
+
+
+
+
+/****** Collection: Posts      ******/
+
+
+{
+"PostId": 1,  "Message": "I've changed my insurance to Blue Cross, what do I have to do to get the updated?",  "PostedBy": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "PostedDate": {"$date": "2014-03-14T03:55:46.000Z"}, "PostReceivedBy": "4455a2ba-9240-4497-8f95-cd454b801908", "RowID": 1
+}
+
+{
+"PostId": 10,"Message": "Actually I'd like to see you again soon. We need to go over the workout plan for the next month. ","PostedBy": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5","PostedDate": { "$date": "2014-03-26T05:31:38.983Z" },"PostReceivedBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa","RowID": 2
+}
+
+{
+"PostId": 11, "Message": "I got a note from Dr.Gunderson regarding your complaint. Let my office know if you can meet this week.", "PostedBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PostedDate": { "$date": "2014-04-22T14:15:00.426Z" }, "PostReceivedBy": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "RowID": 3
+}
+
+{
+"PostId": 12, "Message": "Hii heena hows ur Foot pain now?", "PostedBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PostedDate": { "$date": "2014-09-26T07:18:34.025Z" },"PostReceivedBy": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "RowID": 4
+}
+
+{
+"PostId": 13, "Message": "hi heena", "PostedBy": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PostedDate": { "$date": "2013-01-27T21:49:22.455Z" }, "PostReceivedBy": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "RowID": 5
+}
+
+
+
+/****** Collection: Problem      ******/
+
+
+{
+"Problemsid": 1, "ProblemCause": "Sinusitis", "Status": "Active", "ProblemReportedDate": " 9/20/2012", "StandardCode": "36971009", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "RowID": 1
+}
+
+{
+"Problemsid": 2, "ProblemCause": "Depression", "Status": "Active", "ProblemReportedDate": " 11/10/2011", "StandardCode": " 35489007", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "RowID": 2
+}
+
+{
+"Problemsid": 3, "ProblemCause": "Hypothyroidism", "Status": "Active", "ProblemReportedDate": "4/15/2010", "StandardCode": "40930008","UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "RowID": 3
+}
+
+{
+"Problemsid": 4, "ProblemCause": "Sinusitis", "Status": "Active", "ProblemReportedDate": " 9/2/2012", "StandardCode": "36971009", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 4
+}
+
+{
+"Problemsid": 5, "ProblemCause": "Depression", "Status": "Active", "ProblemReportedDate": " 11/4/2011", "StandardCode": " 35489007", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 5
+}
+
+{
+"Problemsid": 6, "ProblemCause": "Hypothyroidism", "Status": "Active", "ProblemReportedDate": "4/26/2010", "StandardCode": "40930008",  "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 6
+}
+
+
+
+/****** Collection: ProcedureDetail       ******/
+
+
+
+{
+"Proceduredetailsid": 1, "ProcedureName": "Chest X-Ray, PA and Lateral Views", "ProcedureDate": "9/17/2013", "SNOMEDCT": "168731009 ", "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "RowID": 1
+}
+
+{
+"Proceduredetailsid": 2, "ProcedureName": "Lower Respiratory Tract Structure", "ProcedureDate": "9/17/2013", "SNOMEDCT": "82094008  ",  "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "RowID": 2
+}
+
+{
+"Proceduredetailsid": 3, "ProcedureName": "Chest X-Ray, PA and Lateral Views", "ProcedureDate": "9/26/2013", "SNOMEDCT": "168731009 ", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 3
+}
+
+{
+"Proceduredetailsid": 4, "ProcedureName": "Lower Respiratory Tract Structure", "ProcedureDate": "9/26/2013", "SNOMEDCT": "82094008  ", "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",  "RowID": 4
+}
+
+
+
+/****** Collection: Procedures        ******/
+
+
+{
+"ProcedureId": 1, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.", "Facility": "Local Medical Center", "Provider": "Dr Fred Smith", "PatientId": "62147107-b260-4cd3-8ae4-378c92b09f19", "RowID": 1
+}
+
+{
+"ProcedureId": 2, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.",  "Facility": "Local Medical Center", "Provider": "Dr.Martin Green", "PatientId": "7f2f4c55-0d38-4c51-96ca-e5388fa50ae2",  "RowID": 2
+}
+
+{
+"ProcedureId": 3, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.", "Facility": "Local Medical Center", "Provider": "Dr Fred Smith",  "PatientId": "ad2c77e7-e7f7-47cc-973e-f6c3ad6d88ec",  "RowID": 3
+}
+
+{
+"ProcedureId": 4,  "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.",  "Facility": "Local Medical Center", "Provider": "Dr.Martin Green",  "PatientId": "e267a96d-3490-4e7a-bea3-e3133e1e77d1",  "RowID": 4
+}
+
+{
+"ProcedureId": 5, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.",  "Facility": "Local Medical Center", "Provider": "Dr Fred Smith",  "PatientId": "e8e663a7-f25c-4d5b-834c-eaed5e912b45",  "RowID": 5
+}
+
+{
+"ProcedureId": 6, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.", "Facility": "Local Medical Center", "Provider": "Dr.Martin Green",  "PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa",  "RowID": 6
+}
+
+{
+"ProcedureId": 7,  "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.",  "Facility": "Local Medical Center",  "Provider": "Dr Fred Smith",  "PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8",  "RowID": 7
+}
+
+{
+"ProcedureId": 8, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.", "Facility": "Local Medical Center", "Provider": "Dr.Rahul Sharma", "PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b",  "RowID": 8
+}
+
+{
+"ProcedureId": 9, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.", "Facility": "Local Medical Center", "Provider": "Dr Fred Smith",  "PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09",  "RowID": 9
+}
+
+{
+"ProcedureId": 10, "Date": "01/16/12", "Procedures": "Integer vel magna risus. Proin tincidunt dapibus urna ut lobortis. Vivamus sagittis imperdiet orci, non aliquet lacus congue at. Nulla justo augue, pharetra faucibus aliquet eu, sollicitudin et augue.", "Facility": "Local Medical Center",  "Provider": "Dr.Rahul Sharma",  "PatientId": "4c52ea42-41a7-467d-9856-95451e64677a",   "RowID": 10
+}
+
+
+
+/****** Collection: ReasonForHospitalization       ******/
+
+
+{
+"ReasonId": 1, "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "Reason": "Left maxillary sinus mass", "EncounterType": "P,I"
+}
+
+{
+"ReasonId": 2, "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "Reason": "Left maxillary sinus mass", "EncounterType": "P,I"
+}
+
+{
+"ReasonId": 3,  "UserId": "id",  "Reason": "reason for hospitalization...",  "EncounterType": "I"
+}
+
+{
+"ReasonId": 4, "UserId": "81b58c2a-3af4-4fce-8ecb-88e6bc0ab4ad", "Reason": "Left maxillary sinus mass",  "EncounterType": "I"
+}
+
+{
+"ReasonId": 5,  "UserId": "1f68f959-f892-4a13-bc41-211241106810",  "Reason": "Left maxillary sinus mass",  "EncounterType": "I"
+}
+
+{
+"ReasonId": 6, "UserId": "adb4270a-d8b9-40ea-9e3f-f1219d49da0b",  "Reason": "Left maxillary sinus mass", "EncounterType": "I"
+}
+
+{
+"ReasonId": 7,  "UserId": "e67fb548-74b8-4811-9419-c042b271e9aa", "Reason": "Left maxillary sinus mass", "EncounterType": "I"
+}
+
+{
+"ReasonId": 8, "UserId": "3733421d-b1bc-42e0-a772-d308ae5d096b", "Reason": "Left maxillary sinus mass", "EncounterType": "I"
+}
+
+{
+"ReasonId": 9, "UserId": "66fda59c-3274-40f0-9cf5-e1e4849d8556", "Reason": "Left maxillary sinus mass",  "EncounterType": "I"
+}
+
+{
+"ReasonId": 10,  "UserId": "8f0ac8aa-6f1b-4f5e-82fa-31c5335a725c",  "Reason": "Left maxillary sinus mass",  "EncounterType": "I"
+}
+
+{
+"ReasonId": 11, "UserId": "4d05b6c9-5a94-4d50-b01e-650ce1d02fa9",  "Reason": "Left maxillary sinus mass",  "EncounterType": "I"
+}
+
+{
+"ReasonId": 12,  "UserId": "0a416b06-c3cc-453d-9a7d-666faaee913f",  "Reason": "Left maxillary sinus mass",  "EncounterType": "I"
+}
+
+
+
+/****** Collection: RegistrationDetails        ******/
+
+
+{
+"Regid": 1, "FirstName": "Pooja",  "MiddleName": "K", "LastName": "Jain",  "Suffix": "Jr",  "Email": "pooja26nov@gmail.com ",  "Password": "poojajain",  "Roles": "User",  "RowID": 1
+}
+
+{
+"Regid": 2,  "FirstName": "Amit", "MiddleName": "R",  "LastName": "Donda",  "Suffix": "Sr",  "Email": "donda007@gmail.com", "Password": "dondaamit",  "Roles": "Physician",  "RowID": 2
+}
+
+
+
+
+
+/****** Collection: SocialHistory      ******/
+
+
+{
+"SocialHistId": 1, "UserId": { "$uuid": "4c53203c-a8a5-6c1d-f52e-7aec2d97959d"  }, "Social History Item": "Smoking Status", "Description": "Never smoker",  "SNOMED-CT": "266919005",  "RowID": 1
+}
+
+{
+"SocialHistId": 2, "UserId": {"$uuid": "429f653a-b6c6-25f5-e8e4-8c124d5b34b1" },"Social History Item": "Smoking Status","Description": "Never smoker", "SNOMED-CT": "266919005", "RowID": 2
+}
+
+
+
+/****** Collection: StomachIssues     ******/
+
+
+{
+"StomachId": 1,  "Subject": "Stomach Issues",  "Started": "03/18/12",  "Name": "Mary Grant",  "Msgtext": "I woke up in the middle of the night with severe stomach cramps.",   "RowID": 1
+}
+
+
+{
+"StomachId": 2, "Subject": "", "Started": "", "Name": "Dr. Martin Green", "Msgtext": "Have you taken anything for it.",  "RowID": 2
+}
+
+{
+"StomachId": 3, "Subject": "", "Started": "", "Name": "Mary Grant ", "Msgtext": "It's gone now.",  "RowID": 3
+}
+
+{
+"StomachId": 4, "Subject": "", "Started": "", "Name": "Here Abif",  "Msgtext": "Indeed they are. Thanks.",  "RowID": 4
+}
+
+
+{
+"StomachId": 5, "Subject": "",  "Started": "",  "Name": "Dr. John smith",  "Msgtext": "You're welcome. Let me know if it comes back around.",   "RowID": 5
+}
+
+
+
+/****** Collection: UserProfile      ******/
+
+
+
+{
+"UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "UserName": "Dr.Martin Green", "AvatarExt": "png",  "RowID": 1
+}
+
+{
+"UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5", "UserName": "MaryGrant", "AvatarExt": "png",  "RowID": 2
+}
+
+
+{
+"UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8", "UserName": "Heena", "AvatarExt": "png",  "RowID": 3
+}
+
+{
+"UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "UserName": "Dr.Martin Rodriguez",  "AvatarExt": "png",  "RowID": 4
+}
+
+
+
+
+/****** Collection: Vaccination     ******/
+
+
+{
+"Vaccinationid": 1, "VaccineName": "Influenza virus vaccine", "VaccineStatus": "complete", "DateAdministered": "09/02/2010",  "CVXCode": "88",  "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",  "RowID": 1
+}
+
+{
+"Vaccinationid": 2,  "VaccineName": "Influenza virus vaccine",  "VaccineStatus": "complete",  "DateAdministered": "26/02/2012",  "CVXCode": "88",  "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",   "RowID": 2
+}
+
+
+
+
+/****** Collection: VitalSign      ******/
+
+
+{
+"VitalsId": 1, "Height": 64, "Weight": 160, "BloodPressure": "120/78", "BMI": 27.5, "RecordedDate": "10/02/2012",  "UserId": "a8a56c1d-203c-4c53-9d95-972dec7a2ef5",   "RowID": 1
+}
+
+{
+"VitalsId": 2,  "Height": 75,  "Weight": 150,  "BloodPressure": "120/78",  "BMI": 27.5,  "RecordedDate": "26/11/2012",  "UserId": "b6c625f5-653a-429f-b134-5b4d128ce4e8",   "RowID": 2
+}
+
+
+
+/****** Collection: WatchList       ******/
+
+
+
+{
+"WatchListId": 1, "Name": "Jamie P. Frederickson",  "Subject": "Hypertension",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa",  "PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa",  "RowID": 1
+}
+
+{
+"WatchListId": 2,  "Name": "Bill Smith",  "Subject": "Skin rash on arm",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa",  "PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8",  "RowID": 2
+}
+
+{
+"WatchListId": 3, "Name": "Ryan Oxford", "Subject": "Chron's", "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b",  "RowID": 3
+}
+
+{
+"WatchListId": 4, "Name": "Mallory Appleby", "Subject": "Sinus Infection",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa", "PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09",  "RowID": 4
+}
+
+{
+"WatchListId": 5,  "Name": "Jennifer Stone",  "Subject": "Spider Bite",  "UserId": "c4f316e8-10e9-4d6c-b5a4-77d6888050fa",  "PatientId": "4c52ea42-41a7-467d-9856-95451e64677a",   "RowID": 5
+}
+
+{
+"WatchListId": 6,  "Name": "Bill Smith",  "Subject": "Skin rash on arm", "UserId": "4455a2ba-9240-4497-8f95-cd454b801908", "PatientId": "c41e7a05-6cdf-4df4-a558-50a27fe7f6a8",  "RowID": 6
+}
+
+{
+"WatchListId": 7,  "Name": "Jamie P. Frederickson",  "Subject": "Hypertension",  "UserId": "4455a2ba-9240-4497-8f95-cd454b801908",  "PatientId": "70b4afc6-682f-43f3-8d27-a923504f76fa",  "RowID": 7
+}
+
+{
+"WatchListId": 8,  "Name": "Mallory Appleby",  "Subject": "Sinus Infection",  "UserId": "4455a2ba-9240-4497-8f95-cd454b801908",  "PatientId": "03302c00-027d-417c-9fca-15cb48aa7b09",   "RowID": 8
+}
+
+
+{
+"WatchListId": 9, "Name": "Ryan Oxford",  "Subject": "Chron's",  "UserId": "4455a2ba-9240-4497-8f95-cd454b801908",  "PatientId": "2cec16a0-62f8-417d-9e40-9c42bfda711b",  "RowID": 9
+}
+
+
+{
+"WatchListId": 10,  "Name": "Jennifer Stone",  "Subject": "Spider Bite",  "UserId": "4455a2ba-9240-4497-8f95-cd454b801908",  "PatientId": "4c52ea42-41a7-467d-9856-95451e64677a",  "RowID": 10
+}
+
